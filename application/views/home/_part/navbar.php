@@ -101,7 +101,7 @@
 										<a href="" style="padding: 0">LOGIN</a>
 									</li>
 									<li class="menu-item-has-children">
-										<button onclick="window.location.href = 'https://w3docs.com';" class="btn btn-black-outline btn-lg btn-align-center" type="button">
+										<button style="background-color: #C3A771; color:#ffffff; font-size:12px;" onclick="window.location.href = 'https://w3docs.com';" class="btn btn-black-outline btn-lg btn-align-center" type="button">
 											SIGN UP
 										</button>
 									</li>
