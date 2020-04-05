@@ -649,6 +649,48 @@
 									</div>
 								</div>
 
+								<div class="row home-default-about">
+									<div class="col-sm-12">
+									<div class="container">
+											<div class="row offers">
+												
+											</div>
+										</div>
+										<div class="container">
+											<div class="row welcome" style="background-image:url(<?=base_url('assets/template/')?>images/foot.jpg)">
+												<div class="col-sm-12" style="padding-top:25px; padding-bottom:20px">
+													<div class="col-sm-5">
+														<div class="content_element"style="padding:20px;" >
+															<h2 style="color:#ffffff; padding:30px; padding-bottom:1px; letter-spacing: 2px;">Any question ?</h2>
+															<h2 style="color:#ffffff; padding:30px; padding-top:1px; letter-spacing: 2px;">Contact us here</h2>
+															
+														</div>
+													</div>
+													<div class="col-sm-3" style="float:right;">
+														<div class="col-sm-12" style="padding-top:15px; margin-top:10px; margin-bottom:5px; background-color:#ffffff; height: 2px;">
+															<img src="<?=base_url("assets/template/images/Icon/whatsapp_icon.png")?>" alt="">
+														</div>
+														<div class="col-sm-12" style="padding-top:15px; margin-top:10px; margin-bottom:5px; background-color:#ffffff; height: 2px;">
+															<img src="<?=base_url("assets/template/images/Icon/whatsapp_icon.png")?>" alt="">
+														</div>
+														<div class="col-sm-12" style="padding-top:15px; margin-top:10px; margin-bottom:5px; background-color:#ffffff; height: 2px; ">
+															<img src="<?=base_url("assets/template/images/Icon/whatsapp_icon.png")?>" alt="">
+														</div>
+														<div class="col-sm-12" style="padding-top:15px; margin-top:10px; margin-bottom:5px; background-color:#ffffff;height: 2px;">
+															<img src="<?=base_url("assets/template/images/Icon/whatsapp_icon.png")?>" alt="">
+														</div>
+													</div>	
+												</div>
+											</div>
+										</div>
+										<div class="container">
+											<div class="row offers">
+												
+											</div>
+										</div>
+									</div>
+								</div>
+
 								
 								<div class="row instagram-wrapper">
 									<div class="col-sm-12">
