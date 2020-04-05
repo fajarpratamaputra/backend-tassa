@@ -649,7 +649,7 @@
 									</div>
 								</div>
 
-								<div class="row home-default-about">
+								<div class="row home-default-about" style="background:#ffffff;">
 									<div class="col-sm-12">
 									<div class="container">
 											<div class="row offers">
@@ -716,14 +716,14 @@
 								</div>
 
 								
-								<div class="row instagram-wrapper">
+								<!-- <div class="row instagram-wrapper">
 									<div class="col-sm-12">
 										<div class="icon_element icon_element-outer icon_element-align-center">
 											
 										</div>
 										
 									</div>
-								</div>
+								</div> -->
 								
 							</div>
 						</div>

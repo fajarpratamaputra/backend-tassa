@@ -1,4 +1,8 @@
 <div class="footer-widget">
+				
+			</div>
+			<footer id="footer" class="footer">
+				<div class="footer-info">
 				<div class="container">
 					<div class="footer-widget-wrap">
 						<div class="row">
@@ -60,36 +64,18 @@
 						</div>
 					</div>
 				</div>
-			</div>
-			<footer id="footer" class="footer">
-				<div class="footer-info">
 					<div class="container">
 						<div class="row">
 							<div class="col-md-12 text-center">
-								<div class="footer-info-logo">
-									<a href="#"><img alt="The DMCS" src="<?=base_url('assets/template/')?>images/logo_tassa.png"></a>
+								<div class="col-md-5">
+									<div class="footer-info-logo text-left">
+										<a href="#"><img alt="The DMCS" src="<?=base_url('assets/template/')?>images/logo_tassa.png"></a>
+									</div>
 								</div>
-								<div class="copyright text-center">Copyright © 2020 Tassa.id</div>
-								<div class="footer-social">
-									<a href="#" title="Facebook" target="_blank">
-										<i class="fa fa-facebook facebook-bg-hover"></i>
-									</a>
-									<a href="#" title="Twitter" target="_blank">
-										<i class="fa fa-twitter twitter-bg-hover"></i>
-									</a>
-									<a href="#" title="Google+" target="_blank">
-										<i class="fa fa-google-plus google-plus-bg-hover"></i>
-									</a>
-									<a href="#" title="Pinterest" target="_blank">
-										<i class="fa fa-pinterest pinterest-bg-hover"></i>
-									</a>
-									<a href="#" title="RSS" target="_blank">
-										<i class="fa fa-rss rss-bg-hover"></i>
-									</a>
-									<a href="#" title="Instagram" target="_blank">
-										<i class="fa fa-instagram instagram-bg-hover"></i>
-									</a>
+								<div class="col-md-6">
+									<div class="copyright text-right" style="padding:15px;">Copyright Tassa.id 2020. All Right Reserve</div>	
 								</div>
+									
 							</div>
 						</div>
 					</div>
