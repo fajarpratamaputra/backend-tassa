@@ -6392,13 +6392,13 @@ a[data-toggle="tooltip"]:hover {
   text-decoration: underline;
 }
 
-.product {
+.product-etc {
   float:left;
   margin-left: 45%;
 }
 
 @media (max-width: 767px) {
-.product {
+.product-etc {
   margin-left: 0%;
 }
 

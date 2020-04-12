@@ -826,7 +826,7 @@
 										</li>
 									</ul>
 								</div>
-								<nav class="shop-pagination product">
+								<nav class="shop-pagination product-etc">
 									<div class="paginate">
 										<div class="paginate_links">
 											<span class='page-numbers current'>1</span>
