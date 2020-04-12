@@ -6391,8 +6391,18 @@ a[data-toggle="tooltip"]:hover {
 .heading-container .heading-standar .page-breadcrumb a:hover {
   text-decoration: underline;
 }
+
+.product {
+  float:left;
+  margin-left: 45%;
+}
+
 @media (max-width: 767px) {
-  .heading-container .heading-standar .page-breadcrumb {
+.product {
+  margin-left: 0%;
+}
+
+.heading-container .heading-standar .page-breadcrumb {
     display: none;
   }
 }

@@ -5,14 +5,14 @@
 				<div class="row">
 					<div class="col-md-12 navbar-default-col">
 						<div class="navbar-wrap">
-							<div class="navbar-header">
+							<div class="navbar-header" style="margin:0px;">
 								<button type="button" class="navbar-toggle">
 									<span class="sr-only">Toggle navigation</span>
 									<span class="icon-bar bar-top"></span>
 									<span class="icon-bar bar-middle"></span>
 									<span class="icon-bar bar-bottom"></span>
 								</button>
-								<a class="navbar-search-button search-icon-mobile" href="#">
+								<a class="navbar-search-button search-icon-mobile" href="#" style="padding:10px;">
 									<i class="fa fa-search"></i>
 								</a>
 								<a class="cart-icon-mobile" href="#">
