@@ -8,6 +8,7 @@
 						<ul class="breadcrumb">
 							<li><span><a href="#" class="home"><span>Home</span></a></span></li>
 							<li><span>Shop Detail</span></li>
+							<li><span>Detail Product</span></li>
 						</ul>
 					</div>
 				</div>
@@ -61,7 +62,7 @@
 													</div>
 												</div>
 											</div>
-											<div class="col-md-4 col-sm-6 entry-summary">
+											<!-- <div class="col-md-4 col-sm-6 entry-summary">
 												<div class="summary">
 													<h1 class="product_title entry-title"><?=$prod->ProductName?></h1>
 													<p class="price"><span class="amount">Rp <?=$prod->ProductPrice?></span></p>
@@ -100,6 +101,87 @@
 														</div>
 													</div>
 												</div> 
+											</div> -->
+											<div class="col-md-4 col-sm-6 entry-summary">
+												<div class="summary">
+													<h2 class="product_title entry-title">Cras rhoncus duis viverra</h2>
+													<a href="#reviews" class="shop-review-link">customer review</a>
+													<div class="shop-product-rating">
+														<div class="star-rating">
+															<span style="width:80%"></span>
+														</div>
+														
+													</div>
+													<br>
+													<p class="price"><span class="amount">&#36;12.00</span>&ndash;<span class="amount">&#36;23.00</span></p>
+													<a href="#reviews" class="shop-review-link">Stok produk sisa : 1</a>
+													<hr>
+													<div class="product-excerpt">
+														<p>
+															Proin malesuada enim nulla, nec bibendum justo vestibulum non. Duis et ipsum convallis, bibendum enim a, hendrerit diam. Praesent tellus mi, vehicula et risus eget, laoreet tristique tortor. Fusce id metus eget nibh imperdiet fermentum non in metus.
+														</p>
+													</div>
+													<div class="product-actions res-color-attr">
+														<form class="cart">
+															<div class="product-options-outer">
+																<div class="variation_form_section">
+																	<div class="product-options icons-lg">
+																		<div class="col-md-12" style="padding:0px;">
+																			<div class="col-md-6 col-sm-12 col-xd-12" style="padding:0px;">
+																				<label>Color</label>
+																				<br>
+																				<div class="select-option swatch-wrapper">
+																					<a href="#" title="Green" class="swatch-color green">Green</a>
+																				</div>
+																				<div class="select-option swatch-wrapper selected">
+																					<a href="#" title="Red" class="swatch-color red">Red</a>
+																				</div>
+																				<div class="select-option swatch-wrapper">
+																					<a href="#" title="White" class="swatch-color white">White</a>
+																				</div>
+																			</div>
+																			<div class="col-md-6 col-sm-12 col-xd-12" style="padding:0px;">
+																				<label>Size</label>
+																				<br>
+																				<div class="select-option swatch-wrapper selected">
+																					<a href="#" title="Extra Large" class="swatch-anchor">
+																						<img src="<?=base_url("assets/template/")?>images/sizes/XL.jpg" alt="thumbnail" width="35" height="35"/>
+																					</a>
+																				</div>
+																				<div class="select-option swatch-wrapper">
+																					<a href="#" title="Extra Extra Large" class="swatch-anchor">
+																						<img src="<?=base_url("assets/template/")?>images/sizes/XXL.jpg" alt="thumbnail" width="35" height="35"/>
+																					</a>
+																				</div>
+																				<div class="select-option swatch-wrapper">
+																					<a href="#" title="Medium" class="swatch-anchor">
+																						<img src="<?=base_url("assets/template/")?>images/sizes/M.jpg" alt="thumbnail" width="35" height="35"/>
+																					</a>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div class="single_variation_wrap" >
+																<label>Quantity</label>
+																<div class="variations_button" >
+																	<div class="quantity" >
+																		<input type="number" name="quantity" value="1" title="Qty" class="input-text qty text" size="4">
+																	</div>
+																</div>
+															</div>
+															<div class="col-md-12" style="padding:0px; padding-top:10px;">
+																<button style="background-color: #C3A771; border-color:#C3A771; color:#ffffff; font-size:12px;" onclick="window.location.href = 'https://w3docs.com';" class="btn btn-black-outline btn-lg" type="button">
+																	Continue to Payment
+																</button>
+																<button style="background-color: #ffffff; border-color:#C3A771; color:#C3A771; font-size:12px;" onclick="window.location.href = 'https://w3docs.com';" class="btn btn-black-outline btn-lg" type="button">
+																	Add to Bag
+																</button>
+															</div>
+														</form>
+													</div>
+												</div> 
 											</div>
 										</div>
 									</div>
@@ -133,7 +215,7 @@
 											<div class="col-sm-12">
 												<div class="related products">
 													<div class="related-title">
-														<h3><span>Related Products</span></h3>
+														<h2 style="text-align:center; padding:5px;">Product Lainnya</h2>
 													</div>
 													<ul class="products columns-4" data-columns="4">
 													<?php
@@ -185,6 +267,73 @@
 											</div>
 										</div>
 									</div>
+
+									<div class="row home-default-about" style="background:#ffffff;">
+										<div class="col-sm-12">
+											<div class="container">
+												<div class="row offers">
+													
+												</div>
+											</div>
+											<div class="container">
+												<div class="row welcome" style="background-image:url(<?=base_url('assets/template/')?>images/foot.jpg)">
+													<div class="col-sm-12" style="padding-top:25px; padding-bottom:20px">
+														<div class="col-sm-5">
+															<div class="content_element"style="padding:20px;" >
+																<h2 style="color:#ffffff; padding:30px; padding-bottom:1px; letter-spacing: 2px;">Any question ?</h2>
+																<h2 style="color:#ffffff; padding:30px; padding-top:1px; letter-spacing: 2px;">Contact us here</h2>
+																
+															</div>
+														</div>
+														<div class="col-sm-3" style="float:right;">
+															<div class="col-sm-12" style="padding-top:15px; margin-top:10px; margin-bottom:5px; background-color:#ffffff; height: 2px;">
+																<div class="col-md-3 col-sm-3 col-xs-3" style="padding: 0px; margin:0px;">
+																	<img src="<?=base_url("assets/template/images/Icon/whatsapp_icon.png")?>" alt="">
+																</div>
+																<div class="col-sm-9" style="padding: 3px; margin:0px;">
+																	<h6 style="padding: 0px; padding-top: 5px; margin:0px; ">+628 2330 5556 34</h6>
+																</div>
+																
+															</div>
+															<div class="col-sm-12" style="padding-top:15px; margin-top:10px; margin-bottom:5px; background-color:#ffffff; height: 2px;">
+																<div class="col-md-3 col-sm-3 col-xs-3" style="padding: 0px; margin:0px;">
+																	<img src="<?=base_url("assets/template/images/Icon/line_icon.png")?>" alt="">
+																</div>
+																<div class="col-md-9 col-sm-9 col-xs-9" style="padding: 3px; margin:0px;">
+																	<h6 style="padding: 0px; padding-top: 5px; margin:0px; ">@tassadoid</h6>
+																</div>
+																
+															</div>
+															<div class="col-sm-12" style="padding-top:15px; margin-top:10px; margin-bottom:5px; background-color:#ffffff; height: 2px;">
+																<div class="col-md-3 col-sm-3 col-xs-3" style="padding: 0px; margin:0px;">
+																	<img src="<?=base_url("assets/template/images/Icon/instagram_icon.png")?>" alt="">
+																</div>
+																<div class="col-md-9 col-sm-9 col-xs-9" style="padding: 3px; margin:0px;">
+																	<h6 style="padding: 0px; padding-top: 5px; margin:0px; ">@tassadoid</h6>
+																</div>
+																
+															</div>
+															<div class="col-sm-12" style="padding-top:15px; margin-top:10px; margin-bottom:5px; background-color:#ffffff; height: 2px;">
+																<div class="col-md-3 col-sm-3 col-xs-3" style="padding: 0px; margin:0px;">
+																	<img src="<?=base_url("assets/template/images/Icon/facebook_icon.png")?>" alt="">
+																</div>
+																<div class="col-md-9 col-sm-9 col-xs-9" style="padding: 3px; margin:0px;">
+																	<h6 style="padding: 0px; padding-top: 5px; margin:0px; ">tassadoid</h6>
+																</div>
+																
+															</div>
+														</div>	
+													</div>
+												</div>
+											</div>
+											<div class="container">
+												<div class="row offers">
+													
+												</div>
+											</div>
+										</div>
+									</div>
+
 								</div> 
 							</div>
 						</div>
