@@ -49,15 +49,55 @@
 
 														border: 10px dashed #C3A771;
 														border-style: solid;
+
+													}
+
+													.bullet {
+														width:5%;
+														height:5%;
+													}
+
+													.bullet2 {
+														width:5%;
+														height:5%;
+													}
+
+													.bullet3 {
+														width:5%;
+														height:5%;
+													}
+
+													.line-address {
+														width:40%;
+													}
+
+													@media (max-width: 767px) {
+														.line-address {
+															display:none;
+														}
+
+														.bullet {
+															width:15%;
+															height:15%;
+														}
+
+														.bullet2 {
+															display:none;
+														}
+
+														.bullet3 {
+															display:none;
+														}
+														
 													}
 
 												</style>
-												<div>
-														<img width="5%" height="5%" src="<?=base_url("assets/template/")?>assets/1.png" alt="">
-														<img width="41%" src="<?=base_url("assets/template/")?>assets/border.png" alt="">
-														<img width="5%" height="5%" src="<?=base_url("assets/template/")?>assets/2a.png" alt="">
-														<img width="41%" src="<?=base_url("assets/template/")?>assets/border.png" alt="">
-														<img width="5%" height="5%" src="<?=base_url("assets/template/")?>assets/3a.png" alt="">
+												<div style="width:100%">
+														<img class="bullet" src="<?=base_url("assets/template/")?>assets/1.png" alt="">
+														<img class="line-address" src="<?=base_url("assets/template/")?>assets/border.png" alt="">
+														<img class="bullet2" src="<?=base_url("assets/template/")?>assets/2a.png" alt="">
+														<img class="line-address" src="<?=base_url("assets/template/")?>assets/border.png" alt="">
+														<img class="bullet3" src="<?=base_url("assets/template/")?>assets/3a.png" alt="">
 												</div>
 												<br>
 												<div class="col-md-12">
@@ -118,8 +158,8 @@
 														</div>
 													</div>
 													<div class="col-md-12" style="margin-bottom:10px;">
-														<div style="border:1px width:100%; solid #DEDEDE; box-sizing: border-box; padding:10px; background-color:#C3A771">
-															<button style="background-color: #C3A771; border-color:#C3A771; color:#ffffff; font-size:12px;" onclick="window.location.href = 'https://w3docs.com';" class="btn btn-black-outline btn-lg btn-align-center" type="button">
+														<div style="border:1px; solid #DEDEDE; box-sizing: border-box; padding:10px; background-color:#C3A771">
+															<button style="background-color: #C3A771; width:100%; border-color:#C3A771; color:#ffffff; font-size:12px;" onclick="window.location.href = 'https://w3docs.com';" class="btn btn-black-outline btn-lg btn-align-center" type="button">
 																LANJUTKAN TRANSAKSI
 															</button>
 														</div>
