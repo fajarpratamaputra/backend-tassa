@@ -108,7 +108,7 @@
 													<a href="#reviews" class="shop-review-link">customer review</a>
 													<div class="shop-product-rating">
 														<div class="star-rating">
-															<span style="width:80%"></span>
+															<span style="width:50%"></span>
 														</div>
 														
 													</div>
