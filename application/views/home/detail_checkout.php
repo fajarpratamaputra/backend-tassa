@@ -91,19 +91,56 @@
 														
 													}
 
+													input[type="file"] {
+														display: none;
+													}
+
+													.custom-file-upload {
+														border: 1px dashed #828282;
+														display: inline-block;
+														padding: 6px 12px;
+														cursor: pointer;
+														width:100%;
+														text-align:center;
+													}
+
 												</style>
-												<div style="width:100%; padding-left:20%; padding-right:20%;">
-														<h3 style="text-align:center;">Detail Pembayaran Produk</h3>
-														<h5 style="text-align:center; font-style:normal;">Perhatikan ringkasan pesanan anda sebelum melakukan checkout</h5>
-														<img class="bullet" src="<?=base_url("assets/template/")?>assets/1.png" alt="">
-														<img class="line-address" src="<?=base_url("assets/template/")?>assets/border.png" alt="">
-														<img class="bullet2" src="<?=base_url("assets/template/")?>assets/2.png" alt="">
-														<img class="line-address" src="<?=base_url("assets/template/")?>assets/border.png" alt="">
-														<img class="bullet3" src="<?=base_url("assets/template/")?>assets/3a.png" alt="">
-												</div>
-												<br>
 												<div class="col-md-12">
-													<div class="col-md-6" style="margin-bottom:10px;">
+													<div class="col-md-8" style="margin-bottom:10px;">
+														<div class="col-md-12" style="margin-bottom:10px; border:1px solid #DEDEDE; border-top: 4px solid #C3A771; box-sizing: border-box; padding:10px;">
+															<h4>Halo, Rahmat Hamid</h4>
+															<p>Terima kasih sudah melakukan pesanan di Tassa.id . Silahkan melakukan transfer 
+															ke nomor rekening yang tertera dibawah untuk menyelesaikan pesanan.</p>
+														</div>
+														<div class="col-md-12" style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
+															<h4>Rincian Checkout</h4>
+															<p>Checkout Kamu masih tertunda. Untuk menyelesaikan pesanan, silahkan lakukan pembayaran di 
+															ATM atau melalui Internet Banking</p>
+														</div>
+														<div class="col-md-12" style="margin-bottom:10px; border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
+															<table class="table shop_table cart">
+																<thead>
+																	<tr>
+																		<th class="product-price">Checkout ID</th>
+																		<th class="product-quantity">No. Rekening</th>
+																		<th class="product-subtotal">Total Bayar</th>
+																	</tr>
+																</thead>
+																<tbody>
+																	<tr class="cart_item">
+																		<td class="product-price">
+																		<h6>CHK87545438218355</h6>
+																		</td>
+																		<td class="product-quantity">
+																			<h6>9087569204798</h6>
+																		</td>
+																		<td class="product-subtotal hidden-xs">
+																			<h6>Rp. 1.450.000</h6>
+																		</td>
+																	</tr>
+																</tbody>
+															</table>
+														</div>
 														<div class="col-md-12" style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
 															<div class="col-md-3">
 																<img src="<?=base_url("assets/backend/")?>products/file-1585687834.png" alt="">
@@ -140,32 +177,34 @@
 															</div>
 														</div>
 													</div>
-													<div class="col-md-6" style="margin-bottom:10px;">
-														<div class="col-md-12" style="margin-bottom:5px;">
-															<div class="col-md-12" style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
+													<div class="col-md-4" style="margin-bottom:10px;">
+														<div class="col-md-12" style="margin-bottom:10px;">
+															<div class="col-md-12" style="border:1px solid #DEDEDE; border-top: 4px solid #C3A771; box-sizing: border-box; padding:10px;">
 																<div class="col-md-12">
 																	<h5 class="col-md-12">ALAMAT PENGIRIMAN</h5>
-																	<p class="col-md-6" style="text-align:left">Nama Penerima</p><p class="col-md-6" style="text-align:right">Rahmat Hamid</p>
-																	<p class="col-md-6" style="text-align:left">Alamat Email</p><p class="col-md-6" style="text-align:right">rahmat140295@gmail.com</p>
-																	<p class="col-md-6" style="text-align:left">Alamat Rumah</p><p class="col-md-6" style="text-align:right">Budidaya VI No. 30 Manggala, Kota Makasar, Sulawesi Selatan</p>
-																	<p class="col-md-6" style="text-align:left">Kode Pos</p><p class="col-md-6" style="text-align:right">902384</p>
+																	<p class="col-md-12" style="text-align:left">Rahmat Hamid</p>
+																	<p class="col-md-12" style="text-align:left">rahmat140295@gmail.com</p>
+																	<p class="col-md-12" style="text-align:left">Budidaya VI No. 30 Manggala, Kota Makasar, Sulawesi Selatan</p>
+																	<p class="col-md-12" style="text-align:left">902384</p>
 																	
 																</div>
 															</div>
 														</div>
-														<div class="col-md-12" style="margin-bottom:5px;">
+														<div class="col-md-12" style="margin-bottom:10px;">
 															<div class="col-md-12" style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
 																<div class="col-md-12">
-																	<p class="col-md-6" style="text-align:left">Kode Voucher</p>
+																	<h6 class="col-md-12">METODE PEMBAYARAN</h6>
+																	<div class="col-md-6" style="padding:5px;">
+																		<img src="<?=base_url('assets/template/')?>images/logo/Bca_logo.png" alt="">
+																	</div>
 																	<div class="col-md-6">
-																		<input class="col-md-12" type="text" id="voucher" name="log" class="form-control" value="">
-																		<h6 style="font-size: 10px; font-weight: normal;">Masukkan kode voucher untuk dapatkan diskon*</h6>
+																		<h5>9087569204798</h5>
 																	</div>
 																</div>
 															</div>
 														</div>
 														<div class="col-md-12">
-															<div class="col-md-12" style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
+															<div class="col-md-12" style="margin-bottom:10px; border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
 																<div class="col-md-12">
 																	<h5 class="col-md-12">RINGKASAN HARGA</h5>
 																	<p class="col-md-6" style="text-align:left">Produk</p><p class="col-md-6" style="text-align:right">Rp. 1.450.000</p>
@@ -174,18 +213,19 @@
 																</div>
 															</div>
 														</div>
-														<div class="col-md-12" style="margin-bottom:5px;">
-															<div class="col-md-12" style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
-																<h3 style="font-size: 16px; font-weight: bold; color: #C3A771; text-align:center;">Total Bayar : Rp.1.450.000</h3>
+														<div class="col-md-12" style="margin-bottom:10px;">
+															<div class="col-md-12" style="color:#C3A771; border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
+																<label for="file-upload" class="custom-file-upload">
+																	+ Upload bukti bayar disini
+																</label>
+																<input id="file-upload" type="file"/>
+																<button style="margin-top:10px; background-color: #C3A771; width:100%; border-color:#C3A771; color:#ffffff; font-size:12px;" onclick="window.location.href = 'https://w3docs.com';" class="btn btn-black-outline btn-lg btn-align-center" type="button">
+																		PILIH METODE PEMBAYARAN
+																	</button>
 															</div>
+															
 														</div>
-														<div class="col-md-12">
-															<div style="margin-top:20px; border:1px; solid #DEDEDE; box-sizing: border-box; padding:10px; background-color:#C3A771">
-																<button style="background-color: #C3A771; width:100%; border-color:#C3A771; color:#ffffff; font-size:12px;" onclick="window.location.href = 'https://w3docs.com';" class="btn btn-black-outline btn-lg btn-align-center" type="button">
-																	PILIH METODE PEMBAYARAN
-																</button>
-															</div>
-														</div>
+														
 														
 													</div> 
 											</div>
