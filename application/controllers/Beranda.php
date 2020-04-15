@@ -46,4 +46,9 @@ class Beranda extends CI_Controller {
 		$this->templatehome->view('home/address');
 	}
 
+	public function payment()
+	{
+		$this->templatehome->view('home/detail_payment');
+	}
+
 }
