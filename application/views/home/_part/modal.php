@@ -9,12 +9,6 @@
 							<h4 class="modal-title">Login</h4>
 						</div>
 						<div class="modal-body">
-							<div class="user-login-facebook">
-								<button class="btn-login-facebook" type="button">
-									<i class="fa fa-facebook"></i>Sign in with Facebook
-								</button>
-							</div>
-							<div class="user-login-or"><span>or</span></div>
 							<div class="form-group">
 								<label>Username</label>
 								<input type="text" id="username" name="log" required class="form-control" value="" placeholder="Username">
@@ -27,9 +21,6 @@
 								<div class="form-flat-checkbox pull-left">
 									<input type="checkbox" name="rememberme" id="rememberme" value="forever"><i></i>&nbsp;Remember Me
 								</div>
-								<span class="lostpassword-modal-link pull-right">
-									<a href="#lostpasswordModal" data-rel="lostpasswordModal">Lost your password?</a>
-								</span>
 							</div>
 						</div>
 						<div class="modal-footer">
@@ -53,12 +44,6 @@
 							<h4 class="modal-title">Register account</h4>
 						</div>
 						<div class="modal-body">
-							<div class="user-login-facebook">
-								<button class="btn-login-facebook" type="button">
-									<i class="fa fa-facebook"></i>Sign in with Facebook
-								</button>
-							</div>
-							<div class="user-login-or"><span>or</span></div>
 							<div class="form-group">
 								<label>Username</label>
 								<input type="text" name="user_login" required class="form-control" value="" placeholder="Username">

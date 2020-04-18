@@ -61,4 +61,9 @@ class Beranda extends CI_Controller {
 		$this->templatehome->view('home/detail_checkout');
 	}
 
+	public function privasi()
+	{
+		$this->templatehome->view('home/privasi');
+	}
+
 }

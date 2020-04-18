@@ -98,10 +98,10 @@
 										</div>
 									</li>
 									<li class="menu-item-has-children">
-										<a href="" style="padding: 0">LOGIN</a>
+										<a data-rel="loginModal" href="#" style="padding: 0">LOGIN</a>
 									</li>
 									<li class="menu-item-has-children">
-										<button style="background-color: #C3A771; border-color:#C3A771; color:#ffffff; font-size:12px;" onclick="window.location.href = 'https://w3docs.com';" class="btn btn-black-outline btn-lg btn-align-center" type="button">
+										<button style="background-color: #C3A771; border-color:#C3A771; color:#ffffff; font-size:12px;" data-rel="registerModal"  class="btn btn-black-outline btn-lg btn-align-center" type="button">
 											SIGN UP
 										</button>
 									</li>

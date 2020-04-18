@@ -1,7 +1,7 @@
 <div class="offcanvas open">
 			<div class="offcanvas-wrap">
 				<div class="offcanvas-user clearfix">
-					<a class="offcanvas-user-account-link" href="my-account.html">
+					<a class="offcanvas-user-account-link" data-rel="loginModal" href="#">
 						<i class="fa fa-user"></i> Login
 					</a>
 				</div>

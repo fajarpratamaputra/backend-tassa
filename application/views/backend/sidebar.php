@@ -4,7 +4,7 @@
               <a class="navbar-brand w-100 mr-0" href="#" style="line-height: 25px;">
                 <div class="d-table m-auto">
                   <img id="main-logo" class="d-inline-block align-top mr-1" style="max-width: 25px;" src="<?=base_url('assets/backend/') ?>images/shards-dashboards-logo.svg" alt="Shards Dashboard">
-                  <span class="d-none d-md-inline ml-1">Dashboard Malebbi</span>
+                  <span class="d-none d-md-inline ml-1">Dashboard Tassa.id</span>
                 </div>
               </a>
               <a class="toggle-sidebar d-sm-inline d-md-none d-lg-none">
@@ -45,6 +45,13 @@
                 <a class="nav-link " href="<?=base_url("users/profile")?>">
                   <i class="material-icons">person</i>
                   <span>User Profile</span>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link " href="<?=base_url("login/logout")?>">
+                <i class="fas fa-sign-out-alt"></i>
+                  <span>Logout</span>
                 </a>
               </li>
               

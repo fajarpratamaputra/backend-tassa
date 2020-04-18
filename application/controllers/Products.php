@@ -9,17 +9,25 @@ class Products extends CI_Controller {
 		$this->load->library('template_d');
 		$this->load->model('m_products');
 		$this->load->model('m_category');
+		$this->load->model('m_loginadmin');
+		if($this->session->userdata('id') == null){
+			redirect(base_url("login"));
+		}
 		
 	  }
 	  
 	public function index()
 	{
+		$id = $this->session->userdata('id');
+		$data['profile'] = $this->m_loginadmin->get_profile($id);
 		$data['prod'] = $this->m_products->get_join();
 		$this->template_d->view('backend/products/product', $data);
 	}
 
 	public function add()
 	{
+		$id = $this->session->userdata('id');
+		$data['profile'] = $this->m_loginadmin->get_profile($id);
 		$data['category'] = $this->m_category->get_all();
 		$this->template_d->view('backend/products/addProduct', $data);
 	}
@@ -77,8 +85,10 @@ class Products extends CI_Controller {
 
 	public function edit()
 	{
-		$id = $this->uri->segment('3');
-		$data['prod'] = $this->m_products->edit($id);
+		$id = $this->session->userdata('id');
+		$data['profile'] = $this->m_loginadmin->get_profile($id);
+		$id_product = $this->uri->segment('3');
+		$data['prod'] = $this->m_products->edit($id_product);
 		$data['category'] = $this->m_category->get_all();
 		$this->template_d->view('backend/products/editProduct', $data);
 	}
