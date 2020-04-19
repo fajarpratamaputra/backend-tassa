@@ -29,7 +29,7 @@
 										<img class="logo-fixed" alt="The DMCS" src="<?=base_url('assets/template/')?>images/logo_tassa.png">
 									</a>
 									<li class="menu-item-has-children">
-										<a href="<?=base_url('beranda/product')?>" style="
+										<a href="<?=base_url('beranda/product/newin')?>" style="
 												padding-left: 5px;
 												padding-right: 5px;
 											">
@@ -37,7 +37,7 @@
 										</a>
                                     </li>
                                     <li class="menu-item-has-children">
-										<a href="<?=base_url('beranda/product')?>" style="
+										<a href="<?=base_url('beranda/product/moeslimdress')?>" style="
 												padding-left: 5px;
 												padding-right: 5px;
 											">
@@ -45,7 +45,7 @@
 										</a>
                                     </li>
                                     <li class="menu-item-has-children">
-										<a href="<?=base_url('beranda/product')?>" style="
+										<a href="<?=base_url('beranda/product/kaftan')?>" style="
 												padding-left: 5px;
 												padding-right: 5px;
 											">
@@ -53,7 +53,7 @@
 										</a>
                                     </li>
                                     <li class="menu-item-has-children">
-										<a href="<?=base_url('beranda/product')?>" style="
+										<a href="<?=base_url('beranda/product/best')?>" style="
 												padding-left: 5px;
 												padding-right: 5px;
 											">
@@ -61,7 +61,7 @@
 										</a>
                                     </li>
                                     <li class="menu-item-has-children">
-										<a href="<?=base_url('beranda/product')?>" style="
+										<a href="<?=base_url('beranda/product/sale')?>" style="
 												padding-left: 5px;
 												padding-right: 25px;
 											">
@@ -78,7 +78,7 @@
 										<div class="search-form-wrap show-popup hide"></div>
 									</li>
 									<li class="menu-item-has-children">
-										<a class="minicart-link" href="#" style="
+										<a class="minicart-link" href="<?=base_url('beranda/cart')?>" style="
 												padding-left: 5px;
 												padding-right: 0px;
 											">
@@ -97,14 +97,26 @@
 											</div>
 										</div>
 									</li>
-									<li class="menu-item-has-children">
-										<a data-rel="loginModal" href="#" style="padding: 0">LOGIN</a>
-									</li>
-									<li class="menu-item-has-children">
-										<button style="background-color: #C3A771; border-color:#C3A771; color:#ffffff; font-size:12px;" data-rel="registerModal"  class="btn btn-black-outline btn-lg btn-align-center" type="button">
-											SIGN UP
-										</button>
-									</li>
+									<?php 
+										$login = false;
+										if($this->session->userdata('user_id') != null){
+											$login = true;
+										}
+									?>
+									<?php if ($login == false) { ?>
+										<li class="menu-item-has-children">
+											<a data-rel="loginModal" href="#" style="padding: 0">LOGIN</a>
+										</li>
+										<li class="menu-item-has-children">
+											<button style="background-color: #C3A771; border-color:#C3A771; color:#ffffff; font-size:12px;" data-rel="registerModal"  class="btn btn-black-outline btn-lg btn-align-center" type="button">
+												SIGN UP
+											</button>
+										</li>
+									<?php } else if ($login == true) { ?>
+										<li class="menu-item-has-children">
+											<a href="<?=base_url('loginfe/logout')?>" style="padding: 0">LOGOUT</a>
+										</li>
+									<?php } ?>
 									
 								</ul>
 							</nav>

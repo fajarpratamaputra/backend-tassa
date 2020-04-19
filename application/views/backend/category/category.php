@@ -19,8 +19,9 @@
                     <table id="table" class="table mb-0">
                       <thead class="bg-light">
                         <tr>
-                          <th scope="col" class="border-0">#</th>
+                          <th scope="col" class="border-0">No</th>
                           <th scope="col" class="border-0">Category Name</th>
+                          <th scope="col" class="border-0">#</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -31,6 +32,10 @@
                       <tr>
                           <td><?=$no++?></td>
                           <td><?=$cat->CategoryName?></td>
+                          <td>
+                              <a href="<?php echo base_url('categories/edit/'.$cat->CategoryID) ?>" class="btn btn-sm btn-outline-primary mr-1">Edit</a>
+                              <a href="<?php echo base_url('categories/delete/'.$cat->CategoryID) ?>" class="btn btn-sm btn-outline-primary mr-1">Delete</a>
+                          </td>
                       </tr>
                       <?php } ?>
                       </tbody>

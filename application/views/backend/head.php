@@ -10,3 +10,49 @@
 <link rel="stylesheet" href="<?=base_url('assets/backend/styles/') ?>extras.1.1.0.min.css">
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.snow.css">
+<style>
+    div.paging {
+        padding     : 2px;
+        margin      : 2px;
+        text-align  : center;
+        font-family : Tahoma;
+        font-size   : 16px;
+    }
+    div.paging a {
+        padding             : 2px 6px;
+        margin-right        : 2px;
+        border              : 1px solid #DEDFDE;
+        text-decoration     : none;
+        color               : #0061DE;
+        background-position : bottom;
+    }
+    div.paging a:hover {
+        background-color: #0063dc;
+        border : 1px solid #fff;
+        color  : #fff;
+    }
+    div.paging span.current {
+        border : 1px solid #DEDFDE;
+        padding      : 2px 6px;
+        margin-right : 2px;
+        font-weight  : bold;
+        color        : #FF0084;
+    }
+    div.paging span.disabled {
+        padding      : 2px 6px;
+        margin-right : 2px;
+        color        : #ADAAAD;
+        font-weight  : bold;
+    }
+    div.paging span.prevnext {   
+        font-weight : bold;
+    }
+    div.paging span.prevnext a {
+        border : none;
+    }
+    div.paging span.prevnext a:hover {
+        display: block;
+        border : 1px solid #fff;
+        color  : #fff;
+    }                     
+</style>

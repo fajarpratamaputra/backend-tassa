@@ -15,13 +15,31 @@ class Products extends CI_Controller {
 		}
 		
 	  }
-	  
+	
 	public function index()
 	{
 		$id = $this->session->userdata('id');
 		$data['profile'] = $this->m_loginadmin->get_profile($id);
-		$data['prod'] = $this->m_products->get_join();
+		// $data['prod'] = $this->m_products->get_join();
+		$jumlah_data = $this->m_products->jumlah_data();
+		$this->load->library('pagination');
+		$config['base_url'] = base_url().'index.php/products/index/';
+		$config['total_rows'] = $jumlah_data;
+		$config['per_page'] = 5;
+		$from = $this->uri->segment(3);
+		$this->pagination->initialize($config);		
+		$data['prod'] = $this->m_products->data($config['per_page'],$from);
 		$this->template_d->view('backend/products/product', $data);
+	}
+
+	public function picture()
+	{
+		$id = $this->session->userdata('id');
+		$data['profile'] = $this->m_loginadmin->get_profile($id);
+		$id_product = $this->uri->segment('3');
+		$data['picture'] = $this->m_products->get_picture($id_product);
+		$data['prod'] = $this->m_products->edit($id_product);
+		$this->template_d->view('backend/products/listPicture', $data);
 	}
 
 	public function add()
@@ -30,6 +48,15 @@ class Products extends CI_Controller {
 		$data['profile'] = $this->m_loginadmin->get_profile($id);
 		$data['category'] = $this->m_category->get_all();
 		$this->template_d->view('backend/products/addProduct', $data);
+	}
+
+	public function addpicture()
+	{
+		$id = $this->session->userdata('id');
+		$data['profile'] = $this->m_loginadmin->get_profile($id);
+		$id_product = $this->uri->segment('3');
+		$data['pic'] = $this->m_products->edit($id_product);
+		$this->template_d->view('backend/products/addPicture', $data);
 	}
 
 	public function insert()
@@ -80,6 +107,39 @@ class Products extends CI_Controller {
 		}
 		
 		redirect('products/');
+
+	}
+
+	public function insert_picture()
+    {
+		$productid 		 = $this->input->post("productid");
+		
+        $this->load->library('upload');
+        $nmfile = "file-".time(); //nama file saya beri nama langsung dan diikuti fungsi time
+        $config['upload_path'] = './assets/backend/products/'; //path folder
+        $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
+		$config['max_size'] = '3048'; 
+		$config['max_width']  = '1480'; //lebar maksimum 1288 px
+        $config['max_height']  = '820'; //tinggi maksimu 768 px
+        $config['file_name'] = $nmfile; //nama yang terupload nantinya
+
+        $this->upload->initialize($config);
+        
+        if($_FILES['file']['name'])
+        {
+            if ($this->upload->do_upload('file'))
+            {
+                $gbr = $this->upload->data();
+				$data = array(
+					'productID' 	=> $productid,
+					'picture' 		=> $gbr['file_name']
+				);
+
+                $this->m_products->add_picture($data);
+            }
+        }
+		
+		redirect('products/picture/'.$productid);
 
 	}
 
@@ -163,6 +223,20 @@ class Products extends CI_Controller {
 		redirect('products/');
    
    }
+
+   function delete_picture($id){
+
+		$this->db->where('id',$id);
+		$query = $this->db->get('productimages');
+		$row = $query->row();
+		$productid = $row->productID;
+
+		unlink("./assets/backend/products/$row->picture");
+
+		$this->db->delete('productimages', array('id' => $id));
+		redirect('products/picture/'.$productid);
+
+	}
    
 
 

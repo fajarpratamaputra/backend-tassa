@@ -7,21 +7,21 @@ class M_Loginadmin extends CI_Model {
     }
     
     function cek_login($where){
-		return $this->db->get_where('admin',$where);
+		  return $this->db->get_where('admin',$where);
     }
     
     public function get_profile($id)
-	{
+	  {
 
-		$query = $this->db->where('id', $id)
-                ->get('admin');
-                
+      $query = $this->db->where('id', $id)
+                  ->get('admin');
+                  
 
-		if($query){
-			return $query->row();
-		}else{
-			return false;
-		}
+      if($query){
+        return $query->row();
+      }else{
+        return false;
+      }
 
     }
 

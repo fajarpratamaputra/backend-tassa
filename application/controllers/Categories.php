@@ -27,7 +27,7 @@ class Categories extends CI_Controller {
 	{
 		$id = $this->session->userdata('id');
 		$data['profile'] = $this->m_loginadmin->get_profile($id);
-		$this->template_d->view('backend/category/addCategory');
+		$this->template_d->view('backend/category/addCategory', $data);
 	}
 
 	public function insert()
@@ -42,5 +42,36 @@ class Categories extends CI_Controller {
 		redirect('categories/');
 
 	}
+
+	public function edit()
+	{
+		$id = $this->session->userdata('id');
+		$data['profile'] = $this->m_loginadmin->get_profile($id);
+		$id_category = $this->uri->segment('3');
+		$data['cat'] = $this->m_category->get_category($id_category);
+		$this->template_d->view('backend/category/editCategory', $data);
+	}
+
+	public function update()
+    {
+		$id['CategoryID'] = $this->input->post('id_category');
+		$category 		  = $this->input->post("category");
+		
+        $data = array(
+			'CategoryName' 		=> $category
+		);
+
+		$this->m_category->update($data,$id);
+		
+		redirect('categories/');
+
+	}
+
+	function delete($id)
+	{
+		$this->db->delete('productcategories', array('CategoryID' => $id));
+		redirect('categories/');
+   
+   }
 
 }

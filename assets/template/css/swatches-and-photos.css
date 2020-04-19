@@ -33,6 +33,15 @@
 .swatch-wrapper .swatch-color.red {
 	background-color: #f81212;
 }
+.swatch-wrapper .swatch-color.black {
+	background-color: #000000;
+}
+.swatch-wrapper .swatch-color.gray {
+	background-color: #808080;
+}
+.swatch-wrapper .swatch-color.brown {
+	background-color: #964b00;
+}
 .swatch-wrapper .swatch-color.white {
 	background-color: #ffffff;
 }

@@ -24,13 +24,12 @@
                           <th scope="col" class="border-0">Product Price</th>
                           <th scope="col" class="border-0">Product Description</th>
                           <th scope="col" class="border-0">Product Category</th>
-                          <th scope="col" class="border-0">Product Image</th>
                           <th scope="col" class="border-0">#</th>
                         </tr>
                       </thead>
                       <tbody>
                       <?php
-                          $no = 1;
+                          $no = 1 + $this->uri->segment(3);
                           foreach($prod as $p){
                       ?>
                       <tr>
@@ -39,17 +38,26 @@
                           <td><?=$p->ProductPrice?></td>
                           <td><?php echo word_limiter($p->ProductCartDesc, 5) ?></td>
                           <td><?=$p->CategoryName?></td>
-                          <td><img width="60px" height="80px" src="<?=base_url('assets/backend/products/'.$p->ProductImage)?>" alt=""></td>
                           <td>
                               <a href="<?php echo base_url('products/edit/'.$p->ProductID) ?>" class="btn btn-sm btn-outline-primary mr-1">Edit</a>
                               <a href="<?php echo base_url('products/delete/'.$p->ProductID) ?>" class="btn btn-sm btn-outline-primary mr-1">Delete</a>
+                              <a href="<?php echo base_url('products/picture/'.$p->ProductID) ?>" class="btn btn-sm btn-outline-primary mr-1">Picture</a>
                           </td>
                         </tr>
                         <?php } ?>
                       </tbody>
+                      
+                     <tfoot>
+                      <div class="paging">
+                        <?php 
+                          echo $this->pagination->create_links();
+                        ?>
+                      </div>
+                     </tfoot>
                     </table>
                   </div>
                 </div>
+                
               </div>
             </div>
             <!-- End Default Light Table -->
