@@ -13,8 +13,9 @@
 												
 											</div>
 										</div>
+										<?php foreach($quote as $q) { ?>
 										<div class="container">
-											<div class="row welcome" style="background-image:url(<?=base_url('assets/template/')?>images/slideshow/gambar5.png)">
+											<div class="row welcome" style="background-image:url(<?=base_url('assets/backend/banner/'.$q->picture_slider)?>)">
 												<div class="col-sm-12">
 													<div class="separator content_element separator_align_center sep_width_10 sep_border_width_2 sep_pos_align_center separator_no_text sep_color_white">
 														<span class="sep_holder sep_holder_l">
@@ -45,6 +46,7 @@
 												</div>
 											</div>
 										</div>
+										<?php } ?>
 										<div class="container">
 											<div class="row offers">
 												
@@ -196,8 +198,11 @@
 												
 											</div>
 										</div>
+										<?php 
+											foreach($footer as $foot) {
+										?>
 										<div class="container">
-											<div class="row welcome" style="background-image:url(<?=base_url('assets/template/')?>images/foot.jpg)">
+											<div class="row welcome" style="background-image:url(<?=base_url('assets/backend/banner/'.$foot->picture_slider)?>)">
 												<div class="col-sm-12" style="padding-top:25px; padding-bottom:20px">
 													<div class="col-sm-5">
 														<div class="content_element"style="padding:20px;" >
@@ -247,6 +252,7 @@
 												</div>
 											</div>
 										</div>
+											<?php } ?>
 										<div class="container">
 											<div class="row offers">
 												

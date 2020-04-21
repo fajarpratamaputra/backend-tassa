@@ -26,3 +26,5 @@
 <script type='text/javascript' src='<?=base_url('assets/template/')?>js/price-slider.js'></script>
 
 <script type='text/javascript' src='<?=base_url('assets/template/')?>js/jquery.magnific-popup.min.js'></script>
+
+<script type='text/javascript' src='<?=base_url('assets/template/')?>js/custom.js'></script>

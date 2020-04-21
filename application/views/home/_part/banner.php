@@ -8,24 +8,27 @@
 					</div>
 				</div>
 				<div class="carousel-inner dhslider-wrap">
-					<div class="item slider-item active">
-						<div class="slide-bg" style="background-image:url(<?=base_url('assets/template/')?>images/slideshow/slide1.png)"></div>  
+				<?php 
+					$no = 0;
+					foreach($banner as $ban) {
+					
+				?>
+					<div class="item slider-item <?php if($no == 0) {echo "active";}  ?>">
+						<div class="slide-bg" style="background-image:url(<?=base_url('assets/backend/banner/'.$ban->picture_slider)?>)">
+						</div>  
 						
 					</div>
-					<div class="item slider-item">
-						<div class="slide-bg" style="background-image:url(<?=base_url('assets/template/')?>images/slideshow/slide2.png)"></div>  
-						
-                    </div>
-                    <div class="item slider-item">
-						<div class="slide-bg" style="background-image:url(<?=base_url('assets/template/')?>images/slideshow/slide3.png)"></div>  
-						
-					</div>
+				<?php $no++; } ?>	
                 </div>
                 
 				<ol class="carousel-indicators parallax-content">
-					<li data-target="#banner-slider" data-slide-to="0" class="active"></li>
-                    <li data-target="#banner-slider" data-slide-to="1"></li>
-                    <li data-target="#banner-slider" data-slide-to="2"></li>
+				<?php 
+					$no = 0;
+					foreach($banner as $ban) {
+
+				?>
+					<li data-target="#banner-slider" data-slide-to="0"></li>
+				<?php $no++; } ?>	   
 				</ol>
 			</div>
 		</div>

@@ -1,3 +1,4 @@
+
 <div class="footer-widget">
 				
 			</div>
@@ -12,11 +13,10 @@
 									<h3 class="widget-title"><span>Office</span></h3>
 									<ul class="menu">
 									 
-										<li>5476 Stevens Creek Blvd</a></li>
-										<li>undefined Pompano Beach, </a></li>
-										<li>Florida 88072 United States</a></li>
-										<li>(684) 555-0102</a></li>
-										<li>www.costumer@tassa.id</a></li>
+										<li><?=$setting->office_address?></a></li>
+										<li><?=$setting->telepon?></a></li>
+										<li><?=$setting->url_web?></a></li>
+										
 									</ul>
 								</div>
 							</div>
@@ -24,10 +24,11 @@
 								<div class="widget widget_nav_menu">
 									<h3 class="widget-title"><span>Information</span></h3>
 									<ul class="menu">
-										<li><a href="#">Support</a></li>
-										<li><a href="#">FAQ</a></li>
-										<li><a href="#">Repair Center</a></li>
-										<li><a href="#">Contact us</a></li>
+										<li><a href="#">About Us</a></li>
+										<li><a href="#">How To Shop</a></li>
+										<li><a href="#">Shipping</a></li>
+										<li><a href="#">Payment</a></li>
+										<li><a href="<?=base_url('beranda/faq/')?>">FAQ</a></li>
 									</ul>
 								</div>
 							</div>

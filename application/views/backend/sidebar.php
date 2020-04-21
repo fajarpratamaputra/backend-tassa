@@ -42,6 +42,36 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a class="nav-link " href="<?=base_url("banner/")?>">
+                  <i class="material-icons">vertical_split</i>
+                  <span>Banner</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="<?=base_url("quote/")?>">
+                  <i class="material-icons">vertical_split</i>
+                  <span>Quote</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="<?=base_url("footpicture/")?>">
+                  <i class="material-icons">vertical_split</i>
+                  <span>Footer Picture</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="<?=base_url("faq/")?>">
+                  <i class="material-icons">vertical_split</i>
+                  <span>FAQ</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="<?=base_url("setting/")?>">
+                  <i class="material-icons">vertical_split</i>
+                  <span>Web Setting</span>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link " href="<?=base_url("users/profile")?>">
                   <i class="material-icons">person</i>
                   <span>User Profile</span>
