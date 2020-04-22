@@ -1,3 +1,34 @@
+
+<style>
+li.nav-item {
+		display: inline-block;
+	}
+
+	.nav-item:hover .isi-dropdown {
+		display: block;
+	}
+
+	.isi-dropdown a:hover {
+		color: #fff !important;
+	}
+
+	.isi-dropdown {
+		position: absolute;
+		display: none;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+		background-color: #f9f9f9;
+	}
+
+	.isi-dropdown a {
+		color: #3c3c3c !important;
+	}
+
+	.isi-dropdown a:hover {
+		color: #232323 !important;
+		background: #f3f3f3 !important;
+	}
+</style>
 <aside class="main-sidebar col-12 col-md-3 col-lg-2 px-0">
           <div class="main-navbar">
             <nav class="navbar align-items-stretch navbar-light bg-white flex-md-nowrap border-bottom p-0">
@@ -42,6 +73,21 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="material-icons">vertical_split</i>  
+                  <span>Information</span>
+                
+                </a>
+                <ul class="isi-dropdown">
+                  <li><a class="nav-link" href="<?=base_url("setting/")?>">Web Setting</a></li>
+                  <li><a class="nav-link" href="<?=base_url("faq/")?>">FAQ</a></li>
+                  <li><a class="nav-link" href="<?=base_url("information/about")?>">About Us</a></li>
+                  <li><a class="nav-link" href="<?=base_url("information/how")?>">How To Shop</a></li>
+                  <li><a class="nav-link" href="<?=base_url("information/shipping")?>">Shipping</a></li>
+                  <li><a class="nav-link" href="<?=base_url("information/payment")?>">Payment</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link " href="<?=base_url("banner/")?>">
                   <i class="material-icons">vertical_split</i>
                   <span>Banner</span>
@@ -59,18 +105,7 @@
                   <span>Footer Picture</span>
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link " href="<?=base_url("faq/")?>">
-                  <i class="material-icons">vertical_split</i>
-                  <span>FAQ</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link " href="<?=base_url("setting/")?>">
-                  <i class="material-icons">vertical_split</i>
-                  <span>Web Setting</span>
-                </a>
-              </li>
+              
               <li class="nav-item">
                 <a class="nav-link " href="<?=base_url("users/profile")?>">
                   <i class="material-icons">person</i>

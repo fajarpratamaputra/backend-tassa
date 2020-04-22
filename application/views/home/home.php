@@ -63,7 +63,7 @@
 													<h2 class="text-center custom_heading">NEW IN</h2>
 													
 													<div class="content_element">
-														<p class="text-center" style="font-size:14px;">
+														<p class="text-center" style="font-size:18px;">
 															Kami hadirkan produk terbaru untuk anda kenakan
 														</p>
 														
@@ -131,7 +131,7 @@
 													<h2 class="text-center custom_heading">BEST SELLER</h2>
 													
 													<div class="content_element">
-														<p class="text-center" style="font-size:14px;">
+														<p class="text-center" style="font-size:18px;">
 															Kami hadirkan produk terlaris untuk anda kenakan
 														</p>
 														

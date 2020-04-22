@@ -16,6 +16,7 @@ class Beranda extends CI_Controller {
 		$this->load->model('m_banner');
 		$this->load->model('m_quote');
 		$this->load->model('m_footpicture');
+		$this->load->model('m_information');
 	}
 
 	public function index()
@@ -130,6 +131,14 @@ class Beranda extends CI_Controller {
 	{
 		$data['setting'] = $this->m_setting->get_setting();
 		$this->templatehome->view('home/privasi', $data);
+	}
+
+	public function information()
+	{
+		$data['setting'] = $this->m_setting->get_setting();
+		$type = $this->uri->segment(3);
+		$data['info'] = $this->m_information->get_detail($type);
+		$this->templatehome->view('home/information', $data);
 	}
 
 	public function faq()

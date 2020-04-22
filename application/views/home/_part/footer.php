@@ -24,10 +24,10 @@
 								<div class="widget widget_nav_menu">
 									<h3 class="widget-title"><span>Information</span></h3>
 									<ul class="menu">
-										<li><a href="#">About Us</a></li>
-										<li><a href="#">How To Shop</a></li>
-										<li><a href="#">Shipping</a></li>
-										<li><a href="#">Payment</a></li>
+										<li><a href="<?=base_url('beranda/information/about')?>">About Us</a></li>
+										<li><a href="<?=base_url('beranda/information/how')?>">How To Shop</a></li>
+										<li><a href="<?=base_url('beranda/information/shipping')?>">Shipping</a></li>
+										<li><a href="<?=base_url('beranda/information/payment')?>">Payment</a></li>
 										<li><a href="<?=base_url('beranda/faq/')?>">FAQ</a></li>
 									</ul>
 								</div>
@@ -76,26 +76,10 @@
 								</div>
 							</div>
 							<div class="footer-widget-col col-md-6 col-sm-12 col-xs-12" style="padding:0px; margin:0px">
-								<div class="widget widget_nav_menu">
-									<h3 class="widget-title"><span>Translate</span></h3>
-									<div class="col-md-12">
-									<ul class="menu">
-										<li>
-											<div class="col-md-5 col-sm-12 col-xs-12" style="margin:5px">
-												<button width="100%" style="background-color: #C3A771; color:#ffffff; font-size:10px;" onclick="window.location.href = 'https://w3docs.com';" class="btn btn-black-outline btn-lg btn-align-center" type="button">
-													Indonesia
-												</button>
-											</div>
-										</li>
-										<li>
-											<div class="col-md-5 col-sm-12 col-xs-12" style="margin:5px">
-												<button width="100%" style="background-color: #ffffff; color:#C3A771; font-size:10px;" onclick="window.location.href = 'https://w3docs.com';" class="btn btn-black-outline btn-lg btn-align-center" type="button">
-													English
-												</button>
-											</div>
-										</li>
-									</div>
-									
+								<h3 class="widget-title"><span>Translate</span></h3>
+								<div class="btn-group" role="group" aria-label="Basic example" style="padding:0px; margin:0px; border:1px solid #C3A771">
+									<button type="button" class="col-md-6 btn btn-secondary" style="border:1px solid #C3A771; background-color: #C3A771; color:#ffffff; font-size:12px;">Indonesia</button>
+									<button type="button" class="col-md-6 btn btn-secondary" style="border:1px solid #C3A771; background-color: #ffffff; color:#C3A771; font-size:12px;">English</button>
 								</div>
 							</div>
 						</div>

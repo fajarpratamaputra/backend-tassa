@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="<?=base_url('assets/backend/styles/') ?>extras.1.1.0.min.css">
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.snow.css">
+<link rel="stylesheet" type="text/css" href="<?=base_url('assets/backend/styles/') ?>bootstrap-wysihtml5-0.0.2.css"></link>
 <style>
     div.paging {
         padding     : 2px;
