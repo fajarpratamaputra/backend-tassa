@@ -1,4 +1,6 @@
-
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote-lite.min.js"></script>
           <div class="main-content-container container-fluid px-4">
             <!-- Page Header -->
             <div class="page-header row no-gutters py-4 mb-3 border-bottom">
@@ -23,7 +25,7 @@
                           <!-- <form> -->
                             <div class="form-group">
                                 <strong class="text-muted d-block mb-2">Description</strong>
-                                <textarea class="form-control" name="desc" id="" cols="30" rows="20"><?=$how->description?></textarea>
+                                <textarea name="desc" id="summernote" cols="30" rows="20"><?=$how->description?></textarea>
                                 <input type="hidden" name="type" value="how">
                               </div>
                             
@@ -43,3 +45,19 @@
             </form>
             
           </div>
+          <script>
+      $('#summernote').summernote({
+        placeholder: 'Hello stand alone ui',
+        tabsize: 2,
+        height: 250,
+        toolbar: [
+          ['style', ['style']],
+          ['font', ['bold', 'underline', 'clear']],
+          ['color', ['color']],
+          ['para', ['ul', 'ol', 'paragraph']],
+          ['table', ['table']],
+          ['insert', ['link', 'picture', 'video']],
+          ['view', ['codeview']]
+        ]
+      });
+    </script>
