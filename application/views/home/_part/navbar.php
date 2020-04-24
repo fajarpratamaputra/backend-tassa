@@ -24,7 +24,7 @@
 							</div>
 							<nav class="collapse navbar-collapse primary-navbar-collapse">
 								<ul class="nav navbar-nav primary-nav">
-									<a class="navbar-brand" href="<?=base_url('./')?>">
+									<a class="navbar-brand" href="<?=base_url('./')?>" style="padding-top:5px;">
 										<img class="logo" alt="The DMCS" src="<?=base_url('assets/template/')?>images/logo_tassa.png">
 										<img class="logo-fixed" alt="The DMCS" src="<?=base_url('assets/template/')?>images/logo_tassa.png">
 									</a>

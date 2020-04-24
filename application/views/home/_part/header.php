@@ -6,13 +6,7 @@
 					
 				</div>
 				<div class="col-sm-6 col-right-topbar">
-					<div class="right-topbar">
-						<div class="user-login">
-							<ul class="nav top-nav">
-								
-							</ul>
-						</div>
-					</div>
+					
 				</div>
 			</div>
 		</div>

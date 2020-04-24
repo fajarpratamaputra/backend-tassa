@@ -5373,6 +5373,7 @@ a[data-toggle="tooltip"]:hover {
   filter: alpha(opacity=90);
 }
 .dhslider .slider-caption {
+  margin-top:100px;
   position: absolute;
   z-index: 9;
   width: 100%;

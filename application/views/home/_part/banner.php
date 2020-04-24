@@ -12,9 +12,17 @@
 					$no = 0;
 					foreach($banner as $ban) {
 					
-				?>
+				?>	
 					<div class="item slider-item <?php if($no == 0) {echo "active";}  ?>">
 						<div class="slide-bg" style="background-image:url(<?=base_url('assets/backend/banner/'.$ban->picture_slider)?>)">
+							<div class="slider-caption caption-align-center">
+								<div class="slider-caption-wrap">
+									<div class="slider-buttons">
+										<a href="#" class="btn btn-lg btn-white-outline">Detail</a>
+										<!-- <a href="#" class="btn btn-lg btn-white-outline">Buy Now</a> -->
+									</div>
+								</div>
+							</div>
 						</div>  
 						
 					</div>
