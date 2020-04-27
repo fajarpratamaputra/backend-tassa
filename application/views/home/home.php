@@ -82,7 +82,10 @@
 																				<div class="product-wrap">
 																					<div class="product-images">
 																						<div class="shop-loop-thumbnail">
-                                                                                            <img width="300" height="350" src="<?=base_url('assets/backend/products/'. $p->ProductImage)?>" alt="Product-2"/>
+																							<a href="<?=base_url('beranda/details/'.$p->ProductName.'/'.$p->ProductID.'/White')?>">
+																								<img width="300" height="350" src="<?=base_url('assets/backend/products/'. $p->ProductImage)?>" alt="Product-2"/>
+																							</a>
+                                                                                            
                                                                                         </div>
                                                                                         <div class="clear"></div>
 																						<!-- <div class="shop-loop-quickview">
@@ -93,7 +96,7 @@
 																				<figcaption>
 																					<div class="shop-loop-product-info">
 																						<div class="info-title">
-																							<h3 class="product_title"><a href="<?=base_url('beranda/details/'.$p->ProductName.'/'.$p->ProductID)?>"><?=$p->ProductName?></a></h3>
+																							<h3 class="product_title"><a href="<?=base_url('beranda/details/'.$p->ProductName.'/'.$p->ProductID.'/White')?>"><?=$p->ProductName?></a></h3>
 																						</div>
 																						<div class="info-meta">
 																							<div class="info-price">
@@ -102,7 +105,7 @@
 																								</span>
 																							</div>
 																							<div class="loop-add-to-cart">
-																								<a href="<?=base_url('beranda/details/'.$p->ProductName.'/'.$p->ProductID)?>">Select options</a>
+																								<a href="<?=base_url('beranda/details/'.$p->ProductName.'/'.$p->ProductID.'/White')?>">Select options</a>
 																							</div>
 																						</div>
 																					</div>
@@ -150,7 +153,9 @@
 																				<div class="product-wrap">
 																					<div class="product-images">
 																						<div class="shop-loop-thumbnail">
-                                                                                            <img width="300" height="350" src="<?=base_url('assets/backend/products/'. $p->ProductImage)?>" alt="Product-2"/>
+																							<a href="<?=base_url('beranda/details/'.$p->ProductName.'/'.$p->ProductID.'/White')?>">
+																								<img width="300" height="350" src="<?=base_url('assets/backend/products/'. $p->ProductImage)?>" alt="Product-2"/>
+																							</a>
                                                                                         </div>
                                                                                         <div class="clear"></div>
 																						<!-- <div class="shop-loop-quickview">
@@ -161,7 +166,7 @@
 																				<figcaption>
 																					<div class="shop-loop-product-info">
 																						<div class="info-title">
-																							<h3 class="product_title"><a href="<?=base_url('beranda/details/'.$p->ProductName.'/'.$p->ProductID)?>"><?=$p->ProductName?></a></h3>
+																							<h3 class="product_title"><a href="<?=base_url('beranda/details/'.$p->ProductName.'/'.$p->ProductID.'/White')?>"><?=$p->ProductName?></a></h3>
 																						</div>
 																						<div class="info-meta">
 																							<div class="info-price">
@@ -170,7 +175,7 @@
 																								</span>
 																							</div>
 																							<div class="loop-add-to-cart">
-																								<a href="<?=base_url('beranda/details/'.$p->ProductName.'/'.$p->ProductID)?>">Select options</a>
+																								<a href="<?=base_url('beranda/details/'.$p->ProductName.'/'.$p->ProductID.'/White')?>">Select options</a>
 																							</div>
 																						</div>
 																					</div>

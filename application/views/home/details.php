@@ -103,11 +103,11 @@
 																			<div class="col-md-6 col-sm-12 col-xd-12" style="padding:0px;">
 																				<label>Color</label>
 																				<br>
-																				<div class="select-option swatch-wrapper selected">
-																					<a href="#" title="Red" class="swatch-color white">White</a>
+																				<div class="select-option swatch-wrapper <?php if($this->uri->segment(5) == 'White') { echo "selected"; } ?>">
+																					<a href="<?=base_url('beranda/details/'.$prod->ProductName.'/'.$prod->ProductID.'/White')?>" title="White" class="swatch-color white">White</a>
 																				</div>
-																				<div class="select-option swatch-wrapper">
-																					<a href="#" title="White" class="swatch-color gray">Gray</a>
+																				<div class="select-option swatch-wrapper <?php if($this->uri->segment(5) == 'Gray') { echo "selected"; } ?>">
+																					<a href="<?=base_url('beranda/details/'.$prod->ProductName.'/'.$prod->ProductID.'/Gray')?>" title="Gray" class="swatch-color gray">Gray</a>
 																				</div>
 																			</div>
 																			<div class="col-md-6 col-sm-12 col-xd-12" style="padding:0px;">
@@ -127,6 +127,7 @@
 																		<input type="number" name="qty" value="1" title="Qty" class="input-text qty text" size="4">
 																		<input type="hidden" name="productid" value="<?=$prod->ProductID?>">
 																		<input type="hidden" name="productname" value="<?=$prod->ProductName?>">
+																		<input type="hidden" name="color" value="<?=$this->uri->segment(5)?>">
 																	</div>
 																</div>
 															</div>

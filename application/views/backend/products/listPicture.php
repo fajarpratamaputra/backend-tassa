@@ -21,6 +21,7 @@
                         <tr>
                           <th scope="col" class="border-0">No</th>
                           <th scope="col" class="border-0">Product Picture</th>
+                          <th scope="col" class="border-0">Color</th>
                           <th scope="col" class="border-0">#</th>
                         </tr>
                       </thead>
@@ -32,6 +33,7 @@
                       <tr>
                           <td><?=$no++?></td>
                           <td><img width="60px" height="80px" src="<?=base_url('assets/backend/products/'.$pic->picture)?>" alt=""></td>
+                          <td><?=$pic->color?></td>
                           <td>
                               <a href="<?php echo base_url('products/delete_picture/'.$pic->id) ?>" class="btn btn-sm btn-outline-primary mr-1">Delete</a>
                           </td>
@@ -61,7 +63,15 @@
                           <strong class="text-muted d-block mb-2">Picture</strong>
                           <div class="input-group mb-3">
                             <input name="file" type="file" class="form-control" > 
-                            <input name="productid" type="hidden" value="<?=$prod->ProductID?>" > 
+                            <input name="productid" type="hidden" value="<?=$prod->ProductID?>" required> 
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleFormControlSelect1">Color</label>
+                            <select class="form-control" name="color" required>
+                            <option value="">Choose Color</option>
+                              <option value="white">White</option>
+                              <option value="Gray">Gray</option>
+                            </select>
                           </div>
                       </li>
                     </ul>

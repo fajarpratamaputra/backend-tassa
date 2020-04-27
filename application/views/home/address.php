@@ -102,89 +102,73 @@
 														<img class="bullet3" src="<?=base_url("assets/template/")?>assets/3a.png" alt="">
 												</div>
 												<br>
-												<div class="col-md-12">
-													<div class="col-md-6" style="margin-bottom:10px;">
-														<div style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
-															<div class="form-group">
-																<label>Nama Penerima</label>
-																<input type="text" id="username" name="log" required class="form-control" value="" placeholder="Username">
+												<form action="<?=base_url('beranda/insert_address')?>" enctype="multipart/form-data" method="post">
+													<div class="col-md-12">
+														<div class="col-md-6" style="margin-bottom:10px;">
+															<div style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
+																<div class="form-group">
+																	<label for="name">Nama Penerima</label>
+																	<input type="text" id="name" name="name" required class="form-control" value="" placeholder="Username">
+																</div>
+															</div>
+														</div>
+														<div class="col-md-6" style="margin-bottom:10px;">
+															<div style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
+																<div class="form-group">
+																	<label for="phone">No. Telepon</label>
+																	<input type="text" id="phone" required value="" name="phone" class="form-control" placeholder="Password">
+																</div>
+															</div>
+														</div>
+														<div class="col-md-12" style="margin-bottom:10px;">
+															<div style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
+																<div class="form-group">
+																	<label for="address">Alamat Pengiriman</label>
+																	<input type="text" id="address" required value="" name="address" class="form-control" placeholder="Password">
+																</div>
+															</div>
+														</div>
+														<div class="col-md-6" style="margin-bottom:10px;">
+															<div style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
+																<div class="form-group">
+																	<label for="province">Provinsi</label>
+																	<input type="text" id="province" required value="" name="province" class="form-control" placeholder="Password">
+																</div>
+															</div>
+														</div>
+														<div class="col-md-6" style="margin-bottom:10px;">
+															<div style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
+																<div class="form-group">
+																	<label for="city">Kabupaten/Kota</label>
+																	<input type="text" id="city" required value="" name="city" class="form-control" placeholder="Password">
+																</div>
+															</div>
+														</div>
+														<div class="col-md-6" style="margin-bottom:10px;">
+															<div style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
+																<div class="form-group">
+																	<label for="subdistricts">Kecamatan</label>
+																	<input type="text" id="subdistricts" required value="" name="subdistricts" class="form-control" placeholder="Password">
+																</div>
+															</div>
+														</div>
+														<div class="col-md-6" style="margin-bottom:10px;">
+															<div style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
+																<div class="form-group">
+																	<label for="zip">Kode Pos</label>
+																	<input type="text" id="zip" required value="" name="zip" class="form-control" placeholder="Password">
+																</div>
+															</div>
+														</div>
+														<div class="col-md-12" style="margin-bottom:10px;">
+															<div style="border:1px; solid #DEDEDE; box-sizing: border-box; padding:10px; background-color:#C3A771">
+																<button style="background-color: #C3A771; width:100%; border-color:#C3A771; color:#ffffff; font-size:12px;" class="btn btn-black-outline btn-lg btn-align-center" type="submit">
+																	LANJUTKAN TRANSAKSI
+																</button>
 															</div>
 														</div>
 													</div>
-													<div class="col-md-6" style="margin-bottom:10px;">
-														<div style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
-															<div class="form-group">
-																<label for="password">Alamat Email</label>
-																<input type="email" id="password" required value="" name="pwd" class="form-control" placeholder="Password">
-															</div>
-														</div>
-													</div>
-													<div class="col-md-12" style="margin-bottom:10px;">
-														<div style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
-															<div class="form-group">
-																<label for="test">Alamat Pengiriman</label>
-																<input type="text" id="password" required value="" name="pwd" class="form-control" placeholder="Password">
-															</div>
-														</div>
-													</div>
-													<div class="col-md-6" style="margin-bottom:10px;">
-														<div style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
-															<div class="form-group">
-																<label>Provinsi</label>
-																<select class="form-control" id="exampleFormControlSelect1">
-																	<option>NAD Aceh</option>
-																	<option>Bengkulu</option>
-																	<option>DKI Jakarta</option>
-																	<option>Sulawesi Selatan</option>
-																	<option>Maluku Utara</option>
-																</select>
-															</div>
-														</div>
-													</div>
-													<div class="col-md-6" style="margin-bottom:10px;">
-														<div style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
-															<div class="form-group">
-																<label for="password">Kabupaten/Kota</label>
-																<select class="form-control" id="exampleFormControlSelect1">
-																	<option>Banda Aceh</option>
-																	<option>Bengkulu</option>
-																	<option>Jakarta Pusat</option>
-																	<option>Makassar</option>
-																	<option>Ambon</option>
-																</select>
-															</div>
-														</div>
-													</div>
-													<div class="col-md-6" style="margin-bottom:10px;">
-														<div style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
-															<div class="form-group">
-																<label>Kecamatan</label>
-																<select class="form-control" id="exampleFormControlSelect1">
-																	<option>Kecamatan a</option>
-																	<option>Kecamatan b</option>
-																	<option>Kecamatan c</option>
-																	<option>Kecamatan d</option>
-																	<option>Kecamatan e</option>
-																</select>	
-															</div>
-														</div>
-													</div>
-													<div class="col-md-6" style="margin-bottom:10px;">
-														<div style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
-															<div class="form-group">
-																<label for="text">Kode Pos</label>
-																<input type="text" id="text" required value="" name="pwd" class="form-control" placeholder="Password">
-															</div>
-														</div>
-													</div>
-													<div class="col-md-12" style="margin-bottom:10px;">
-														<div style="border:1px; solid #DEDEDE; box-sizing: border-box; padding:10px; background-color:#C3A771">
-															<button style="background-color: #C3A771; width:100%; border-color:#C3A771; color:#ffffff; font-size:12px;" onclick="window.location.href = 'https://w3docs.com';" class="btn btn-black-outline btn-lg btn-align-center" type="button">
-																LANJUTKAN TRANSAKSI
-															</button>
-														</div>
-													</div>
-												</div> 
+												</form> 
 											</div>
 										</div>
 									</div>

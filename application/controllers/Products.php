@@ -113,6 +113,7 @@ class Products extends CI_Controller {
 	public function insert_picture()
     {
 		$productid 		 = $this->input->post("productid");
+		$color			 = $this->input->post("color");
 		
         $this->load->library('upload');
         $nmfile = "file-".time(); //nama file saya beri nama langsung dan diikuti fungsi time
@@ -132,7 +133,8 @@ class Products extends CI_Controller {
                 $gbr = $this->upload->data();
 				$data = array(
 					'productID' 	=> $productid,
-					'picture' 		=> $gbr['file_name']
+					'picture' 		=> $gbr['file_name'],
+					'color'			=> $color
 				);
 
                 $this->m_products->add_picture($data);

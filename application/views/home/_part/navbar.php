@@ -80,10 +80,17 @@
 									<li class="menu-item-has-children">
 										<a class="minicart-link" href="<?=base_url('beranda/cart')?>" style="
 												padding-left: 5px;
-												padding-right: 0px;
-											">
+												padding-right: 0px;">
 											<span class="minicart-icon">
-												<i class="minicart-icon-svg elegant_icon_bag"></i> <span>0</span>
+											<?php 
+												if($this->session->userdata('user_id') != null){
+													$num = $this->db->where('userid', $this->session->userdata('user_id'))->where('orderid', '')->get('cart')->num_rows();
+												}else {
+													$num = 0;
+												}
+												
+											?>
+												<i class="minicart-icon-svg elegant_icon_bag"></i> <span><?=$num?></span>
 											</span>
 										</a>
 										<div class="minicart">
@@ -115,6 +122,9 @@
 									<?php } else if ($login == true) { ?>
 										<li class="menu-item-has-children">
 											<a href="<?=base_url('loginfe/logout')?>" style="padding: 0">LOGOUT</a>
+										</li>
+										<li class="menu-item-has-children">
+											<a href="<?=base_url('beranda/privasi')?>" style="padding: 0">ACCOUNT</a>
 										</li>
 									<?php } ?>
 									

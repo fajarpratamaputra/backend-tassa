@@ -25,7 +25,10 @@
 									<div class="container">
 										<div class="row summary-container">
 											<div class="col-md-12 col-sm-12 entry-summary" style="padding-left:20%; padding-right:20%;">
-												
+											<script type="text/javascript"
+													src="https://app.sandbox.midtrans.com/snap/snap.js"
+													data-client-key="SB-Mid-client-lUtLJNP1FHA-lL4U"></script>
+											<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 												<style>
 													.eclipse {
 															width: 20px;
@@ -129,21 +132,70 @@
 
 													<div class="col-md-12" style="margin-bottom:10px;">
 														<h5 class="col-md-12">RINGKASAN HARGA</h5>
-														<p class="col-md-6" style="text-align:left">Produk</p><p class="col-md-6" style="text-align:right; font-size: 18px;">Rp. 1.450.000</p>
+														<p class="col-md-6" style="text-align:left">Produk</p><p class="col-md-6" style="text-align:right; font-size: 18px;"><?="Rp " . number_format($order->OrderAmount,2,',','.')?></p>
 														<p class="col-md-6" style="text-align:left">Diskon</p><p class="col-md-6" style="text-align:right; font-size: 18px;">Rp. 0</p>
-														<p class="col-md-6" style="text-align:left">Total Harga</p><p class="col-md-6" style="text-align:right; font-size: 18px;">Rp. 1.450.000</p>
+														<p class="col-md-6" style="text-align:left">Total Harga</p><p class="col-md-6" style="text-align:right; font-size: 18px;"><?="Rp " . number_format($order->OrderAmount,2,',','.')?></p>
 														<hr style="border: 1px solid #DEDEDE;">	
-														<p class="col-md-6" style="text-align:left; font-size: 14px; color: #C3A771;">Total Keseluruhan</p><p class="col-md-6" style="text-align:right; font-size: 18px; color: #C3A771;">Rp. 1.450.000</p>														
+														<p class="col-md-6" style="text-align:left; font-size: 14px; color: #C3A771;">Total Keseluruhan</p><p class="col-md-6" style="text-align:right; font-size: 18px; color: #C3A771;"><?="Rp " . number_format($order->OrderAmount,2,',','.')?></p>														
 
 													</div>
 													
 													<div class="col-md-12" style="margin-bottom:10px;">
 														<div style="border:1px; solid #DEDEDE; box-sizing: border-box; padding:10px; background-color:#C3A771">
-															<button style="background-color: #C3A771; width:100%; border-color:#C3A771; color:#ffffff; font-size:12px;" onclick="window.location.href = '#';" class="btn btn-black-outline btn-lg btn-align-center" type="button">
-																CHECKOUT
+															<button id="pay-button" style="background-color: #C3A771; width:100%; border-color:#C3A771; color:#ffffff; font-size:12px;" class="btn btn-black-outline btn-lg btn-align-center" type="button">
+																PAYMENT
 															</button>
 														</div>
 													</div>
+													<script type="text/javascript">
+												
+														$('#pay-button').click(function (event) {
+														event.preventDefault();
+														$(this).attr("disabled", "disabled");
+														
+														$.ajax({
+														url: '<?=site_url()?>/snap/token/fajar',
+														cache: false,
+
+														success: function(data) {
+															//location = data;
+
+															console.log('token = '+data);
+															
+															var resultType = document.getElementById('result-type');
+															var resultData = document.getElementById('result-data');
+
+															function changeResult(type,data){
+															$("#result-type").val(type);
+															$("#result-data").val(JSON.stringify(data));
+															//resultType.innerHTML = type;
+															//resultData.innerHTML = JSON.stringify(data);
+															}
+
+															snap.pay(data, {
+															
+															onSuccess: function(result){
+																changeResult('success', result);
+																console.log(result.status_message);
+																console.log(result);
+																$("#payment-form").submit();
+															},
+															onPending: function(result){
+																changeResult('pending', result);
+																console.log(result.status_message);
+																$("#payment-form").submit();
+															},
+															onError: function(result){
+																changeResult('error', result);
+																console.log(result.status_message);
+																$("#payment-form").submit();
+															}
+															});
+														}
+														});
+													});
+
+													</script>
 												</div> 
 											</div>
 										</div>

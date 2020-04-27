@@ -5373,7 +5373,7 @@ a[data-toggle="tooltip"]:hover {
   filter: alpha(opacity=90);
 }
 .dhslider .slider-caption {
-  margin-top:100px;
+  margin-top:150px;
   position: absolute;
   z-index: 9;
   width: 100%;
@@ -5420,6 +5420,14 @@ a[data-toggle="tooltip"]:hover {
   }
 }
 @media (max-width: 767px) {
+  .dhslider .slider-caption {
+    margin-top:100px;
+    position: absolute;
+    z-index: 9;
+    width: 100%;
+    top: 50%;
+  }
+
   .dhslider .slider-caption .btn {
     font-size: 0.8em;
   }

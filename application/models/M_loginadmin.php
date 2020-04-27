@@ -25,6 +25,7 @@ class M_Loginadmin extends CI_Model {
 
     }
 
+
 }
 
 ?>

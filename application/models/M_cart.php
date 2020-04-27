@@ -1,50 +1,65 @@
 <?php
 
-class M_Productfe extends CI_Model {
+class M_Cart extends CI_Model {
 
     var $table;
 
     function __construct() {
         parent::__construct();
-        $this->table = "products";
+        $this->table = "users";
 	}
 	
+	// function data1($number,$offset){
+	// 	return $query = $this->db->get($this->table,$number,$offset)->result();		
+	// }
+
 	public function data($number,$offset)
 	{
-		$this->db->join('productcategories','productcategories.CategoryID = products.ProductCategoryID')
-				->order_by('products.ProductID','DESC');
-		return $this->db->get('products',$number,$offset)->result();
+		$this->db->join('users u', 'u.UserID = c.userid')
+				 ->join('products p', 'p.ProductID = c.productid')
+				 ->order_by('c.id_cart', 'DESC');
+		return $this->db->get('cart c',$number,$offset)->result();
 	}
 
 	public function jumlah_data()
 	{
-		$this->db->join('productcategories','productcategories.CategoryID = products.ProductCategoryID')
-				->order_by('products.ProductID','DESC');
-		return $this->db->get('products')->num_rows();
+		$this->db->join('users u', 'u.UserID = c.userid')
+				 ->where('c.id_Cart', 'DESC');
+		return $this->db->get('cart c')->num_rows();
 	}
+ 
+	// function jumlah_data1(){
+	// 	return $this->db->get($this->table)->num_rows();
+	// }
 
-    public function get_join()
-	{
-		$this->db->join('productcategories','productcategories.CategoryID = products.ProductCategoryID')
-				->order_by('products.ProductID','DESC');
-		return $this->db->get('products')->result();
-	}
-
-	public function other_product()
-	{
-		$this->db->join('productcategories','productcategories.CategoryID = products.ProductCategoryID')
-				->order_by('products.ProductID','RANDOM')
-				->limit(3);
-		return $this->db->get('products')->result();
+    function add_products($data) {
+        $insert = $this->db->insert($this->table, $data);
+        if ($insert) :
+            return $this->db->insert_id();
+        endif;
 	}
 	
-	public function get_picture($productid,$color)
+	function add_picture($data) {
+        $insert = $this->db->insert('productimages', $data);
+        if ($insert) :
+            return $this->db->insert_id();
+        endif;
+    }
+
+    public function get_join($id)
+	{
+		$this->db->join('users u', 'u.UserID = c.userid')
+				 ->join('products p', 'p.ProductID = c.productid')
+				 ->where('c.id_cart', $id)
+				 ->order_by('c.id_cart', 'DESC');
+		return $this->db->get('cart c')->result();
+	}
+	
+	public function get_picture($productid)
 	{
 		$this->db->join('products','productimages.productID = products.ProductID')
 				->where('products.ProductID', $productid)
-				->where('productimages.color', $color)
-				->order_by('productimages.id','ASC')
-				->limit(4);
+				->order_by('productimages.id','ASC');
 		return $this->db->get('productimages')->result();
 	}
 	
@@ -82,10 +97,10 @@ class M_Productfe extends CI_Model {
 
     public function edit($id)
 	{
-
-		$query = $this->db->join('productcategories','productcategories.CategoryID = products.ProductCategoryID')
-                ->where('products.ProductID', $id)
-                ->get('products');
+		$query = $this->db->join('users u', 'u.UserID = c.userid')
+						  ->join('products p', 'p.ProductID = c.productid')
+						  ->where('c.id_cart', $id)
+						  ->get('cart c');
                 
 
 		if($query){
@@ -98,13 +113,13 @@ class M_Productfe extends CI_Model {
     
     public function update($data, $id)
 	{
-		$query = $this->db->update("products", $data, $id);
+		$query = $this->db->update("cart", $data, $id);
 
 	}
     
     public function delete($id)
 	{
-		$query = $this->db->delete("products", $id);
+		$query = $this->db->delete("cart", $id);
 	}
 
 }

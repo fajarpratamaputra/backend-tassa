@@ -219,7 +219,7 @@
 																	+ Upload bukti bayar disini
 																</label>
 																<input id="file-upload" type="file"/>
-																<button style="margin-top:10px; background-color: #C3A771; width:100%; border-color:#C3A771; color:#ffffff; font-size:12px;" onclick="window.location.href = 'https://w3docs.com';" class="btn btn-black-outline btn-lg btn-align-center" type="button">
+																<button style="margin-top:10px; background-color: #C3A771; width:100%; border-color:#C3A771; color:#ffffff; font-size:12px;" onclick="window.location.href = '#';" class="btn btn-black-outline btn-lg btn-align-center" type="button">
 																		PILIH METODE PEMBAYARAN
 																	</button>
 															</div>

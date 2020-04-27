@@ -15,6 +15,12 @@ class M_Loginfe extends CI_Model {
         if ($insert) :
             return $this->db->insert_id();
         endif;
+    }
+    
+    public function update_user($data, $id)
+	{
+		$query = $this->db->update("users", $data, $id);
+
 	}
 	
     public function get_join()
@@ -26,7 +32,12 @@ class M_Loginfe extends CI_Model {
 
 	function cek_login($where){
 		return $this->db->get_where('users',$where);
-  }
+    }
+
+    public function get_users($id)
+	{
+        return $this->db->where('UserID', $id)->get('users')->row();
+    }
 	
 }
 

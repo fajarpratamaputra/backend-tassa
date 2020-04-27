@@ -88,22 +88,28 @@ li.nav-item {
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="<?=base_url("banner/")?>">
-                  <i class="material-icons">vertical_split</i>
-                  <span>Banner</span>
+                <a class="nav-link" href="#">
+                  <i class="material-icons">vertical_split</i>  
+                  <span>Picture</span>
+                
                 </a>
+                <ul class="isi-dropdown">
+                  <li><a class="nav-link" href="<?=base_url("banner/")?>">Banner</a></li>
+                  <li><a class="nav-link" href="<?=base_url("quote/")?>">Quote</a></li>
+                  <li><a class="nav-link" href="<?=base_url("footpicture/")?>">Footer Picture</a></li>
+                </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="<?=base_url("quote/")?>">
-                  <i class="material-icons">vertical_split</i>
-                  <span>Quote</span>
+                <a class="nav-link" href="#">
+                  <i class="material-icons">vertical_split</i>  
+                  <span>Transaction</span>
+                
                 </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link " href="<?=base_url("footpicture/")?>">
-                  <i class="material-icons">vertical_split</i>
-                  <span>Footer Picture</span>
-                </a>
+                <ul class="isi-dropdown">
+                  <li><a class="nav-link" href="<?=base_url("cart/")?>">Cart</a></li>
+                  <li><a class="nav-link" href="<?=base_url("quote/")?>">Order</a></li>
+                  <li><a class="nav-link" href="<?=base_url("customer/")?>">Customer</a></li>
+                </ul>
               </li>
               
               <li class="nav-item">

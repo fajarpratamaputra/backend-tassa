@@ -60,7 +60,7 @@
                     <ul class="list-group list-group-flush">
                       <li class="list-group-item px-3">
                           <strong class="text-muted d-block mb-2">Add Quote Picture</strong>
-                          <h6>dimensi : 800 x 400</h6>
+                          <h6 style="font-size:12px;">dimensi : 800 x 400</h6>
                           <div class="input-group mb-3">
                             <label for="quote">Quote</label>
                             <textarea name="quote" id="quote" cols="30" rows="10"></textarea>

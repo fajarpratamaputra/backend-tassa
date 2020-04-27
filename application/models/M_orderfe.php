@@ -14,8 +14,29 @@ class M_Orderfe extends CI_Model {
 		$this->db->join('products','products.ProductID = cart.productid')
 				->join('productcategories','productcategories.CategoryID = products.ProductCategoryID')
 				->where('cart.userid', $id)
-				->order_by('cart.id_Cart','ASC');
+				->where('cart.orderid', '')
+				->order_by('cart.id_cart','ASC');
 		return $this->db->get('cart')->result();
+	}
+
+	public function order($id)
+	{
+		$this->db->where('OrderUserID', $id)
+				 ->where('OrderCode !=', '');
+		return $this->db->get('orders')->row();
+	}
+
+	public function update_orders($data, $id)
+	{
+		$query = $this->db->update("orders", $data, $id);
+
+	}
+
+	public function update_cart($data_cart, $where)
+	{
+		$this->db->where($where);
+		$query = $this->db->update("cart", $data_cart);
+
 	}
 
 	public function user($id)
@@ -30,10 +51,18 @@ class M_Orderfe extends CI_Model {
             return $this->db->insert_id();
         endif;
 	}
+	
     
     public function delete($id)
 	{
 		$query = $this->db->delete("products", $id);
+	}
+
+	function add_orders($data) {
+        $insert = $this->db->insert('orders', $data);
+        if ($insert) :
+            return $this->db->insert_id();
+        endif;
 	}
 
 }

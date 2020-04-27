@@ -59,7 +59,7 @@
                     <ul class="list-group list-group-flush">
                       <li class="list-group-item px-3">
                           <strong class="text-muted d-block mb-2">Add Banner</strong>
-                          <h6>dimensi : 1440 x 579</h6>
+                          <h6 style="font-size:12px;">dimensi : 1440 x 579</h6>
                           <div class="input-group mb-3">
                             <input name="img" type="file" class="form-control" > 
                             <input name="tes" type="hidden" value="tes" class="form-control" > 

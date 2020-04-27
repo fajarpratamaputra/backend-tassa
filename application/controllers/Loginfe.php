@@ -35,15 +35,65 @@ class Loginfe extends CI_Controller {
 
 	}
 
-	// public function tes()
-	// {
-		
-	// 	$encrypted_password = 'anisa01';
-	// 	$pass = '$2y$10$VXqgJnTDmnblDYwqDELa2OvpHM7g/2yIHNwfxc.GViX2qCxq0QT3W';
-	// 	$decrypted_string = password_verify($encrypted_password, $pass);
+	public function update_user()
+    {
+		$id['UserID']= $this->session->userdata('user_id');
+		$email 		 = $this->input->post("email");
+		$phone 		 = $this->input->post("phone");
+		$address	 = $this->input->post("address");
+		$city 	 	 = $this->input->post("city");
+		$province 	 = $this->input->post("province");
+		$zip 	 	 = $this->input->post("zip");
 
-	// 	echo $decrypted_string;
-	// }
+		$this->load->library('upload');
+		$nmfile = "file-".time(); //nama file saya beri nama langsung dan diikuti fungsi time
+		$config['upload_path'] 	 = './assets/backend/users/'; //path folder
+		$config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
+		$config['max_size'] 	 = '3048'; 
+		$config['max_width']     = '1300'; //lebar maksimum 1288 px
+		$config['max_height']    = '1300'; //tinggi maksimu 768 px
+		$config['file_name']     = $nmfile; //nama yang terupload nantinya
+
+		$this->upload->initialize($config);
+		
+        if($_FILES['file']['name'])
+        {
+			$this->db->where('UserID',$this->session->userdata('user_id'));
+			$query = $this->db->get('users');
+			$row = $query->row();
+
+			unlink("./assets/backend/users/$row->UserPhoto");
+			if ($this->upload->do_upload('file'))
+            {
+                $gbr = $this->upload->data();
+				$data = array(
+					'UserEmail' 		=> $email,
+					'UserPhone'			=> $phone,
+					'UserPhoto' 		=> $gbr['file_name'],
+					'UserAddress'		=> $address,
+					'UserCity' 			=> $city,
+					'UserProvince'      => $province,
+					'UserZip'      		=> $zip
+				);
+
+                $this->m_loginfe->update_user($data,$id);
+            }
+        }else {
+				$data = array(
+					'UserEmail' 		=> $email,
+					'UserPhone'			=> $phone,
+					'UserAddress'		=> $address,
+					'UserCity' 			=> $city,
+					'UserProvince'      => $province,
+					'UserZip'      		=> $zip
+				);
+
+				$this->m_loginfe->update_user($data,$id);
+		}
+		
+		redirect('beranda/privasi/');
+
+	}
 
 	function login_action(){
 

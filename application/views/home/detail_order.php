@@ -93,7 +93,7 @@
 
 												</style>
 												<div style="width:100%; padding-left:20%; padding-right:20%;">
-														<h3 style="text-align:center;">Detail Pembayaran Produk</h3>
+														<h3 style="text-align:center;">Detail Order Produk</h3>
 														<h5 style="text-align:center; font-style:normal;">Perhatikan ringkasan pesanan anda sebelum melakukan checkout</h5>
 														<img class="bullet" src="<?=base_url("assets/template/")?>assets/1.png" alt="">
 														<img class="line-address" src="<?=base_url("assets/template/")?>assets/border.png" alt="">
@@ -104,13 +104,20 @@
 												<br>
 												<div class="col-md-12">
 													<div class="col-md-6" style="margin-bottom:10px;">
-														<div class="col-md-12" style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
+														<?php
+															$grand = 0;
+															foreach($cart as $c){
+																$total = $c->qty * $c->ProductPrice; 
+																$grand = $grand + $total;
+																$grand_total = $grand + 0;
+														?>
+														<div class="col-md-12" style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px; margin-bottom:5px;">
 															<div class="col-md-3">
 																<img src="<?=base_url("assets/backend/")?>products/file-1585687834.png" alt="">
 															</div>
 															<div class="col-md-8">
-																<h4>Kabasaran Midi Kaftan</h4>
-																<h6>Gucci Magelang</h6>
+																<h4><?=$c->ProductName?></h4>
+																<h6><?=$c->CategoryName?></h6>
 																<table class="table shop_table cart">
 																	<thead>
 																		<tr>
@@ -123,7 +130,11 @@
 																		<tr class="cart_item">
 																			<td class="product-price">
 																				<div class="select-option swatch-wrapper">
-																					<a href="#" title="Green" class="swatch-color green">Green</a>
+																					<?php if($c->color == 'White') { ?>
+																						<a href="#" title="<?=$c->color?>" class="swatch-color white"><?=$c->color?></a>
+																					<?php } elseif($c->color == 'Gray') {?>
+																						<a href="#" title="<?=$c->color?>" class="swatch-color gray"><?=$c->color?></a>
+																					<?php } ?>
 																				</div>
 																			</td>
 																			<td class="product-quantity">
@@ -131,7 +142,7 @@
 																			</td>
 																			<td class="product-subtotal hidden-xs">
 																				<div class="quantity">
-																					<input type="number" step="1" min="0" name="qunatity" value="2" title="Qty" class="input-text qty text" size="4"/>
+																					<input type="number" step="1" min="0" name="qunatity" value="<?=$c->qty?>" title="Qty" class="input-text qty text" size="4"/>
 																				</div>
 																			</td>
 																		</tr>
@@ -139,54 +150,58 @@
 																</table>
 															</div>
 														</div>
+														<?php } ?>
 													</div>
 													<div class="col-md-6" style="margin-bottom:10px;">
-														<div class="col-md-12" style="margin-bottom:5px;">
-															<div class="col-md-12" style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
-																<div class="col-md-12">
-																	<h5 class="col-md-12">ALAMAT PENGIRIMAN</h5>
-																	<p class="col-md-6" style="text-align:left">Nama Penerima</p><p class="col-md-6" style="text-align:right">Rahmat Hamid</p>
-																	<p class="col-md-6" style="text-align:left">Alamat Email</p><p class="col-md-6" style="text-align:right">rahmat140295@gmail.com</p>
-																	<p class="col-md-6" style="text-align:left">Alamat Rumah</p><p class="col-md-6" style="text-align:right">Budidaya VI No. 30 Manggala, Kota Makasar, Sulawesi Selatan</p>
-																	<p class="col-md-6" style="text-align:left">Kode Pos</p><p class="col-md-6" style="text-align:right">902384</p>
-																	
-																</div>
-															</div>
-														</div>
-														<div class="col-md-12" style="margin-bottom:5px;">
-															<div class="col-md-12" style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
-																<div class="col-md-12">
-																	<p class="col-md-6" style="text-align:left">Kode Voucher</p>
-																	<div class="col-md-6">
-																		<input class="col-md-12" type="text" id="voucher" name="log" class="form-control" value="">
-																		<h6 style="font-size: 10px; font-weight: normal;">Masukkan kode voucher untuk dapatkan diskon*</h6>
+														<form action="<?=base_url('beranda/insert_detail_order')?>" enctype="multipart/form-data" method="post">
+															<div class="col-md-12" style="margin-bottom:5px;">
+																<div class="col-md-12" style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
+																	<div class="col-md-12">
+																		<h5 class="col-md-12">ALAMAT PENGIRIMAN</h5>
+																		<p class="col-md-6" style="text-align:left">Nama Penerima</p><p class="col-md-6" style="text-align:right"><?=$order->OrderShipName?></p>
+																		<p class="col-md-6" style="text-align:left">No Telephone</p><p class="col-md-6" style="text-align:right"><?=$order->OrderPhone?></p>
+																		<p class="col-md-6" style="text-align:left">Alamat Rumah</p><p class="col-md-6" style="text-align:right"><?=$order->OrderShipAddress?></p>
+																		<p class="col-md-6" style="text-align:left">Kode Pos</p><p class="col-md-6" style="text-align:right"><?=$order->OrderZip?></p>
+																		
 																	</div>
 																</div>
 															</div>
-														</div>
-														<div class="col-md-12">
-															<div class="col-md-12" style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
-																<div class="col-md-12">
-																	<h5 class="col-md-12">RINGKASAN HARGA</h5>
-																	<p class="col-md-6" style="text-align:left">Produk</p><p class="col-md-6" style="text-align:right">Rp. 1.450.000</p>
-																	<p class="col-md-6" style="text-align:left">Diskon</p><p class="col-md-6" style="text-align:right">Rp. 0</p>
-																	<p class="col-md-6" style="text-align:left">Total Harga</p><p class="col-md-6" style="text-align:right">Rp. 1.450.000</p>
+															<div class="col-md-12" style="margin-bottom:5px;">
+																<div class="col-md-12" style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
+																	<div class="col-md-12">
+																		<p class="col-md-6" style="text-align:left">Kode Voucher</p>
+																		<div class="col-md-6">
+																			<input class="col-md-12" type="text" id="voucher" name="log" class="form-control" value="">
+																			<h6 style="font-size: 10px; font-weight: normal;">Masukkan kode voucher untuk dapatkan diskon*</h6>
+																		</div>
+																	</div>
 																</div>
 															</div>
-														</div>
-														<div class="col-md-12" style="margin-bottom:5px;">
-															<div class="col-md-12" style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
-																<h3 style="font-size: 16px; font-weight: bold; color: #C3A771; text-align:center;">Total Bayar : Rp.1.450.000</h3>
+															<div class="col-md-12">
+																<div class="col-md-12" style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
+																	<div class="col-md-12">
+																		<h5 class="col-md-12">RINGKASAN HARGA</h5>
+																		<p class="col-md-6" style="text-align:left">Produk</p><p class="col-md-6" style="text-align:right"><?="Rp " . number_format($grand,2,',','.')?></p>
+																		<p class="col-md-6" style="text-align:left">Diskon</p><p class="col-md-6" style="text-align:right">Rp. 0</p>
+																		<p class="col-md-6" style="text-align:left">Total Harga</p><p class="col-md-6" style="text-align:right"><?="Rp " . number_format($grand_total,2,',','.')?></p>
+																	</div>
+																</div>
 															</div>
-														</div>
-														<div class="col-md-12">
-															<div style="margin-top:20px; border:1px; solid #DEDEDE; box-sizing: border-box; padding:10px; background-color:#C3A771">
-																<button style="background-color: #C3A771; width:100%; border-color:#C3A771; color:#ffffff; font-size:12px;" onclick="window.location.href = 'https://w3docs.com';" class="btn btn-black-outline btn-lg btn-align-center" type="button">
-																	PILIH METODE PEMBAYARAN
-																</button>
+															<div class="col-md-12" style="margin-bottom:5px;">
+																<div class="col-md-12" style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
+																	<h3 style="font-size: 16px; font-weight: bold; color: #C3A771; text-align:center;">Total Bayar : <?="Rp " . number_format($grand_total,2,',','.')?></h3>
+																</div>
 															</div>
-														</div>
-														
+															<input type="hidden" name="order" value="<?=$order->OrderCode?>">
+															<input type="hidden" name="amount" value="<?=$grand_total?>">
+															<div class="col-md-12">
+																<div style="margin-top:20px; border:1px; solid #DEDEDE; box-sizing: border-box; padding:10px; background-color:#C3A771">
+																	<button style="background-color: #C3A771; width:100%; border-color:#C3A771; color:#ffffff; font-size:12px;" class="btn btn-black-outline btn-lg btn-align-center" type="submit">
+																		CHECKOUT
+																	</button>
+																</div>
+															</div>
+														</form>
 													</div> 
 											</div>
 										</div>

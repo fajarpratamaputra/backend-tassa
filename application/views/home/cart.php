@@ -107,7 +107,7 @@
 																<div class="col-md-12" style="margin-bottom:10px;">
 																<hr>
 																	<div style="border:1px; solid #DEDEDE; box-sizing: border-box; padding:10px; background-color:#C3A771">
-																		<button style="background-color: #C3A771; width:100%; border-color:#C3A771; color:#ffffff; font-size:12px;" onclick="window.location.href = 'https://w3docs.com';" class="btn btn-black-outline btn-lg btn-align-center" type="button">
+																		<button style="background-color: #C3A771; width:100%; border-color:#C3A771; color:#ffffff; font-size:12px;" onclick="window.location.href = '<?=base_url('beranda/address/')?>'" class="btn btn-black-outline btn-lg btn-align-center" type="button">
 																			LANJUTKAN TRANSAKSI
 																		</button>
 																	</div>
@@ -142,7 +142,11 @@
 																		<tr class="cart_item">
 																			<td class="product-price">
 																				<div class="select-option swatch-wrapper">
-																					<a href="#" title="Gray" class="swatch-color gray">Gray</a>
+																					<?php if($c->color == 'White') { ?>
+																						<a href="#" title="<?=$c->color?>" class="swatch-color white"><?=$c->color?></a>
+																					<?php } elseif($c->color == 'Gray') {?>
+																						<a href="#" title="<?=$c->color?>" class="swatch-color gray"><?=$c->color?></a>
+																					<?php } ?>
 																				</div>
 																			</td>
 																			<td class="product-quantity">
@@ -150,7 +154,7 @@
 																			</td>
 																			<td class="product-subtotal hidden-xs">
 																				<div class="quantity">
-																					<input type="number" step="1" min="0" name="qunatity" value="2" title="Qty" class="input-text qty text" size="4"/>
+																					<input type="number" step="1" min="0" name="qunatity" value="<?=$c->qty?>" title="Qty" class="input-text qty text" size="4"/>
 																				</div>
 																			</td>
 																		</tr>
