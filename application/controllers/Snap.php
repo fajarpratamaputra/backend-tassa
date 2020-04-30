@@ -35,61 +35,52 @@ class Snap extends CI_Controller {
 
     public function token()
     {
-		$name = $this->uri->segment(3);
+		$code = $this->uri->segment(3);
 		
+		$query = $this->db->join('users u','u.UserID = o.OrderUserID')
+						  ->where('o.OrderCode', $code)
+						  ->get('orders o')->row();
+		
+		$name = $query->OrderShipName;
+		$amount = $query->OrderAmount;
+		$address = $query->OrderShipAddress;
+		$city = $query->OrderCity;
+		$zip = $query->OrderZip;
+		$phone = $query->OrderPhone;
+
+		$name_bill = $query->UserName;
+		$email = $query->UserEmail;
+		$phone_bill = $query->UserPhone;
+
+
 		// Required
 		$transaction_details = array(
-		  'order_id' => rand(),
-		  'gross_amount' => 100000, // no decimal allowed for creditcard
+		  'order_id' => $code,
+		  'gross_amount' => $amount, 
 		);
-
-		// Optional
-		$item1_details = array(
-		  'id' => 'a1',
-		  'price' => 50000,
-		  'quantity' => 1,
-		  'name' => "Apple"
-		);
-
-		// Optional
-		$item2_details = array(
-		  'id' => 'a2',
-		  'price' => 50000,
-		  'quantity' => 1,
-		  'name' => "Orange"
-		);
-
-		// Optional
-		$item_details = array ($item1_details, $item2_details);
 
 		// Optional
 		$billing_address = array(
-		  'first_name'    => $name,
-		  'last_name'     => $name,
-		  'address'       => "Mangga 20",
-		  'city'          => "Jakarta Selatan",
-		  'postal_code'   => "16602",
-		  'phone'         => "081122334455",
-		  'country_code'  => 'IDN'
+		  'first_name'    => $name_bill,
+		  'address'       => $address,
+		  'city'          => $city,
+		  'phone'         => $phone_bill
 		);
 
 		// Optional
 		$shipping_address = array(
-		  'first_name'    => "Obet",
-		  'last_name'     => "Supriadi",
-		  'address'       => "Manggis 90",
-		  'city'          => "Jakarta Utara",
-		  'postal_code'   => "16601",
-		  'phone'         => "08113366345",
-		  'country_code'  => 'IDN'
+		  'first_name'    => $name,
+		  'address'       => $address,
+		  'city'          => $city,
+		  'postal_code'   => $zip,
+		  'phone'         => $phone
 		);
 
 		// Optional
 		$customer_details = array(
-		  'first_name'    => $name,
-		  'last_name'     => $name,
-		  'email'         => "tes@gamil.com",
-		  'phone'         => "081122334455",
+		  'first_name'    => $name_bill,
+		  'email'         => $email,
+		  'phone'         => $phone,
 		  'billing_address'  => $billing_address,
 		  'shipping_address' => $shipping_address
 		);
@@ -102,13 +93,12 @@ class Snap extends CI_Controller {
         $time = time();
         $custom_expiry = array(
             'start_time' => date("Y-m-d H:i:s O",$time),
-            'unit' => 'minute', 
-            'duration'  => 2
+            'unit' => 'hour', 
+            'duration'  => 24
         );
         
         $transaction_data = array(
             'transaction_details'=> $transaction_details,
-            'item_details'       => $item_details,
             'customer_details'   => $customer_details,
             'credit_card'        => $credit_card,
             'expiry'             => $custom_expiry

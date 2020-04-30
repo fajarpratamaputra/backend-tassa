@@ -78,18 +78,24 @@
 										<div class="search-form-wrap show-popup hide"></div>
 									</li>
 									<li class="menu-item-has-children">
-										<a class="minicart-link" href="<?=base_url('beranda/cart')?>" style="
+										<?php 
+											if($this->session->userdata('user_id') != null){
+												$num = $this->db->where('userid', $this->session->userdata('user_id'))->where('orderid', '')->get('cart')->num_rows();
+												if($num > 0) {
+													$link = 'beranda/cart';
+												}else{
+													$link = '';
+												}
+											}else {
+												$num = 0;
+												$link = '';
+											}
+												
+										?>
+										<a class="minicart-link" href="<?=base_url($link)?>" style="
 												padding-left: 5px;
 												padding-right: 0px;">
 											<span class="minicart-icon">
-											<?php 
-												if($this->session->userdata('user_id') != null){
-													$num = $this->db->where('userid', $this->session->userdata('user_id'))->where('orderid', '')->get('cart')->num_rows();
-												}else {
-													$num = 0;
-												}
-												
-											?>
 												<i class="minicart-icon-svg elegant_icon_bag"></i> <span><?=$num?></span>
 											</span>
 										</a>

@@ -124,7 +124,7 @@
 																<label>Quantity</label>
 																<div class="variations_button" >
 																	<div class="quantity" >
-																		<input type="number" name="qty" value="1" title="Qty" class="input-text qty text" size="4">
+																		<input type="number" id="qty" name="qty" value="1" title="Qty" class="input-text qty text" size="4">
 																		<input type="hidden" name="productid" value="<?=$prod->ProductID?>">
 																		<input type="hidden" name="productname" value="<?=$prod->ProductName?>">
 																		<input type="hidden" name="color" value="<?=$this->uri->segment(5)?>">
@@ -132,13 +132,15 @@
 																</div>
 															</div>
 															<div class="col-md-12" style="padding:0px; padding-top:10px;">
-																<button style="background-color: #C3A771; border-color:#C3A771; color:#ffffff; font-size:12px;" onclick="window.location.href = 'https://w3docs.com';" class="btn btn-black-outline btn-lg" type="button">
+																<button name="Submit" value="payment" style="background-color: #C3A771; border-color:#C3A771; color:#ffffff; font-size:12px;" class="btn btn-black-outline btn-lg" type="submit">
 																	Continue to Payment
 																</button>
-																<button style="background-color: #ffffff; border-color:#C3A771; color:#C3A771; font-size:12px;" class="btn btn-black-outline btn-lg" type="submit">
+																<button name="Submit" value="cart" style="background-color: #ffffff; border-color:#C3A771; color:#C3A771; font-size:12px;" class="btn btn-black-outline btn-lg" type="submit">
 																	Add to Bag
 																</button>
 															</div>
+															<!-- Modal -->
+															
 														</form>
 													</div>
 												</div> 

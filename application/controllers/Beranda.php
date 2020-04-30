@@ -84,7 +84,38 @@ class Beranda extends CI_Controller {
 		
 		}
 
-		redirect('beranda/details/'.$productname.'/'.$productid.'/'.$color.'?login='.$login);
+		if ($_POST['Submit'] == 'cart' ) {
+			redirect('beranda/details/'.$productname.'/'.$productid.'/'.$color.'?login='.$login);
+		}
+		else if ($_POST['Submit'] == 'payment') {
+			redirect('beranda/address');
+		}
+
+	}
+
+	public function add_to_payment()
+    {
+		$productid 		= $this->input->post("productid");
+		$userid 		= $this->session->userdata('user_id');
+		$color 			= $this->input->post("color");
+		$qty 			= $this->input->post("qty");
+		$date 			= date('Y-m-d H:i:s');
+		$login = false;
+		if($this->session->userdata('user_id') != null){
+			$login = true;
+		
+			$data = array(
+				'userid' 		=> $userid,
+				'productid' 	=> $productid,
+				'qty' 			=> $qty,
+				'color'			=> $color,
+				'created_at'  	=> $date
+			);
+			$this->m_orderfe->add_cart($data);
+		
+		}
+
+		redirect('beranda/address');
 
 	}
 

@@ -106,30 +106,6 @@
 												</div>
 												<br>
 												<div class="col-md-12">
-													<div class="col-md-3" style="margin-bottom:10px;">
-														<div style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
-															<img src="<?=base_url('assets/template/')?>images/logo/Bca_logo.png" alt="">
-														</div>
-													</div>
-													<!-- <div class="col-md-1" style="margin-bottom:10px;"></div> -->
-													<div class="col-md-3" style="margin-bottom:10px;">
-														<div style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
-															<img src="<?=base_url('assets/template/')?>images/logo/mandiri_logo.png" alt="">
-														</div>
-													</div>
-													<!-- <div class="col-md-1" style="margin-bottom:10px;"></div> -->
-													<div class="col-md-3" style="margin-bottom:10px;">
-														<div style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
-															<img src="<?=base_url('assets/template/')?>images/logo/bni_logo.png" alt="">	
-														</div>
-													</div>
-													<!-- <div class="col-md-1" style="margin-bottom:10px;"></div> -->
-													<div class="col-md-3" style="margin-bottom:10px;">
-														<div style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
-															<img src="<?=base_url('assets/template/')?>images/logo/danamon_logo.png" alt="">
-														</div>
-													</div>
-
 													<div class="col-md-12" style="margin-bottom:10px;">
 														<h5 class="col-md-12">RINGKASAN HARGA</h5>
 														<p class="col-md-6" style="text-align:left">Produk</p><p class="col-md-6" style="text-align:right; font-size: 18px;"><?="Rp " . number_format($order->OrderAmount,2,',','.')?></p>
@@ -154,7 +130,7 @@
 														$(this).attr("disabled", "disabled");
 														
 														$.ajax({
-														url: '<?=site_url()?>/snap/token/fajar',
+														url: '<?=site_url()?>/snap/token/<?=$order->OrderCode?>',
 														cache: false,
 
 														success: function(data) {
