@@ -75,7 +75,7 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
+	'hostname' => '127.0.0.1',
 	'username' => 'u295000851_tassadb',
 	'password' => 'tassa-database-01',
 	'database' => 'u295000851_tassadb',

@@ -106,42 +106,57 @@
 
 												</style>
 												<div class="col-md-12">
-													<div class="col-md-8" style="margin-bottom:10px;">
+													<div class="col-md-6" style="margin-bottom:10px;">
 														<div class="col-md-12" style="margin-bottom:10px; border:1px solid #DEDEDE; border-top: 4px solid #C3A771; box-sizing: border-box; padding:10px;">
 															<h4>Halo, Rahmat Hamid</h4>
-															<p>Terima kasih sudah melakukan pesanan di Tassa.id . Silahkan melakukan transfer 
-															ke nomor rekening yang tertera dibawah untuk menyelesaikan pesanan.</p>
-														</div>
-														<div class="col-md-12" style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
-															<h4>Rincian Checkout</h4>
-															<p>Checkout Kamu masih tertunda. Untuk menyelesaikan pesanan, silahkan lakukan pembayaran di 
-															ATM atau melalui Internet Banking</p>
+															<p>Terima kasih sudah melakukan pesanan di Tassa.id .</p>
 														</div>
 														<div class="col-md-12" style="margin-bottom:10px; border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
-															<table class="table shop_table cart">
-																<thead>
-																	<tr>
-																		<th class="product-price">Checkout ID</th>
-																		<th class="product-quantity">No. Rekening</th>
-																		<th class="product-subtotal">Total Bayar</th>
-																	</tr>
-																</thead>
-																<tbody>
-																	<tr class="cart_item">
-																		<td class="product-price">
-																		<h6>CHK87545438218355</h6>
-																		</td>
-																		<td class="product-quantity">
-																			<h6>9087569204798</h6>
-																		</td>
-																		<td class="product-subtotal hidden-xs">
-																			<h6>Rp. 1.450.000</h6>
-																		</td>
-																	</tr>
-																</tbody>
-															</table>
+														<?php
+																		$no = 1;
+																		foreach($order as $ord){
+																			$code = $ord->OrderCode;
+																			$payment = $this->veritrans->status($code);
+																			if(!in_array($payment->status_code, array(200, 201, 202, 407))) {
+																				$status = 'Belum Transfer';
+																			}else{
+																				$status = $payment->transaction_status;;
+																			}
+																	?>
+																		<table class="table shop_table cart">
+																			<thead>
+																				<tr>
+																					<th class="product-price">No</th>
+																					<th class="product-quantity">Kode Order</th>
+																					<th class="product-quantity">Transfer</th>
+																					<th class="product-quantity">Status </th>
+																				</tr>
+																			</thead>
+																			<tbody>
+																				<tr class="cart_item">
+																					<td class="product-price">
+																						<?=$no++;?>	
+																					</td>
+																					<td class="product-quantity">
+																						<?=$ord->OrderCode;?>	
+																					</td>
+																					<td class="product-subtotal hidden-xs">
+																						<?="Rp " . number_format($ord->OrderAmount,2,',','.')?>			
+																					</td>
+																					<td class="product-subtotal hidden-xs">
+																						<div style="border:1px; solid #DEDEDE; box-sizing: border-box; padding:5px; background-color:#C3A771">
+																							<a href="<?=base_url('#')?>" style="background-color: #C3A771; width:100%; border-color:#C3A771; color:#ffffff; font-size:12px;" class="btn btn-black-outline btn-lg btn-align-center">
+																								<?=$status; ?>	
+																							</a>
+																						</div>		
+																					</td>
+																					
+																				</tr>
+																			</tbody>
+																		</table>
+																	<?php } ?>
 														</div>
-														<div class="col-md-12" style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
+														<!-- <div class="col-md-12" style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
 															<div class="col-md-3">
 																<img src="<?=base_url("assets/backend/")?>products/file-1585687834.png" alt="">
 															</div>
@@ -175,57 +190,50 @@
 																	</tbody>
 																</table>
 															</div>
-														</div>
+														</div> -->
 													</div>
-													<div class="col-md-4" style="margin-bottom:10px;">
+													<div class="col-md-6" style="margin-bottom:10px;">
 														<div class="col-md-12" style="margin-bottom:10px;">
 															<div class="col-md-12" style="border:1px solid #DEDEDE; border-top: 4px solid #C3A771; box-sizing: border-box; padding:10px;">
 																<div class="col-md-12">
-																	<h5 class="col-md-12">ALAMAT PENGIRIMAN</h5>
-																	<p class="col-md-12" style="text-align:left">Rahmat Hamid</p>
-																	<p class="col-md-12" style="text-align:left">rahmat140295@gmail.com</p>
-																	<p class="col-md-12" style="text-align:left">Budidaya VI No. 30 Manggala, Kota Makasar, Sulawesi Selatan</p>
-																	<p class="col-md-12" style="text-align:left">902384</p>
-																	
+																<h4>History Delivery</h4>
+																	<table class="table shop_table cart">
+																		<thead>
+																			<tr>
+																				<th class="product-price">No</th>
+																				<th class="product-quantity">Status</th>
+																				<th class="product-quantity">Tanggal/Jam</th>
+																				<th class="product-quantity">Kota </th>
+																			</tr>
+																		</thead>
+																		<?php
+																			$no = 1;
+																			$count = $count_trace - 1;
+																			for ($i = $count; $i >= 0; $i--){
+																				
+																		?>
+																		<tbody>
+																			<tr class="cart_item">
+																				<td class="product-price">
+																					<?=$no++;?>	
+																				</td>
+																				<td class="product-quantity">
+																					<?=$trace[$i]->manifest_description;?>	
+																				</td>
+																				<td class="product-subtotal hidden-xs">
+																					<?=$trace[$i]->manifest_date;?> / <?=$trace[$i]->manifest_time;?>				
+																				</td>
+																				<td class="product-subtotal hidden-xs">
+																					<?=$trace[$i]->city_name;?>	
+																				</td>
+																			</tr>
+																		</tbody>
+																		<?php } ?>
+																		
+																	</table>
 																</div>
 															</div>
 														</div>
-														<div class="col-md-12" style="margin-bottom:10px;">
-															<div class="col-md-12" style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
-																<div class="col-md-12">
-																	<h6 class="col-md-12">METODE PEMBAYARAN</h6>
-																	<div class="col-md-6" style="padding:5px;">
-																		<img src="<?=base_url('assets/template/')?>images/logo/Bca_logo.png" alt="">
-																	</div>
-																	<div class="col-md-6">
-																		<h5>9087569204798</h5>
-																	</div>
-																</div>
-															</div>
-														</div>
-														<div class="col-md-12">
-															<div class="col-md-12" style="margin-bottom:10px; border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
-																<div class="col-md-12">
-																	<h5 class="col-md-12">RINGKASAN HARGA</h5>
-																	<p class="col-md-6" style="text-align:left">Produk</p><p class="col-md-6" style="text-align:right">Rp. 1.450.000</p>
-																	<p class="col-md-6" style="text-align:left">Diskon</p><p class="col-md-6" style="text-align:right">Rp. 0</p>
-																	<p class="col-md-6" style="text-align:left">Total Harga</p><p class="col-md-6" style="text-align:right">Rp. 1.450.000</p>
-																</div>
-															</div>
-														</div>
-														<div class="col-md-12" style="margin-bottom:10px;">
-															<div class="col-md-12" style="color:#C3A771; border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
-																<label for="file-upload" class="custom-file-upload">
-																	+ Upload bukti bayar disini
-																</label>
-																<input id="file-upload" type="file"/>
-																<button style="margin-top:10px; background-color: #C3A771; width:100%; border-color:#C3A771; color:#ffffff; font-size:12px;" onclick="window.location.href = '#';" class="btn btn-black-outline btn-lg btn-align-center" type="button">
-																		PILIH METODE PEMBAYARAN
-																	</button>
-															</div>
-															
-														</div>
-														
 														
 													</div> 
 											</div>

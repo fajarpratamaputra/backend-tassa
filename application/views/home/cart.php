@@ -135,7 +135,8 @@
 																		<tr>
 																			<th class="product-price">Color</th>
 																			<th class="product-quantity">Size</th>
-																			<th class="product-subtotal">Quantity</th>
+																			<th class="product-quantity">Quantity</th>
+																			<th class="product-subtotal" style="text-align:center;">#</th>
 																		</tr>
 																	</thead>
 																	<tbody>
@@ -155,6 +156,13 @@
 																			<td class="product-subtotal hidden-xs">
 																				<div class="quantity">
 																					<input type="number" step="1" min="0" name="qunatity" value="<?=$c->qty?>" title="Qty" class="input-text qty text" size="4"/>
+																				</div>
+																			</td>
+																			<td class="product-subtotal hidden-xs">
+																				<div style="border:1px; solid #DEDEDE; box-sizing: border-box; padding:5px; background-color:#C3A771">
+																					<a href="<?=base_url('beranda/delete_cart/'.$c->id_cart)?>" style="background-color: #C3A771; width:100%; border-color:#C3A771; color:#ffffff; font-size:12px;" class="btn btn-black-outline btn-lg btn-align-center">
+																						Delete
+																					</a>
 																				</div>
 																			</td>
 																		</tr>

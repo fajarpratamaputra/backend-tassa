@@ -130,7 +130,7 @@
 											<a href="<?=base_url('loginfe/logout')?>" style="padding: 0">LOGOUT</a>
 										</li>
 										<li class="menu-item-has-children">
-											<a href="<?=base_url('beranda/privasi')?>" style="padding: 0">ACCOUNT</a>
+											<a href="<?=base_url('beranda/account')?>" style="padding: 0">ACCOUNT</a>
 										</li>
 									<?php } ?>
 									

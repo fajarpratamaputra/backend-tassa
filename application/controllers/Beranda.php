@@ -5,9 +5,13 @@ class Beranda extends CI_Controller {
 
 	public function __construct()
 	{
-
 		parent ::__construct();
 		//load model
+		$params = array('server_key' => 'SB-Mid-server-Wl3OBz59TsVvrw_PH8PPf_vV', 'production' => false);
+		$this->load->library('veritrans');
+		$this->veritrans->config($params);
+		$this->load->helper('url');
+
 		$this->load->library('templatehome');
 		$this->load->model('m_productfe');
 		$this->load->model('m_orderfe');
@@ -19,6 +23,7 @@ class Beranda extends CI_Controller {
 		$this->load->model('m_information');
 		$this->load->model('m_loginfe');
 	}
+
 
 	public function index()
 	{	
@@ -121,7 +126,8 @@ class Beranda extends CI_Controller {
 
 	public function cart()
 	{
-		if($this->session->userdata('user_id') == null){
+		$num = $this->db->where('userid', $this->session->userdata('user_id'))->where('orderid', '')->get('cart')->num_rows();
+		if(($this->session->userdata('user_id') == null) || ($num == 0)){
 			redirect('beranda/');
 		}
 		else {
@@ -132,6 +138,13 @@ class Beranda extends CI_Controller {
 			$this->templatehome->view('home/cart', $data);
 		}
 		
+	}
+
+	function delete_cart($id){
+
+		$this->db->delete('cart', array('id_cart' => $id));
+		redirect('beranda/cart/'.$productid);
+
 	}
 
 
@@ -230,18 +243,73 @@ class Beranda extends CI_Controller {
 		}
 	}
 
-	public function detail_checkout()
-	{
-		$data['setting'] = $this->m_setting->get_setting();
-		$this->templatehome->view('home/detail_checkout', $data);
+	public function trace() {
+		$curl = curl_init();
+
+		curl_setopt_array($curl, array(
+		CURLOPT_URL => "https://pro.rajaongkir.com/api/waybill",
+		CURLOPT_RETURNTRANSFER => true,
+		CURLOPT_ENCODING => "",
+		CURLOPT_MAXREDIRS => 10,
+		CURLOPT_TIMEOUT => 30,
+		CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+		CURLOPT_CUSTOMREQUEST => "POST",
+		CURLOPT_POSTFIELDS => "waybill=JD0070081249&courier=jnt",
+		CURLOPT_HTTPHEADER => array(
+			"content-type: application/x-www-form-urlencoded",
+			"key: 90927796f8d9b2b9accbf81cda0adf94"
+		),
+		));
+
+		$response = curl_exec($curl);
+		$err = curl_error($curl);
+
+		curl_close($curl);
+
+		if ($err) {
+			echo "cURL Error #:" . $err;
+		} else {
+			return json_decode($response);
+		}
 	}
 
-	public function privasi()
+	public function tes(){
+		echo '<pre>';
+			print_r($this->trace()->rajaongkir->result->manifest);
+		echo '</pre>';
+	}
+
+	public function tracking()
 	{
-		$data['setting'] = $this->m_setting->get_setting();
-		$id = $this->session->userdata('user_id');
-		$data['user'] = $this->m_loginfe->get_users($id);
-		$this->templatehome->view('home/privasi', $data);
+		if($this->session->userdata('user_id') == null){
+			redirect('beranda/');
+		}
+		else {
+			$data['trace'] = $this->trace()->rajaongkir->result->manifest;
+			$data['count_trace'] = count($this->trace()->rajaongkir->result->manifest);
+			$userid = $this->session->userdata('user_id');
+			$order = $this->uri->segment(3);
+			$data['order'] = $this->m_orderfe->get_idorder($order);
+			$data['cart'] = $this->m_orderfe->history($userid);
+			$data['user'] = $this->m_orderfe->user($userid);
+			$data['setting'] = $this->m_setting->get_setting();
+			$this->templatehome->view('home/tracking', $data);
+		}
+	}
+
+	public function account()
+	{
+		if($this->session->userdata('user_id') == null){
+			redirect('beranda/');
+		}
+		else {
+			$userid = $this->session->userdata('user_id');
+			$data['cart'] = $this->m_orderfe->history($userid);
+			$data['order'] = $this->m_orderfe->get_order($userid);
+			$data['user'] = $this->m_orderfe->user($userid);
+			$data['setting'] = $this->m_setting->get_setting();
+			$this->templatehome->view('home/account', $data);
+		}
 	}
 
 	public function information()
@@ -258,5 +326,6 @@ class Beranda extends CI_Controller {
 		$data['setting'] = $this->m_setting->get_setting();
 		$this->templatehome->view('home/faq', $data);
 	}
+
 
 }

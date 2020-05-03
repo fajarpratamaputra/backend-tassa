@@ -19,6 +19,30 @@ class M_Orderfe extends CI_Model {
 		return $this->db->get('cart')->result();
 	}
 
+	public function history($id)
+	{
+		$this->db->join('products','products.ProductID = cart.productid')
+				->join('productcategories','productcategories.CategoryID = products.ProductCategoryID')
+				->where('cart.userid', $id)
+				->where('cart.orderid !=', '')
+				->order_by('cart.id_cart','DESC');
+		return $this->db->get('cart')->result();
+	}
+
+	public function get_order($id)
+	{
+		$this->db->where('OrderUserID', $id)
+				 ->order_by('OrderID','DESC');
+		return $this->db->get('orders')->result();
+	}
+
+	public function get_idorder($id)
+	{
+		$this->db->where('OrderCode', $id)
+				 ->order_by('OrderID','DESC');
+		return $this->db->get('orders')->result();
+	}
+
 	public function order($id)
 	{
 		$this->db->where('OrderUserID', $id)

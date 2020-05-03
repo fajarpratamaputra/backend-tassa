@@ -169,59 +169,119 @@
 														<div class="col-md-12" style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
 															<ul class="nav nav-tabs" id="myTab" role="tablist">
 																<li class="nav-item">
-																	<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">History</a>
+																	<a class="nav-link active" id="history-tab" data-toggle="tab" href="#history" role="tab" aria-controls="history" aria-selected="true">History Transaksi</a>
 																</li>
 																<li class="nav-item">
-																	<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Tracking</a>
+																	<a class="nav-link" id="order-tab" data-toggle="tab" href="#order" role="tab" aria-controls="order" aria-selected="false">Order</a>
 																</li>
 															</ul>
 
 															<div class="tab-content">
-																<div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
-																	<div class="col-md-3">
-																		<img src="<?=base_url("assets/backend/")?>products/file-1585687834.png" alt="">
-																	</div>
-																	<div class="col-md-8">
-																		<h4>Kabasaran Midi Kaftan</h4>
-																		<h6>Gucci Magelang</h6>
+																<div class="tab-pane active" id="history" role="tabpanel" aria-labelledby="history-tab">
+																	<?php
+																		foreach($cart as $c){
+																	?>
+																		<div class="col-md-12" style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px; margin-bottom:5px;">
+																			<div class="col-md-3">
+																				<img src="<?=base_url('assets/backend/products/'.$c->ProductImage)?>" alt="">
+																			</div>
+																			<div class="col-md-8">
+																				<h4><?=$c->ProductName?></h4>
+																				<h6><?=$c->CategoryName?></h6>
+																				<table class="table shop_table cart">
+																					<thead>
+																						<tr>
+																							<th class="product-price">Color</th>
+																							<th class="product-quantity">Size</th>
+																							<th class="product-subtotal">Quantity</th>
+																						</tr>
+																					</thead>
+																					<tbody>
+																						<tr class="cart_item">
+																							<td class="product-price">
+																								<div class="select-option swatch-wrapper">
+																									<?php if($c->color == 'White') { ?>
+																										<a href="#" title="<?=$c->color?>" class="swatch-color white"><?=$c->color?></a>
+																									<?php } elseif($c->color == 'Gray') {?>
+																										<a href="#" title="<?=$c->color?>" class="swatch-color gray"><?=$c->color?></a>
+																									<?php } ?>
+																								</div>
+																							</td>
+																							<td class="product-quantity">
+																								<h6>All Size</h6>
+																							</td>
+																							<td class="product-subtotal hidden-xs">
+																								<div class="quantity">
+																									<input type="number" step="1" min="0" name="qunatity" value="<?=$c->qty?>" title="Qty" class="input-text qty text" size="4"/>
+																								</div>
+																							</td>
+																						</tr>
+																					</tbody>
+																				</table>
+																			</div>
+																			<div class="col-md-12">
+																				<hr>
+																				<h6 style="text-align:center;"><?=date('d M Y', strtotime($c->created_at))?></h6>
+																			</div>
+																		</div>
+																		<hr style="border-color: #DEDEDE; ">
+																	<?php } ?>
+																</div>
+																<div class="tab-pane" id="order" role="tabpanel" aria-labelledby="order-tab">
+																	<?php
+																		$no = 1;
+																		foreach($order as $ord){
+																			$code = $ord->OrderCode;
+																			$payment = $this->veritrans->status($code);
+																			if(!in_array($payment->status_code, array(200, 201, 202, 407))) {
+																				$status = 'Belum Transfer';
+																			}else{
+																				$status = $payment->transaction_status;;
+																			}
+																	?>
 																		<table class="table shop_table cart">
 																			<thead>
 																				<tr>
-																					<th class="product-price">Color</th>
-																					<th class="product-quantity">Size</th>
-																					<th class="product-subtotal">Quantity</th>
+																					<th class="product-price">No</th>
+																					<th class="product-quantity">Kode Order</th>
+																					<th class="product-quantity">Transfer</th>
+																					<th class="product-quantity">Status </th>
+																					<th class="product-quantity">Tracking</th>
 																				</tr>
 																			</thead>
 																			<tbody>
 																				<tr class="cart_item">
 																					<td class="product-price">
-																						<div class="select-option swatch-wrapper">
-																							<a href="#" title="Green" class="swatch-color green">Green</a>
-																						</div>
+																						<?=$no++;?>	
 																					</td>
 																					<td class="product-quantity">
-																						<h6>All Size</h6>
+																						<?=$ord->OrderCode;?>	
 																					</td>
 																					<td class="product-subtotal hidden-xs">
-																						<div class="quantity">
-																							<input type="number" step="1" min="0" name="qunatity" value="2" title="Qty" class="input-text qty text" size="4"/>
-																						</div>
+																						<?="Rp " . number_format($ord->OrderAmount,2,',','.')?>			
+																					</td>
+																					<td class="product-subtotal hidden-xs">
+																						<div style="border:1px; solid #DEDEDE; box-sizing: border-box; padding:5px; background-color:#C3A771">
+																							<a href="<?=base_url('#')?>" style="background-color: #C3A771; width:100%; border-color:#C3A771; color:#ffffff; font-size:12px;" class="btn btn-black-outline btn-lg btn-align-center">
+																								<?=$status; ?>	
+																							</a>
+																						</div>		
+																					</td>
+																					<td class="product-subtotal hidden-xs">
+																						<div style="border:1px; solid #DEDEDE; box-sizing: border-box; padding:5px; background-color:#C3A771">
+																							<a href="<?=base_url('beranda/tracking/'.$ord->OrderCode)?>" style="background-color: #C3A771; width:100%; border-color:#C3A771; color:#ffffff; font-size:12px;" class="btn btn-black-outline btn-lg btn-align-center">
+																								Detail
+																							</a>
+																						</div>		
 																					</td>
 																				</tr>
 																			</tbody>
 																		</table>
-																	</div>
-																</div>
-																<div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-																	Tracking
+																	<?php } ?>
 																</div>
 															</div>
 
-															<script>
-																$(function () {
-																	$('#myTab li:last-child a').tab('show')
-																})
-															</script>
+															
 															
 														</div>
 													</div>
