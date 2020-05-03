@@ -108,7 +108,7 @@
 												<div class="col-md-12">
 													<div class="col-md-6" style="margin-bottom:10px;">
 														<div class="col-md-12" style="margin-bottom:10px; border:1px solid #DEDEDE; border-top: 4px solid #C3A771; box-sizing: border-box; padding:10px;">
-															<h4>Halo, Rahmat Hamid</h4>
+															<h4>Halo, <?=$user->UserName?></h4>
 															<p>Terima kasih sudah melakukan pesanan di Tassa.id .</p>
 														</div>
 														<div class="col-md-12" style="margin-bottom:10px; border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
