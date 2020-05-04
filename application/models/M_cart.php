@@ -24,7 +24,7 @@ class M_Cart extends CI_Model {
 	public function jumlah_data()
 	{
 		$this->db->join('users u', 'u.UserID = c.userid')
-				 ->where('c.id_Cart', 'DESC');
+				 ->order_by('c.id_Cart', 'DESC');
 		return $this->db->get('cart c')->num_rows();
 	}
  

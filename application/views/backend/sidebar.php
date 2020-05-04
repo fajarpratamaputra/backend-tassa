@@ -107,7 +107,7 @@ li.nav-item {
                 </a>
                 <ul class="isi-dropdown">
                   <li><a class="nav-link" href="<?=base_url("cart/")?>">Cart</a></li>
-                  <li><a class="nav-link" href="<?=base_url("quote/")?>">Order</a></li>
+                  <li><a class="nav-link" href="<?=base_url("order/")?>">Order</a></li>
                   <li><a class="nav-link" href="<?=base_url("customer/")?>">Customer</a></li>
                 </ul>
               </li>

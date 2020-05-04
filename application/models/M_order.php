@@ -15,17 +15,16 @@ class M_Order extends CI_Model {
 
 	public function data($number,$offset)
 	{
-		$this->db->join('users u', 'u.UserID = c.userid')
-				 ->join('products p', 'p.ProductID = c.productid')
-				 ->order_by('c.id_cart', 'DESC');
-		return $this->db->get('cart c',$number,$offset)->result();
+		$this->db->join('users u', 'u.UserID = o.OrderUserID')
+				 ->order_by('o.OrderID', 'DESC');
+		return $this->db->get('orders o',$number,$offset)->result();
 	}
 
 	public function jumlah_data()
 	{
-		$this->db->join('users u', 'u.UserID = c.userid')
-				 ->where('c.id_Cart', 'DESC');
-		return $this->db->get('cart c')->num_rows();
+		$this->db->join('users u', 'u.UserID = o.OrderUserID')
+				 ->order_by('o.OrderID', 'DESC');
+		return $this->db->get('orders o')->num_rows();
 	}
  
 	// function jumlah_data1(){
