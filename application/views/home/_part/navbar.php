@@ -30,46 +30,58 @@
 									</a>
 									<li class="menu-item-has-children">
 										<a href="<?=base_url('beranda/product/newin')?>" style="
-												padding-left: 5px;
-												padding-right: 5px;
+												padding-left: 2px;
+												padding-right: 2px;
 											">
 											<span class="underline">NEW IN</span> <span class="caret"></span>
 										</a>
                                     </li>
                                     <li class="menu-item-has-children">
 										<a href="<?=base_url('beranda/product/moeslimdress')?>" style="
-												padding-left: 5px;
-												padding-right: 5px;
+												padding-left: 2px;
+												padding-right: 2px;
 											">
 											<span class="underline">MOESLIM DRESS</span> <span class="caret"></span>
 										</a>
                                     </li>
                                     <li class="menu-item-has-children">
 										<a href="<?=base_url('beranda/product/kaftan')?>" style="
-												padding-left: 5px;
-												padding-right: 5px;
+												padding-left: 2px;
+												padding-right: 2px;
 											">
 											<span class="underline">KAFTAN</span> <span class="caret"></span>
 										</a>
                                     </li>
                                     <li class="menu-item-has-children">
 										<a href="<?=base_url('beranda/product/best')?>" style="
-												padding-left: 5px;
-												padding-right: 5px;
+												padding-left: 2px;
+												padding-right: 2px;
 											">
 											<span class="underline">BEST SELLER</span> <span class="caret"></span>
 										</a>
                                     </li>
                                     <li class="menu-item-has-children">
 										<a href="<?=base_url('beranda/product/sale')?>" style="
-												padding-left: 5px;
-												padding-right: 25px;
+												padding-left: 2px;
+												padding-right: 2px;
 											">
 											<span class="underline">SALE</span> <span class="caret"></span>
 										</a>
 									</li>
+									<li class="menu-item-has-children dropdown">
+										<a href="#" style="
+												padding-left: 2px;
+												padding-right: 2px;
+											">
+											<span class="underline">ALL PRODUCTS</span> <span class="caret"></span>
+										</a>
+										<ul class="dropdown-menu">
+											<li><a href="<?=base_url('beranda/product/kaftan')?>">MOESLIM DRESS</a></li>
+											<li><a href="<?=base_url('beranda/product/kaftan')?>">KAFTAN</a></li>
+										</ul>
+									</li>
 									<li class="menu-item-has-children" style="
-												padding-left: 45px;
+												padding-left: 20px;
 												
 											">
 										<a class="navbar-search-button" href="#" >

@@ -22,23 +22,30 @@
 				
 				<nav class="offcanvas-navbar">
 					<ul class="offcanvas-nav">
-						<li class="menu-item-has-children dropdown">
-							<a href="./" class="dropdown-hover">Home <span class="caret"></span></a>
+						<li class="menu-item-has-children">
+							<a href="./">Home</a>
+						</li>
+						<li class="menu-item-has-children">
+							<a href="<?=base_url('beranda/product/newin')?>" >New In </a>
+						</li>
+						<li class="menu-item-has-children">
+							<a href="<?=base_url('beranda/product/moeslimdress')?>" >Moeslim Dress</span></a>
+						</li>
+						<li class="menu-item-has-children">
+							<a href="<?=base_url('beranda/product/kaftan')?>" >Kaftan</span></a>
+						</li>
+						<li class="menu-item-has-children">
+							<a href="<?=base_url('beranda/product/best')?>" >Best Seller </span></a>
+						</li>
+						<li class="menu-item-has-children">
+							<a href="<?=base_url('beranda/product/sale')?>" >Sale </a>
 						</li>
 						<li class="menu-item-has-children dropdown">
-							<a href="<?=base_url('beranda/product/newin')?>" class="dropdown-hover">New In <span class="caret"></span></a>
-						</li>
-						<li class="menu-item-has-children dropdown">
-							<a href="<?=base_url('beranda/product/moeslimdress')?>" class="dropdown-hover">Moeslim Dress<span class="caret"></span></a>
-						</li>
-						<li class="menu-item-has-children dropdown">
-							<a href="<?=base_url('beranda/product/kaftan')?>" class="dropdown-hover">Kaftan<span class="caret"></span></a>
-						</li>
-						<li class="menu-item-has-children dropdown">
-							<a href="<?=base_url('beranda/product/best')?>" class="dropdown-hover">Best Seller <span class="caret"></span></a>
-						</li>
-						<li class="menu-item-has-children dropdown">
-							<a href="<?=base_url('beranda/product/sale')?>" class="dropdown-hover">Sale <span class="caret"></span></a>
+							<a href="<?=base_url('beranda/product/sale')?>" class="dropdown-hover">All Product <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="<?=base_url('beranda/product/moeslimdress')?>">Moeslim Dress</a></li>
+								<li><a href="<?=base_url('beranda/product/moeslimdress')?>">Kaftan</a></li>
+							</ul>
 						</li>
 						
 					</ul>
