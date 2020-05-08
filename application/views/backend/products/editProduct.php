@@ -30,6 +30,10 @@
                                 <strong class="text-muted d-block mb-2">Product Price</strong>
                                 <input type="number" class="form-control" name="price" value="<?=$prod->ProductPrice?>" > 
                             </div>
+                            <div class="form-group">
+                                <strong class="text-muted d-block mb-2">Product Weight (Kg)</strong>
+                                <input type="number" step=any class="form-control" name="weight" value="<?=$prod->ProductWeight?>"> 
+                            </div>
                             <div class="form-row">
                                 <strong class="text-muted d-block mb-2">Product Category</strong>
                                 <select name="category" id="inputState" class="form-control">

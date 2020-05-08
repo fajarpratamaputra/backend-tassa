@@ -23,15 +23,19 @@
                           <!-- <form> -->
                             <div class="form-group">
                                 <strong class="text-muted d-block mb-2">Product Name</strong>
-                                <input type="text" class="form-control" name="name" placeholder="Product Name">
+                                <input type="text" class="form-control" name="name" placeholder="Product Name" required>
                             </div>
                             <div class="form-group">
                                 <strong class="text-muted d-block mb-2">Product Price</strong>
-                                <input type="number" class="form-control" name="price" placeholder="Product Price" > 
+                                <input type="number" class="form-control" name="price" placeholder="0" required> 
+                            </div>
+                            <div class="form-group">
+                                <strong class="text-muted d-block mb-2">Product Weight (Kg)</strong>
+                                <input type="number" class="form-control" name="weight" placeholder="0" required> 
                             </div>
                             <div class="form-row">
                                 <strong class="text-muted d-block mb-2">Product Category</strong>
-                                <select name="category" id="inputState" class="form-control">
+                                <select name="category" id="inputState" class="form-control" required>
                                     <option selected>Pilih Category</option>
                                     <?php foreach ($category as $cat): ?>
                                         <option value="<?php echo $cat->CategoryID ?>"><?php echo $cat->CategoryName ?></option>
@@ -39,12 +43,13 @@
 
                                 </select>
                             </div>
+                            
                           <!-- </form> -->
                         </div>
                         <div class="col-sm-12 col-md-6">
                             <strong class="text-muted d-block mb-2">Product Description</strong>
                             <div class="form-group">
-                                <textarea class="form-control" name="description" id="" cols="30" rows="10"></textarea>
+                                <textarea class="form-control" name="description" id="" cols="30" rows="10" required></textarea>
                             </div>
                         </div>
                       </div>
@@ -63,11 +68,11 @@
                     <li class="list-group-item px-3">
                         <strong class="text-muted d-block mb-2">Image</strong>
                         <div class="input-group mb-3">
-                          <input name="file" type="file" class="form-control" > 
+                          <input name="file" type="file" class="form-control" required> 
                         </div>
                         <strong class="text-muted d-block mb-2">Stock</strong>
                         <div class="input-group mb-3">
-                          <input name="stok" type="number" class="form-control" >
+                          <input name="stok" type="number" class="form-control" required >
                         </div>
 
                     </li>

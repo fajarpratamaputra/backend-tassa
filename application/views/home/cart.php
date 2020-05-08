@@ -1,4 +1,3 @@
-	
 	<body class="shop">
 		
 		<div id="wrapper" class="wide-wrap">

@@ -273,12 +273,6 @@ class Beranda extends CI_Controller {
 		}
 	}
 
-	public function tes(){
-		echo '<pre>';
-			print_r($this->trace()->rajaongkir->result->manifest);
-		echo '</pre>';
-	}
-
 	public function tracking()
 	{
 		if($this->session->userdata('user_id') == null){

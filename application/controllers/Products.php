@@ -66,6 +66,7 @@ class Products extends CI_Controller {
 		$description = $this->input->post("description");
 		$category 	 = $this->input->post("category");
 		$stok 	 	 = $this->input->post("stok");
+		$weight 	 = $this->input->post("weight");
 		
         $this->load->library('upload');
         $nmfile = "file-".time(); //nama file saya beri nama langsung dan diikuti fungsi time
@@ -87,6 +88,7 @@ class Products extends CI_Controller {
 					'ProductName' 		=> $name,
 					'ProductPrice' 		=> $price,
 					'ProductCartDesc'	=> $description,
+					'ProductWeight'		=> $weight,
 					'ProductImage' 		=> $gbr['file_name'],
 					'ProductCategoryID' => $category,
 					'ProductStock'      => $stok
@@ -99,6 +101,7 @@ class Products extends CI_Controller {
 					'ProductName' 		=> $name,
 					'ProductPrice' 		=> $price,
 					'ProductCartDesc'	=> $description,
+					'ProductWeight'		=> $weight,
 					'ProductCategoryID' => $category,
 					'ProductStock'      => $stok
 				);
@@ -163,6 +166,7 @@ class Products extends CI_Controller {
 		$description 	 = $this->input->post("description");
 		$category 	 	 = $this->input->post("category");
 		$stok 	 	 	 = $this->input->post("stok");
+		$weight 	 	 = $this->input->post("weight");
 		
         $this->load->library('upload');
         $nmfile = "file-".time(); //nama file saya beri nama langsung dan diikuti fungsi time
@@ -189,6 +193,7 @@ class Products extends CI_Controller {
 					'ProductName' 		=> $name,
 					'ProductPrice' 		=> $price,
 					'ProductCartDesc'	=> $description,
+					'ProductWeight'		=> $weight,
 					'ProductImage' 		=> $gbr['file_name'],
 					'ProductCategoryID' => $category,
 					'ProductStock'      => $stok
@@ -201,6 +206,7 @@ class Products extends CI_Controller {
 					'ProductName' 		=> $name,
 					'ProductPrice' 		=> $price,
 					'ProductCartDesc'	=> $description,
+					'ProductWeight'		=> $weight,
 					'ProductCategoryID' => $category,
 					'ProductStock'      => $stok
 				);
