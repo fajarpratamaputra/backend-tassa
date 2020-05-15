@@ -128,8 +128,37 @@
 														<div class="col-md-12" style="margin-bottom:10px;">
 															<div style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
 																<div class="form-group">
+																	<div class="dropdown">
+																		<button style="background-color: #C3A771; width:100%; border-color:#C3A771; color:#ffffff; font-size:12px;" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+																			Pilih Alamat Pengiriman
+																		</button>
+																		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+																		<?php
+																			foreach($address as $add){
+																		?>
+																			<a class="dropdown-item" href="<?=base_url('beranda/address/'.$add->id)?>"><?=$add->address.', '.$add->subdistrict.', '.$add->district.', '.$add->province.', '.$add->zipcode ?></a>
+																		<?php } ?>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<?php
+																if($this->uri->segment(3) != '') {
+																	$ship = $this->db->where('id', $this->uri->segment(3))->get('address')->row();
+																}
+																
+														?>
+														
+														<div class="col-md-12" style="margin-bottom:10px;">
+															<div style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
+																<div class="form-group">
 																	<label for="address">Alamat Pengiriman</label>
-																	<input type="text" id="address" required value="" name="address" class="form-control" placeholder="Password">
+																	<?php if($this->uri->segment(3) != '') { ?>
+																		<input type="text" id="address" value="<?=$ship->address?>" name="address" class="form-control">
+																	<?php }else { ?>
+																		<input type="text" id="address" required value="" name="address" class="form-control" placeholder="Address">
+																	<?php } ?>
 																</div>
 															</div>
 														</div>
@@ -137,7 +166,12 @@
 															<div style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
 																<div class="form-group">
 																	<label for="province">Provinsi</label>
-																	<input type="text" id="province" required value="" name="province" class="form-control" placeholder="Password">
+																	<?php if($this->uri->segment(3) != '') { ?>
+																		<input type="text" id="province" value="<?=$ship->province?>" name="province" class="form-control">
+																	<?php }else { ?>
+																		<input type="text" id="province" required value="" name="province" class="form-control" placeholder="Provinsi">
+																	<?php } ?>
+																	
 																</div>
 															</div>
 														</div>
@@ -145,7 +179,12 @@
 															<div style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
 																<div class="form-group">
 																	<label for="city">Kabupaten/Kota</label>
-																	<input type="text" id="city" required value="" name="city" class="form-control" placeholder="Password">
+																	<?php if($this->uri->segment(3) != '') { ?>
+																		<input type="text" id="city" value="<?=$ship->district?>" name="city" class="form-control">
+																	<?php }else { ?>
+																		<input type="text" id="city" required value="" name="city" class="form-control" placeholder="Kabupaten/Kota">
+																	<?php } ?>
+																	
 																</div>
 															</div>
 														</div>
@@ -153,7 +192,12 @@
 															<div style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
 																<div class="form-group">
 																	<label for="subdistricts">Kecamatan</label>
-																	<input type="text" id="subdistricts" required value="" name="subdistricts" class="form-control" placeholder="Password">
+																	<?php if($this->uri->segment(3) != '') { ?>
+																		<input type="text" id="subdistricts" value="<?=$ship->subdistrict?>" name="subdistricts" class="form-control">
+																	<?php }else { ?>
+																		<input type="text" id="subdistricts" required value="" name="subdistricts" class="form-control" placeholder="Kecamatan">
+																	<?php } ?>
+																	
 																</div>
 															</div>
 														</div>
@@ -161,7 +205,12 @@
 															<div style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
 																<div class="form-group">
 																	<label for="zip">Kode Pos</label>
-																	<input type="text" id="zip" required value="" name="zip" class="form-control" placeholder="Password">
+																	<?php if($this->uri->segment(3) != '') { ?>
+																		<input type="text" id="zip" value="<?=$ship->zipcode?>" name="zip" class="form-control">
+																	<?php }else { ?>
+																		<input type="text" id="zip" required value="" name="zip" class="form-control" placeholder="Kode Pos">
+																	<?php } ?>
+																	
 																</div>
 															</div>
 														</div>

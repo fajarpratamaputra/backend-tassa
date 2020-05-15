@@ -22,6 +22,7 @@ class Beranda extends CI_Controller {
 		$this->load->model('m_footpicture');
 		$this->load->model('m_information');
 		$this->load->model('m_loginfe');
+		$this->load->model('m_address');
 	}
 
 
@@ -158,6 +159,7 @@ class Beranda extends CI_Controller {
 			$data['cart'] = $this->m_orderfe->cart($userid);
 			$data['user'] = $this->m_orderfe->user($userid);
 			$data['setting'] = $this->m_setting->get_setting();
+			$data['address'] = $this->m_address->get_addressfe($userid);
 			$this->templatehome->view('home/address', $data);
 		}
 	}
@@ -186,9 +188,148 @@ class Beranda extends CI_Controller {
 		);
 		
 		$code = $this->m_orderfe->add_orders($data);	
-		redirect('beranda/order_detail');
+		redirect('beranda/courier');
 
 	}
+
+	public function cost($city)
+	{
+		$curl = curl_init();
+
+		curl_setopt_array($curl, array(
+		CURLOPT_URL => "https://pro.rajaongkir.com/api/cost",
+		CURLOPT_RETURNTRANSFER => true,
+		CURLOPT_ENCODING => "",
+		CURLOPT_MAXREDIRS => 10,
+		CURLOPT_TIMEOUT => 30,
+		CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+		CURLOPT_CUSTOMREQUEST => "POST",
+		CURLOPT_POSTFIELDS => "origin=153&originType=city&destination=$city&destinationType=city&weight=1700&courier=jne:pos:tiki:jnt:sicepat:jet:lion",
+		CURLOPT_HTTPHEADER => array(
+			"content-type: application/x-www-form-urlencoded",
+			"key: 90927796f8d9b2b9accbf81cda0adf94"
+		),
+		));
+
+		$response = curl_exec($curl);
+		$err = curl_error($curl);
+
+		curl_close($curl);
+
+		if ($err) {
+			echo "cURL Error #:" . $err;
+		} else {
+			return json_decode($response);
+		}
+	}
+
+	public function listcourier()
+	{
+		$curl = curl_init();
+
+		curl_setopt_array($curl, array(
+		CURLOPT_URL => "https://pro.rajaongkir.com/api/province",
+		CURLOPT_RETURNTRANSFER => true,
+		CURLOPT_ENCODING => "",
+		CURLOPT_MAXREDIRS => 10,
+		CURLOPT_TIMEOUT => 30,
+		CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+		CURLOPT_CUSTOMREQUEST => "GET",
+		CURLOPT_HTTPHEADER => array(
+			"key: 90927796f8d9b2b9accbf81cda0adf94"
+		),
+		));
+
+		$response = curl_exec($curl);
+		$err = curl_error($curl);
+
+		curl_close($curl);
+
+		if ($err) {
+			echo "cURL Error #:" . $err;
+		} else {
+			return json_decode($response);
+		}
+		
+	}
+
+	public function district()
+	{
+		$curl = curl_init();
+
+		curl_setopt_array($curl, array(
+		CURLOPT_URL => "https://pro.rajaongkir.com/api/city",
+		CURLOPT_RETURNTRANSFER => true,
+		CURLOPT_ENCODING => "",
+		CURLOPT_MAXREDIRS => 10,
+		CURLOPT_TIMEOUT => 30,
+		CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+		CURLOPT_CUSTOMREQUEST => "GET",
+		CURLOPT_HTTPHEADER => array(
+			"key: 90927796f8d9b2b9accbf81cda0adf94"
+		),
+		));
+
+		$response = curl_exec($curl);
+		$err = curl_error($curl);
+
+		curl_close($curl);
+
+		if ($err) {
+			echo "cURL Error #:" . $err;
+		} else {
+			return json_decode($response);
+		}
+	}
+
+	public function courier()
+	{
+		if($this->session->userdata('user_id') == null){
+			redirect('beranda/');
+		}
+		else {
+			$userid = $this->session->userdata('user_id');
+			$query = $this->db->select_max('OrderID')->where('OrderUserID', $userid)->get('orders');
+			$row = $query->row();
+			$city = $row->OrderID;
+			$data['district'] = $this->district()->rajaongkir->results;
+			$data['count_district'] = count($this->district()->rajaongkir->results);
+			
+			$data['cart'] = $this->m_orderfe->cart($userid);
+			$data['user'] = $this->m_orderfe->user($userid);
+			$data['setting'] = $this->m_setting->get_setting();
+			$data['address'] = $this->m_address->get_addressfe($userid);
+			$data['order'] = $this->m_orderfe->get_infoorder($city);
+			if ($this->uri->segment(3) != '') {
+				$city = $this->uri->segment(3);
+				$data['cost'] = $this->cost($city)->rajaongkir->results;
+				$data['count_cost'] = count($this->cost($city)->rajaongkir->results);
+			}
+			$this->templatehome->view('home/kurir', $data);
+		}
+	}
+
+	public function insert_courier()
+    {
+		$courier	 	  = urldecode($this->uri->segment(3));
+		$service	 	  = urldecode($this->uri->segment(4));
+		$rates	 	  	  = urldecode($this->uri->segment(5));
+		$userid = $this->session->userdata('user_id');
+		$query = $this->db->select_max('OrderID')->where('OrderUserID', $userid)->get('orders');
+		$row = $query->row();
+		$orderid = $row->OrderID;
+		$data = array(
+			'OrderCourier' => $courier,
+			'OrderCourierService' => $service,
+			'OrderRates'   => $rates,
+		);
+		$id['OrderID']  = $orderid;
+		
+		$this->m_orderfe->update_orders($data,$id);	
+		redirect('beranda/order_detail/');
+
+	}
+
 
 	public function order_detail()
 	{
@@ -244,6 +385,8 @@ class Beranda extends CI_Controller {
 	}
 
 	public function trace() {
+		$waybill = "JD0070081249";
+		$courier = "jnt";
 		$curl = curl_init();
 
 		curl_setopt_array($curl, array(
@@ -254,7 +397,7 @@ class Beranda extends CI_Controller {
 		CURLOPT_TIMEOUT => 30,
 		CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
 		CURLOPT_CUSTOMREQUEST => "POST",
-		CURLOPT_POSTFIELDS => "waybill=JD0070081249&courier=jnt",
+		CURLOPT_POSTFIELDS => "waybill=$waybill&courier=$courier",
 		CURLOPT_HTTPHEADER => array(
 			"content-type: application/x-www-form-urlencoded",
 			"key: 90927796f8d9b2b9accbf81cda0adf94"
@@ -305,6 +448,56 @@ class Beranda extends CI_Controller {
 			$this->templatehome->view('home/account', $data);
 		}
 	}
+
+	public function listaddress()
+	{
+		if($this->session->userdata('user_id') == null){
+			redirect('beranda/');
+		}
+		else {
+			$data['district'] = $this->district()->rajaongkir->results;
+			$data['count_district'] = count($this->district()->rajaongkir->results);
+			$data['courier'] = $this->listcourier()->rajaongkir->results;
+			$data['count_courier'] = count($this->listcourier()->rajaongkir->results);
+			$userid = $this->session->userdata('user_id');
+			$data['address'] = $this->m_address->get_addressfe($userid);
+			$data['user'] = $this->m_orderfe->user($userid);
+			$data['setting'] = $this->m_setting->get_setting();
+			$this->templatehome->view('home/listAddress', $data);
+		}
+	}
+
+	public function insert_alamat()
+    {
+		$userid 	 = $this->session->userdata('user_id');
+		$address 	 = $this->input->post("address");
+		$district 	 = $this->input->post("district");
+		$province 	 = $this->input->post("province");
+		$zipcode 	 = $this->input->post("zipcode");
+		
+        
+		$data = array(
+			'userid' 		=> $userid,
+			'address' 		=> $address,
+			'district'		=> $district,
+			'province' 		=> $province ,
+			'zipcode' 		=> $zipcode,
+			
+		);
+
+		$this->m_address->add_address($data);
+		
+		redirect('beranda/listaddress');
+
+	}
+
+	function delete_alamat($id){
+
+		$this->db->delete('address', array('id' => $id));
+		redirect('beranda/listaddress');
+
+	}
+
 
 	public function information()
 	{

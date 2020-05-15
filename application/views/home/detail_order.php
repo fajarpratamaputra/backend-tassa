@@ -146,7 +146,7 @@
 																			</td>
 																			<td class="product-subtotal hidden-xs">
 																				<div class="quantity">
-																					<input type="number" step="1" min="0" name="qunatity" value="<?=$c->qty?>" title="Qty" class="input-text qty text" size="4"/>
+																					<h6><?=$c->qty?></h6>
 																				</div>
 																			</td>
 																		</tr>

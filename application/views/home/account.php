@@ -174,6 +174,9 @@
 																<li class="nav-item">
 																	<a class="nav-link" id="order-tab" data-toggle="tab" href="#order" role="tab" aria-controls="order" aria-selected="false">Order</a>
 																</li>
+																<li class="nav-item">
+																	<a class="nav-link" href="<?=base_url('beranda/listaddress')?>" >Alamat Pengiriman</a>
+																</li>
 															</ul>
 
 															<div class="tab-content">
@@ -258,7 +261,9 @@
 																						<?=$ord->OrderCode;?>	
 																					</td>
 																					<td class="product-subtotal hidden-xs">
-																						<?="Rp " . number_format($ord->OrderAmount,2,',','.')?>			
+																						<?php if($ord->OrderAmount != "") { ?>
+																							<?="Rp " . number_format($ord->OrderAmount,2,',','.')?>
+																						<?php } ?>	
 																					</td>
 																					<td class="product-subtotal hidden-xs">
 																						<div style="border:1px; solid #DEDEDE; box-sizing: border-box; padding:5px; background-color:#C3A771">
@@ -278,6 +283,54 @@
 																			</tbody>
 																		</table>
 																	<?php } ?>
+																</div>
+																<div class="tab-pane" id="address" role="tabpanel" aria-labelledby="address-tab">
+																	<div class="col-md-12">
+																		<form action="">
+																		<div class="col-md-6">
+																			<p class="col-md-12" style="text-align:left; font-size:10px;">Alamat</p>
+																			<p class="col-md-12" style="text-align:left">
+																				<input class="form-control" type="text" name="address">
+																			</p>
+																			<p class="col-md-12" style="text-align:left; font-size:10px;">Kecamatan</p>
+																			<p class="col-md-12" style="text-align:left">
+																				<input class="form-control" type="text" name="city">
+																			</p>
+																		</div>
+																		<div class="col-md-6">
+																			<p class="col-md-12" style="text-align:left; font-size:10px; ">Kabupaten/Kota</p>
+																			<p class="col-md-12" style="text-align:left">
+																				<input class="form-control" type="text" name="province">
+																			</p>
+																			<p class="col-md-12" style="text-align:left; font-size:10px; ">Provinsi</p>
+																			<p class="col-md-12" style="text-align:left">
+																				<input class="form-control" type="text" name="zip">
+																			</p>
+																		</div>
+																		</form>
+																	</div>
+																	<table class="table shop_table cart">
+																		<thead>
+																			<tr>
+																				<th class="product-price">No</th>
+																				<th class="product-quantity">Alamat</th>
+																				<th class="product-quantity">#</th>
+																			</tr>
+																		</thead>
+																		<tbody>
+																			<tr class="cart_item">
+																				<td class="product-price">
+																						
+																				</td>
+																				<td class="product-quantity">
+																						
+																				</td>
+																				<td class="product-subtotal hidden-xs">
+																								
+																				</td>
+																			</tr>
+																		</tbody>
+																	</table>
 																</div>
 															</div>
 

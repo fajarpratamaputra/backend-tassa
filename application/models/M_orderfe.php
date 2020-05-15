@@ -50,6 +50,12 @@ class M_Orderfe extends CI_Model {
 		return $this->db->get('orders')->row();
 	}
 
+	public function get_infoorder($id)
+	{
+		$this->db->where('OrderID', $id);
+		return $this->db->get('orders')->row();
+	}
+
 	public function update_orders($data, $id)
 	{
 		$query = $this->db->update("orders", $data, $id);

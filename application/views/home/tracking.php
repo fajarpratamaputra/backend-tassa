@@ -141,7 +141,9 @@
 																						<?=$ord->OrderCode;?>	
 																					</td>
 																					<td class="product-subtotal hidden-xs">
-																						<?="Rp " . number_format($ord->OrderAmount,2,',','.')?>			
+																						<?php if($ord->OrderAmount != "") { ?>
+																							<?="Rp " . number_format($ord->OrderAmount,2,',','.')?>
+																						<?php } ?>			
 																					</td>
 																					<td class="product-subtotal hidden-xs">
 																						<div style="border:1px; solid #DEDEDE; box-sizing: border-box; padding:5px; background-color:#C3A771">
