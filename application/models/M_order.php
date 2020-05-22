@@ -38,13 +38,11 @@ class M_Order extends CI_Model {
         endif;
 	}
 	
-    public function get_join($id)
+
+	public function get_order($id)
 	{
-		$this->db->join('users u', 'u.UserID = c.userid')
-				 ->join('products p', 'p.ProductID = c.productid')
-				 ->where('c.id_cart', $id)
-				 ->order_by('c.id_cart', 'DESC');
-		return $this->db->get('cart c')->result();
+		$this->db->where('OrderID', $id);
+		return $this->db->get('orders')->row();
 	}
 	
 	public function get_picture($productid)
@@ -105,13 +103,13 @@ class M_Order extends CI_Model {
     
     public function update($data, $id)
 	{
-		$query = $this->db->update("cart", $data, $id);
+		$query = $this->db->update("orders", $data, $id);
 
 	}
     
     public function delete($id)
 	{
-		$query = $this->db->delete("cart", $id);
+		$query = $this->db->delete("orders", $id);
 	}
 
 }

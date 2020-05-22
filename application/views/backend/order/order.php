@@ -20,6 +20,7 @@
                           <th scope="col" class="border-0">UserName</th>
                           <th scope="col" class="border-0">Order Code</th>
                           <th scope="col" class="border-0">Amount</th>
+                          <th scope="col" class="border-0">Recipr Number</th>
                           <th scope="col" class="border-0">Date</th>
                           <th scope="col" class="border-0">#</th>
                         </tr>
@@ -33,8 +34,11 @@
                           <td><?=$no++?></td>
                           <td><?=$ord->UserName?></td>
                           <td><?=$ord->OrderCode ?></td>
+                          <td><?=$ord->OrderAmount ?></td>
+                          <td><?=$ord->OrderReceipt ?></td>
                           <td><?=date('d M Y H:i:s', strtotime($ord->OrderDate))?></td>
                           <td>
+                              <a href="<?php echo base_url('order/resi/'.$ord->OrderID) ?>" class="btn btn-sm btn-outline-primary mr-1">Input Resi</a>
                               <a href="<?php echo base_url('order/edit/'.$ord->OrderID) ?>" class="btn btn-sm btn-outline-primary mr-1">Detail</a>
                               <a href="<?php echo base_url('order/delete/'.$ord->OrderID) ?>" class="btn btn-sm btn-outline-primary mr-1">Delete</a>
                           </td>

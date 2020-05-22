@@ -73,6 +73,12 @@ li.nav-item {
                 </a>
               </li>
               <li class="nav-item">
+                <a class="nav-link " href="<?=base_url("voucher/")?>">
+                  <i class="material-icons">vertical_split</i>
+                  <span>Voucher</span>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href="#">
                   <i class="material-icons">vertical_split</i>  
                   <span>Information</span>

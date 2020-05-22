@@ -106,34 +106,41 @@ class Order extends CI_Controller {
 	{
 		$id = $this->session->userdata('id');
 		$data['profile'] = $this->m_loginadmin->get_profile($id);
-		$id_product = $this->uri->segment('3');
-		$id_cart = $id = $this->uri->segment(3);;
-		$data['cart'] = $this->m_cart->edit($id_cart);
-		$data['product'] = $this->m_products->get_join();
-		$this->template_d->view('backend/cart/editCart', $data);
+		$id_order = $this->uri->segment('3');
+		$data['order'] = $this->m_order->get_order($id_order);
+		$this->template_d->view('backend/order/editOrder', $data);
 	}
 
-	public function update_cart()
+	public function resi()
+	{
+		$id = $this->session->userdata('id');
+		$data['profile'] = $this->m_loginadmin->get_profile($id);
+		$id_order = $this->uri->segment('3');
+		$data['order'] = $this->m_order->get_order($id_order);
+		$this->template_d->view('backend/order/addResi', $data);
+	}
+
+	public function update()
     {
-		$id['id_cart']= $this->input->post('id');
-		$qty 		  = $this->input->post("qty");
-		$color 	 	  = $this->input->post("color");
+		$id['OrderID'] = $this->input->post('id');
+		$resi 	= strtoupper($this->input->post("resi"));
 		
 		$data = array(
-			'qty' 	=> $qty,
-			'color' => $color
+			'OrderReceipt' 		=> $resi,
 		);
-
-		$this->m_cart->update($data,$id);	
-		redirect('cart/edit/'.$id['id_cart']);
+		$this->m_order->update($data,$id);
+		
+		redirect('order/');
 
 	}
+
+
 
 	
 	function delete($id){
 		
-		$this->db->delete('cart', array('id_cart' => $id));
-		redirect('cart/');
+		$this->db->delete('orders', array('OrderID' => $id));
+		redirect('order/');
    
    }
 
