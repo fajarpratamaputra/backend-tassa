@@ -1,6 +1,6 @@
 
 <style>
-	@media screen and (max-width: 600px) { .footer-web {display:none;} }
+	@media screen and (max-width: 600px) { .footer-web {display:none;} .img-footer {margin-left:30%;} }
 	@media screen and (min-width: 600px) { .footer-mobile {display:none;} }	
 </style>
 			<footer id="footer" class="footer" style="background-color:#222222;">
@@ -154,7 +154,7 @@
 							<div class="col-md-12 ">
 								<div class="col-md-5 col-sm-12 col-xs-12 ">
 									<div class="footer-info-logo">
-										<a href="#"><img alt="The DMCS" src="<?=base_url('assets/template/')?>images/logo_tassa.png"></a>
+										<a href="#"><img class="img-footer" alt="The DMCS" src="<?=base_url('assets/template/')?>images/logo_tassa.png"></a>
 									</div>
 								</div>
 								<div class="col-md-6 col-sm-12 col-xs-12 text-center" >

@@ -3,14 +3,28 @@
 		<div id="wrapper" class="wide-wrap">
 			
 			<div class="heading-container heading-resize heading-button">
-				<div class="heading-background heading-parallax" style="background-image: url(<?=base_url('assets/template/')?>images/slideshow/slide2.png);">
+				<div class="heading-background" style="text-align:center; background-image: url(<?=base_url('assets/template/')?>images/slideshow/green-banner.jpeg);">
 					<div class="container">
 						<div class="row">
 							<div class="col-md-12">
-								<div class="heading-wrap">
-									<div class="page-title">
-										<h1>Nunc interdum</h1>
-										<span class="subtitle">Women</span>
+								<div class="heading-wrap" style="text-align:center;">
+									<div class="page-title" >
+									<?php 
+										if($this->uri->segment(3) == 'newin') { 
+											$title = "New In";
+										}else if($this->uri->segment(3) == 'moeslimdress') { 
+											$title = "Moeslim Dress";
+										}else if($this->uri->segment(3) == 'kaftan') { 
+											$title = "Kaftan";
+										}else if($this->uri->segment(3) == 'best') { 
+											$title = "Best Seller";
+										}else if($this->uri->segment(3) == 'sale') { 
+											$title = "Sale";
+										}else {
+											$title = "All Products";
+										}
+									?>
+										<h1><?=$title?></h1>
 									</div>
 								</div>
 							</div>

@@ -15,6 +15,7 @@ class Beranda extends CI_Controller {
 		$this->load->library('templatehome');
 		$this->load->model('m_productfe');
 		$this->load->model('m_orderfe');
+		$this->load->model('m_voucherfe');
 		$this->load->model('m_setting');
 		$this->load->model('m_faq');
 		$this->load->model('m_banner');
@@ -34,6 +35,14 @@ class Beranda extends CI_Controller {
 		$data['quote'] = $this->m_quote->get_quote();
 		$data['footer'] = $this->m_footpicture->get_footer();
 		$this->templatehome->view('home/home', $data);
+	}
+
+	public function blog()
+	{
+		$data['prod'] = $this->m_productfe->get_join();
+		$data['other'] = $this->m_productfe->other_product();
+		$data['setting'] = $this->m_setting->get_setting();
+		$this->templatehome->view('home/blog', $data);
 	}
 
 	public function product()
@@ -349,8 +358,16 @@ class Beranda extends CI_Controller {
 	public function insert_detail_order()
     {
 		$id['OrderCode']  = $this->input->post("order");
-		$amount	 	  = $this->input->post("amount");
-		
+		$amount	 	  	  = $this->input->post("amount");
+		$voucher	 	  = $this->input->post("voucher"); 
+	
+		$query = $this->db->where('code_voucher', $voucher)->get('voucher');
+		if($query->num_rows() > 0 ) {
+			$row = $query->row();
+			$value = $row->value;
+			$amount	 = $amount - ($amount * ($value / 100));	
+		}
+
 		$data = array(
 			'OrderAmount' => $amount
 		);
@@ -443,6 +460,7 @@ class Beranda extends CI_Controller {
 			$userid = $this->session->userdata('user_id');
 			$data['cart'] = $this->m_orderfe->history($userid);
 			$data['order'] = $this->m_orderfe->get_order($userid);
+			$data['voucher'] = $this->m_voucherfe->get_all();
 			$data['user'] = $this->m_orderfe->user($userid);
 			$data['setting'] = $this->m_setting->get_setting();
 			$this->templatehome->view('home/account', $data);

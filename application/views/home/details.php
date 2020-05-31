@@ -131,6 +131,7 @@
 																	</div>
 																</div>
 															</div>
+															<br><br><br>
 															<div class="col-md-12" style="padding:0px; padding-top:10px;">
 																<button name="Submit" value="payment" style="background-color: #C3A771; border-color:#C3A771; color:#ffffff; font-size:12px;" class="btn btn-black-outline btn-lg" type="submit">
 																	Continue to Payment

@@ -109,22 +109,6 @@
 												<br>
 												<form action="<?=base_url('beranda/insert_address')?>" enctype="multipart/form-data" method="post">
 													<div class="col-md-12">
-														<div class="col-md-6" style="margin-bottom:10px;">
-															<div style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
-																<div class="form-group">
-																	<label for="name">Nama Penerima</label>
-																	<input type="text" id="name" name="name" required class="form-control" value="" placeholder="Username">
-																</div>
-															</div>
-														</div>
-														<div class="col-md-6" style="margin-bottom:10px;">
-															<div style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
-																<div class="form-group">
-																	<label for="phone">No. Telepon</label>
-																	<input type="text" id="phone" required value="" name="phone" class="form-control" placeholder="Password">
-																</div>
-															</div>
-														</div>
 														<div class="col-md-12" style="margin-bottom:10px;">
 															<div style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
 																<div class="form-group">
@@ -133,11 +117,14 @@
 																			Pilih Alamat Pengiriman
 																		</button>
 																		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-																		<?php
-																			foreach($address as $add){
-																		?>
-																			<a class="dropdown-item" href="<?=base_url('beranda/address/'.$add->id)?>"><?=$add->address.', '.$add->subdistrict.', '.$add->district.', '.$add->province.', '.$add->zipcode ?></a>
-																		<?php } ?>
+																			<ul>
+																				<?php
+																					foreach($address as $add){
+																				?>
+																					<li><a class="dropdown-item" href="<?=base_url('beranda/address/'.$add->id)?>"><?=$add->address.', '.$add->subdistrict.', '.$add->district.', '.$add->province.', '.$add->zipcode ?></a></li>
+																				<?php } ?>
+																			</ul>
+																			
 																		</div>
 																	</div>
 																</div>
@@ -149,6 +136,22 @@
 																}
 																
 														?>
+														<div class="col-md-6" style="margin-bottom:10px;">
+															<div style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
+																<div class="form-group">
+																	<label for="name">Nama Penerima</label>
+																	<input type="text" id="name" name="name" required class="form-control" value="<?=$user->UserFullName?>">
+																</div>
+															</div>
+														</div>
+														<div class="col-md-6" style="margin-bottom:10px;">
+															<div style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
+																<div class="form-group">
+																	<label for="phone">No. Telepon</label>
+																	<input type="text" id="phone" required value="" name="phone" class="form-control" value="<?=$user->UserPhone?>">
+																</div>
+															</div>
+														</div>
 														
 														<div class="col-md-12" style="margin-bottom:10px;">
 															<div style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">

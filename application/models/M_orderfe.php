@@ -45,9 +45,8 @@ class M_Orderfe extends CI_Model {
 
 	public function order($id)
 	{
-		$this->db->where('OrderUserID', $id)
-				 ->where('OrderCode !=', '');
-		return $this->db->get('orders')->row();
+		$query = $this->db->query('SELECT * FROM orders WHERE OrderID=(SELECT max(OrderID) FROM orders) AND OrderUserID = '.$id.' ');
+		return $query->row();
 	}
 
 	public function get_infoorder($id)

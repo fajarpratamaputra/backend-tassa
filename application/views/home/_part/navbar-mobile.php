@@ -40,13 +40,19 @@
 						<li class="menu-item-has-children">
 							<a href="<?=base_url('beranda/product/sale')?>" >Sale </a>
 						</li>
-						<li class="menu-item-has-children dropdown">
+						<li class="menu-item-has-children">
+							<a href="<?=base_url('beranda/product/all')?>" >All Products </a>
+						</li>
+						<li class="menu-item-has-children">
+							<a href="<?=base_url('beranda/blog')?>" >Blog </a>
+						</li>
+						<!-- <li class="menu-item-has-children dropdown">
 							<a href="<?=base_url('beranda/product/sale')?>" class="dropdown-hover">All Product <span class="caret"></span></a>
 							<ul class="dropdown-menu">
 								<li><a href="<?=base_url('beranda/product/moeslimdress')?>">Moeslim Dress</a></li>
 								<li><a href="<?=base_url('beranda/product/moeslimdress')?>">Kaftan</a></li>
 							</ul>
-						</li>
+						</li> -->
 						
 					</ul>
 				</nav>

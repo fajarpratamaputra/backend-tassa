@@ -175,6 +175,9 @@
 																	<a class="nav-link" id="order-tab" data-toggle="tab" href="#order" role="tab" aria-controls="order" aria-selected="false">Order</a>
 																</li>
 																<li class="nav-item">
+																	<a class="nav-link" id="voucher-tab" data-toggle="tab" href="#voucher" role="tab" aria-controls="voucher" aria-selected="false">Voucher</a>
+																</li>
+																<li class="nav-item">
 																	<a class="nav-link" href="<?=base_url('beranda/listaddress')?>" >Alamat Pengiriman</a>
 																</li>
 															</ul>
@@ -231,17 +234,7 @@
 																	<?php } ?>
 																</div>
 																<div class="tab-pane" id="order" role="tabpanel" aria-labelledby="order-tab">
-																	<?php
-																		$no = 1;
-																		foreach($order as $ord){
-																			$code = $ord->OrderCode;
-																			$payment = $this->veritrans->status($code);
-																			if(!in_array($payment->status_code, array(200, 201, 202, 407))) {
-																				$status = 'Belum Transfer';
-																			}else{
-																				$status = $payment->transaction_status;;
-																			}
-																	?>
+																	
 																		<table class="table shop_table cart">
 																			<thead>
 																				<tr>
@@ -253,6 +246,17 @@
 																				</tr>
 																			</thead>
 																			<tbody>
+																			<?php
+																				$no = 1;
+																				foreach($order as $ord){
+																					$code = $ord->OrderCode;
+																					$payment = $this->veritrans->status($code);
+																					if(!in_array($payment->status_code, array(200, 201, 202, 407))) {
+																						$status = 'Belum Transfer';
+																					}else{
+																						$status = $payment->transaction_status;;
+																					}
+																			?>
 																				<tr class="cart_item">
 																					<td class="product-price">
 																						<?=$no++;?>	
@@ -280,9 +284,44 @@
 																						</div>		
 																					</td>
 																				</tr>
+																			<?php } ?>
 																			</tbody>
 																		</table>
-																	<?php } ?>
+																	
+																</div>
+																<div class="tab-pane" id="voucher" role="tabpanel" aria-labelledby="voucher-tab">
+																	<table class="table shop_table cart">
+																			<thead>
+																				<tr>
+																					<th class="product-price">No</th>
+																					<th class="product-quantity">Kode Voucher</th>
+																					<th class="product-quantity">Potongan(%)</th>
+																					
+																				</tr>
+																			</thead>
+																			<tbody>
+																			<?php
+																				$no = 1;
+																				foreach($voucher as $vou){
+																					
+																			?>
+																		
+																				<tr class="cart_item">
+																					<td class="product-price">
+																						<?=$no++;?>	
+																					</td>
+																					<td class="product-quantity">
+																						<?=$vou->code_voucher;?>	
+																					</td>
+																					<td class="product-subtotal hidden-xs">
+																						<?=$vou->value ?>	
+																					</td>
+																					
+																				</tr>
+																			<?php } ?>
+																			</tbody>
+																		</table>
+																	
 																</div>
 																<div class="tab-pane" id="address" role="tabpanel" aria-labelledby="address-tab">
 																	<div class="col-md-12">

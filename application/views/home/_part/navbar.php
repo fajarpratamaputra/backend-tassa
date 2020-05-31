@@ -30,45 +30,68 @@
 									</a>
 									<li class="menu-item-has-children">
 										<a href="<?=base_url('beranda/product/newin')?>" style="
-												padding-left: 2px;
-												padding-right: 2px;
+												padding-left: 1px;
+												padding-right: 1px;
+												font-size:13px;
 											">
 											<span class="underline">NEW IN</span> <span class="caret"></span>
 										</a>
                                     </li>
                                     <li class="menu-item-has-children">
 										<a href="<?=base_url('beranda/product/moeslimdress')?>" style="
-												padding-left: 2px;
-												padding-right: 2px;
+												padding-left: 1px;
+												padding-right: 1px;
+												font-size:13px;
 											">
 											<span class="underline">MOESLIM DRESS</span> <span class="caret"></span>
 										</a>
                                     </li>
                                     <li class="menu-item-has-children">
 										<a href="<?=base_url('beranda/product/kaftan')?>" style="
-												padding-left: 2px;
-												padding-right: 2px;
+												padding-left: 1px;
+												padding-right: 1px;
+												font-size:13px;
 											">
 											<span class="underline">KAFTAN</span> <span class="caret"></span>
 										</a>
                                     </li>
                                     <li class="menu-item-has-children">
 										<a href="<?=base_url('beranda/product/best')?>" style="
-												padding-left: 2px;
-												padding-right: 2px;
+												padding-left: 1px;
+												padding-right: 1px;
+												font-size:13px;
 											">
 											<span class="underline">BEST SELLER</span> <span class="caret"></span>
 										</a>
                                     </li>
                                     <li class="menu-item-has-children">
 										<a href="<?=base_url('beranda/product/sale')?>" style="
-												padding-left: 2px;
-												padding-right: 2px;
+												padding-left: 1px;
+												padding-right: 1px;
+												font-size:13px;
 											">
 											<span class="underline">SALE</span> <span class="caret"></span>
 										</a>
 									</li>
-									<li class="menu-item-has-children dropdown">
+									<li class="menu-item-has-children">
+										<a href="<?=base_url('beranda/product/all')?>" style="
+												padding-left: 1px;
+												padding-right: 1px;
+												font-size:13px;
+											">
+											<span class="underline">ALL PRODUCTS</span> <span class="caret"></span>
+										</a>
+									</li>
+									<li class="menu-item-has-children">
+										<a href="<?=base_url('beranda/blog')?>" style="
+												padding-left: 1px;
+												padding-right: 1px;
+												font-size:13px;
+											">
+											<span class="underline">BLOG</span> <span class="caret"></span>
+										</a>
+									</li>
+									<!-- <li class="menu-item-has-children dropdown">
 										<a href="#" style="
 												padding-left: 2px;
 												padding-right: 2px;
@@ -79,9 +102,9 @@
 											<li><a href="<?=base_url('beranda/product/kaftan')?>">MOESLIM DRESS</a></li>
 											<li><a href="<?=base_url('beranda/product/kaftan')?>">KAFTAN</a></li>
 										</ul>
-									</li>
+									</li> -->
 									<li class="menu-item-has-children" style="
-												padding-left: 20px;
+												padding-left: 10px;
 												
 											">
 										<a class="navbar-search-button" href="#" >
@@ -105,7 +128,7 @@
 												
 										?>
 										<a class="minicart-link" href="<?=base_url($link)?>" style="
-												padding-left: 5px;
+												padding-left: 3px;
 												padding-right: 0px;">
 											<span class="minicart-icon">
 												<i class="minicart-icon-svg elegant_icon_bag"></i> <span><?=$num?></span>

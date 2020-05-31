@@ -175,7 +175,7 @@
 																	<div class="col-md-12">
 																		<p class="col-md-6" style="text-align:left">Kode Voucher</p>
 																		<div class="col-md-6">
-																			<input class="col-md-12" type="text" id="voucher" name="log" class="form-control" value="">
+																			<input class="col-md-12" type="text" id="voucher" name="voucher" class="form-control" value="">
 																			<h6 style="font-size: 10px; font-weight: normal;">Masukkan kode voucher untuk dapatkan diskon*</h6>
 																		</div>
 																	</div>
