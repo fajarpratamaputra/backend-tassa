@@ -159,11 +159,31 @@
 																	</p>
 																	<p class="col-md-12" style="text-align:left; font-size:10px;">Kabupaten/Kota</p>
 																	<p class="col-md-12" style="text-align:left">
-																		<input class="form-control" type="text" name="city" value="<?=$user->UserCity?>">
+																		<input class="form-control" list="district" name="city" value="<?=$user->UserCity?>" required>
+																		<datalist id="district">
+																			<?php
+																				$no = 1;
+																				$count = $count_district - 1;
+																				for ($i = $count; $i >= 0; $i--){
+																					
+																			?>
+																				<option value="<?=$district[$i]->city_name?>"></option>
+																			<?php } ?>
+																		</datalist>
 																	</p>
 																	<p class="col-md-12" style="text-align:left; font-size:10px; ">Provinsi</p>
 																	<p class="col-md-12" style="text-align:left">
-																		<input class="form-control" type="text" name="province" value="<?=$user->UserProvince?>">
+																		<input class="form-control" list="courier" name="province" value="<?=$user->UserProvince?>" required>
+																		<datalist id="courier">
+																			<?php
+																				$no = 1;
+																				$count = $count_courier - 1;
+																				for ($i = $count; $i >= 0; $i--){
+																					
+																			?>
+																				<option value="<?=$courier[$i]->province?>"></option>
+																			<?php } ?>
+																		</datalist>
 																	</p>
 																	<p class="col-md-12" style="text-align:left; font-size:10px; ">Kode Pos</p>
 																	<p class="col-md-12" style="text-align:left">

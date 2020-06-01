@@ -457,6 +457,10 @@ class Beranda extends CI_Controller {
 			redirect('beranda/');
 		}
 		else {
+			$data['district'] = $this->district()->rajaongkir->results;
+			$data['count_district'] = count($this->district()->rajaongkir->results);
+			$data['courier'] = $this->listcourier()->rajaongkir->results;
+			$data['count_courier'] = count($this->listcourier()->rajaongkir->results);
 			$userid = $this->session->userdata('user_id');
 			$data['cart'] = $this->m_orderfe->history($userid);
 			$data['order'] = $this->m_orderfe->get_order($userid);
