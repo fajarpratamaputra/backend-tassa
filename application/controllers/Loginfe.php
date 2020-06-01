@@ -30,14 +30,32 @@ class Loginfe extends CI_Controller {
 		);
 
 		$this->m_loginfe->add_user($data);
-		
-		redirect('beranda/');
+		$where = array(
+			'username' => $username
+			);
+		$cek = $this->m_loginfe->cek_login($where)->row();
+		if (!empty($cek) && password_verify($password, $cek->UserPassword)) {
+			// if this username exists, and the input password is verified using password_verify
+			$data_session = array(
+				'name' => $username,
+				'status' => "login",
+				'user_id' => $cek->UserID
+				);
+
+			$this->session->set_userdata($data_session);
+
+			redirect(base_url("beranda/"));
+		} else {
+			echo "Username dan password salah !";
+			redirect(base_url('beranda/'));
+		}
 
 	}
 
 	public function update_user()
     {
 		$id['UserID']= $this->session->userdata('user_id');
+		$full 		 = $this->input->post("full");
 		$email 		 = $this->input->post("email");
 		$phone 		 = $this->input->post("phone");
 		$address	 = $this->input->post("address");
@@ -73,7 +91,8 @@ class Loginfe extends CI_Controller {
 					'UserAddress'		=> $address,
 					'UserCity' 			=> $city,
 					'UserProvince'      => $province,
-					'UserZip'      		=> $zip
+					'UserZip'      		=> $zip,
+					'UserFullName'      => $full
 				);
 
                 $this->m_loginfe->update_user($data,$id);
@@ -85,13 +104,14 @@ class Loginfe extends CI_Controller {
 					'UserAddress'		=> $address,
 					'UserCity' 			=> $city,
 					'UserProvince'      => $province,
-					'UserZip'      		=> $zip
+					'UserZip'      		=> $zip,
+					'UserFullName'      => $full
 				);
 
 				$this->m_loginfe->update_user($data,$id);
 		}
 		
-		redirect('beranda/privasi/');
+		redirect('beranda/account/');
 
 	}
 

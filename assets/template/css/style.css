@@ -4046,7 +4046,7 @@ input[type="button"].btn-block {
   }
   .header-type-default .navbar-header {
     padding: 0 15px;
-    margin: 0 -15px;
+    
   }
 }
 .offcanvas-overlay {

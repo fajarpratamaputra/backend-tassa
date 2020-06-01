@@ -113,7 +113,15 @@
 															<div class="col-md-12" style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
 																<div class="col-md-12">
 																	<div class="col-md-5">
-																		<img src="<?=base_url('assets/backend/users/'.$user->UserPhoto)?>" alt="UserPhoto" style="width:100px; height:100px; border-radius:100%;">
+																		<?php 
+																			if($user->UserPhoto != "") {
+																				$photo = $user->UserPhoto;
+																			}else {
+																				$photo = "user.png";
+																			}
+																		
+																		?>
+																		<img src="<?=base_url('assets/backend/users/'.$photo)?>" alt="UserPhoto" style="width:100px; height:100px; border-radius:100%;">
 																	</div>
 																	<div class="col-md-6" style="">
 																		<p style="text-align:left; padding-top:20px;"><?=$user->UserName?></p>
@@ -126,6 +134,10 @@
 																</div>
 																<div class="col-md-12">
 																<hr>
+																	<p class="col-md-12" style="text-align:left; font-size:10px;">Nama Lengkap</p>
+																	<p class="col-md-12" style="text-align:left">
+																		<input class="form-control" type="text" name="full" value="<?=$user->UserFullName?>">
+																	</p>
 																	<p class="col-md-12" style="text-align:left; font-size:10px;">Alamat Email</p>
 																	<p class="col-md-12" style="text-align:left">
 																		<input class="form-control" type="text" name="email" value="<?=$user->UserEmail?>">
@@ -159,7 +171,7 @@
 																	</p>
 																</div>
 															</div>
-															<button style="margin-top:10px; background-color: #C3A771; width:100%; border-color:#C3A771; color:#ffffff; font-size:12px;" onclick="window.location.href = '#';" class="btn btn-black-outline btn-lg btn-align-center" type="submit">
+															<button style="margin-top:10px; background-color: #C3A771; width:100%; border-color:#C3A771; color:#ffffff; font-size:12px;"  class="btn btn-black-outline btn-lg btn-align-center" type="submit">
 																		Update Profile
 																	</button>
 														</div>
@@ -175,10 +187,7 @@
 																	<a class="nav-link" id="order-tab" data-toggle="tab" href="#order" role="tab" aria-controls="order" aria-selected="false">Order</a>
 																</li>
 																<li class="nav-item">
-																	<a class="nav-link" id="voucher-tab" data-toggle="tab" href="#voucher" role="tab" aria-controls="voucher" aria-selected="false">Voucher</a>
-																</li>
-																<li class="nav-item">
-																	<a class="nav-link" href="<?=base_url('beranda/listaddress')?>" >Alamat Pengiriman</a>
+																	<a class="nav-link" href="<?=base_url('beranda/listaddress')?>" >Daftar Alamat</a>
 																</li>
 															</ul>
 
@@ -283,40 +292,6 @@
 																							</a>
 																						</div>		
 																					</td>
-																				</tr>
-																			<?php } ?>
-																			</tbody>
-																		</table>
-																	
-																</div>
-																<div class="tab-pane" id="voucher" role="tabpanel" aria-labelledby="voucher-tab">
-																	<table class="table shop_table cart">
-																			<thead>
-																				<tr>
-																					<th class="product-price">No</th>
-																					<th class="product-quantity">Kode Voucher</th>
-																					<th class="product-quantity">Potongan(%)</th>
-																					
-																				</tr>
-																			</thead>
-																			<tbody>
-																			<?php
-																				$no = 1;
-																				foreach($voucher as $vou){
-																					
-																			?>
-																		
-																				<tr class="cart_item">
-																					<td class="product-price">
-																						<?=$no++;?>	
-																					</td>
-																					<td class="product-quantity">
-																						<?=$vou->code_voucher;?>	
-																					</td>
-																					<td class="product-subtotal hidden-xs">
-																						<?=$vou->value ?>	
-																					</td>
-																					
 																				</tr>
 																			<?php } ?>
 																			</tbody>

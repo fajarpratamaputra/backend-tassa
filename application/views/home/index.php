@@ -22,10 +22,8 @@
 		<div id="wrapper" class="wide-wrap">
 			<div class="offcanvas-overlay"></div>
 
-            <?php $this->load->view('home/_part/header') ?>
-
-			<?=$content?>
-
+			<?php $this->load->view('home/_part/header') ?>
+				<?=$content?>
 			<?php $this->load->view('home/_part/footer') ?>
 		</div>
 		

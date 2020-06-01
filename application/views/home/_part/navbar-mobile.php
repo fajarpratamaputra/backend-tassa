@@ -23,7 +23,7 @@
 				<nav class="offcanvas-navbar">
 					<ul class="offcanvas-nav">
 						<li class="menu-item-has-children">
-							<a href="./">Home</a>
+							<a href="<?=base_url('beranda/product/all')?>" >All Products </a>
 						</li>
 						<li class="menu-item-has-children">
 							<a href="<?=base_url('beranda/product/newin')?>" >New In </a>
@@ -39,12 +39,6 @@
 						</li>
 						<li class="menu-item-has-children">
 							<a href="<?=base_url('beranda/product/sale')?>" >Sale </a>
-						</li>
-						<li class="menu-item-has-children">
-							<a href="<?=base_url('beranda/product/all')?>" >All Products </a>
-						</li>
-						<li class="menu-item-has-children">
-							<a href="<?=base_url('beranda/blog')?>" >Blog </a>
 						</li>
 						<!-- <li class="menu-item-has-children dropdown">
 							<a href="<?=base_url('beranda/product/sale')?>" class="dropdown-hover">All Product <span class="caret"></span></a>

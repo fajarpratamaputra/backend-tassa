@@ -123,6 +123,7 @@
 																				?>
 																					<li><a class="dropdown-item" href="<?=base_url('beranda/address/'.$add->id)?>"><?=$add->address.', '.$add->subdistrict.', '.$add->district.', '.$add->province.', '.$add->zipcode ?></a></li>
 																				<?php } ?>
+																				<li><a class="dropdown-item" href="<?=base_url('beranda/listaddress/')?>">Tambah Alamat</a></li>
 																			</ul>
 																			
 																		</div>
@@ -148,7 +149,7 @@
 															<div style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
 																<div class="form-group">
 																	<label for="phone">No. Telepon</label>
-																	<input type="text" id="phone" required value="" name="phone" class="form-control" value="<?=$user->UserPhone?>">
+																	<input type="text" id="phone" required name="phone" class="form-control" value="<?=$user->UserPhone?>">
 																</div>
 															</div>
 														</div>
