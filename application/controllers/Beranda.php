@@ -37,7 +37,7 @@ class Beranda extends CI_Controller {
 		$this->templatehome->view('home/home', $data);
 	}
 
-	public function blog()
+	public function articel()
 	{
 		$data['prod'] = $this->m_productfe->get_join();
 		$data['other'] = $this->m_productfe->other_product();

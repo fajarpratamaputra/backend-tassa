@@ -4,7 +4,7 @@
             <div class="page-header row no-gutters py-4 mb-3 border-bottom">
               <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
                 <span class="text-uppercase page-subtitle">Add</span>
-                <h3 class="page-title">Product</h3>
+                <h3 class="page-title">FAQ</h3>
               </div>
             </div>
             <!-- End Page Header -->

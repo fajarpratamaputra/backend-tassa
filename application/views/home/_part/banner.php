@@ -1,4 +1,4 @@
-<div class="row wpb_row row-fluid banner">
+<div class="row wpb_row row-fluid banner" style="z-index : 1">
 	<div class="wpb_column column_container col-sm-12">
 		<div class="wpb_wrapper">
 			<div id="banner-slider" data-autorun="yes" data-duration="6000" class="carousel slide fade dhslider dhslider-custom " data-height="650">

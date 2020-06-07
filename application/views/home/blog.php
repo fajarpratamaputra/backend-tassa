@@ -21,7 +21,7 @@
 			<div class="content-container">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-9 main-wrap">
+						<div class="col-md-12 main-wrap">
 							<div class="main-content">
 								<div class="row">
 									<div class="col-sm-12">
@@ -31,7 +31,7 @@
 													<div class="hentry-wrap">
 														<div class="entry-featured">
 															<a href="#">
-																<img width="700" height="350" src="<?=base_url('assets/template/')?>images/blog/blog-1.jpg" alt="blog-1"/>
+																<img width="500px" height="250px" src="<?=base_url('assets/template/')?>images/blog/blog-1.jpg" alt="blog-1"/>
 															</a>
 														</div>
 														<div class="entry-info">
@@ -155,7 +155,7 @@
 													</div>
 												</article>
 											</div>
-											<div class="paginate">
+											<!-- <div class="paginate">
 												<div class="paginate_links">
 													<span class="page-numbers current">1</span>
 													<a class="page-numbers" href="#">2</a>
@@ -165,76 +165,13 @@
 														<i class="fa fa-angle-right"></i>
 													</a>
 												</div>
-											</div>
+											</div> -->
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="col-md-3 sidebar-wrap">
-							<div class="main-sidebar">
-								<div class="widget widget_search">
-									<h4 class="widget-title"><span>Search</span></h4>
-									<form>
-										<label for="s" class="sr-only">Search</label>
-										<input type="search" id="s" name="s" class="form-control" value="" placeholder="Search something&hellip;"/>
-										<input type="submit" id="searchsubmit" class="hidden" name="submit" value="Search"/>
-									</form>
-								</div>
-								<div class="widget social-widget">
-									<h4 class="widget-title"><span>Connect</span></h4>
-									<div class="social-widget-wrap social-widget-square">
-										<a href="#" title="Facebook" target="_blank">
-											<i class="fa fa-facebook facebook-bg"></i>
-										</a>
-										<a href="#" title="Twitter" target="_blank">
-											<i class="fa fa-twitter twitter-bg"></i>
-										</a>
-										<a href="#" title="Google+" target="_blank">
-											<i class="fa fa-google-plus google-plus-bg"></i>
-										</a>
-										<a href="#" title="Pinterest" target="_blank">
-											<i class="fa fa-pinterest pinterest-bg"></i>
-										</a>
-									</div>
-								</div>
-								<div class="widget widget-post-thumbnail">
-									<h4 class="widget-title"><span>News</span></h4>
-									<ul class="posts-thumbnail-list">
-										<li>
-											<div class="posts-thumbnail-image">
-												<a href="#">
-													<img width="600" height="450" src="<?=base_url('assets/template/')?>images/blog/blog-2.jpg" alt="blog-2"/>
-												</a>
-											</div>
-											<div class="posts-thumbnail-content">
-												<h4><a href="#">The fashionable Instagram</a></h4>
-											</div>
-										</li>
-										<li>
-											<div class="posts-thumbnail-image">
-												<a href="#">
-													<img width="600" height="450" src="<?=base_url('assets/template/')?>images/blog/blog-5.jpg" alt="blog-5"/>
-												</a>
-											</div>
-											<div class="posts-thumbnail-content">
-												<h4><a href="#">The Fashion</a></h4>
-											</div>
-										</li>
-										<li>
-											<div class="posts-thumbnail-image">
-												<a href="#">
-													<img width="600" height="450" src="<?=base_url('assets/template/')?>images/blog/blog-3.jpg" alt="blog-3"/>
-												</a>
-											</div>
-											<div class="posts-thumbnail-content">
-												<h4><a href="#">Suspendisse potenti</a></h4>
-											</div>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
+						
 					</div>
 				</div>
 			</div>

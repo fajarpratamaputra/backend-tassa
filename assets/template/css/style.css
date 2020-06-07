@@ -2856,6 +2856,9 @@ input[type="button"].btn-block {
   border-bottom: 0px solid transparent;
   position: relative;
 }
+
+.color { background: rgba(0, 0, 0, 0.5); }
+.color-back { background:#fff; }
 @media (min-width: 900px) {
   .navbar-header {
     float: left;
@@ -3135,15 +3138,15 @@ input[type="button"].btn-block {
     top: 99px;
   }
 }
-.navbar-default {
+/* .navbar-default {
   background-color: #ffffff;
   border-color: #1e1e1e;
-}
-@media (min-width: 900px) {
+} */
+/* @media (min-width: 900px) {
   .header-type-default .navbar-default {
     background: #ffffff;
   }
-}
+} */
 @media (min-width: 900px) {
   .header-type-default .navbar-fixed-top.navbar-default {
     height: 60px;
@@ -3638,12 +3641,13 @@ input[type="button"].btn-block {
   position: relative;
 }
 .navbar-fixed-top {
-  background: #ffffff;
+  background: #222222;
   height: 60px;
+  color:#fff;
 }
 .navbar-fixed-top .navbar-nav.primary-nav > li > a {
   line-height: 60px;
-  color: #1e1e1e !important;
+  color: #fff !important;
 }
 .navbar-fixed-top .navbar-nav.primary-nav > li > a .underline::after {
   background: #1e1e1e;
@@ -6190,9 +6194,14 @@ a[data-toggle="tooltip"]:hover {
 .header-type-classic,
 .header-navbar-default {
   position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.9),rgba(0, 0, 0, 0.0));
+}
+.header-navbar-default:hover {
+  background: rgba(0, 0, 0, 0.9);
 }
 .header-container.header-navbar-fixed {
   padding: 0 0 60px 0;
+  background: rgba(255, 255, 255, 0.0);
 }
 .header-search-overlay {
   left: 0;
@@ -6200,7 +6209,7 @@ a[data-toggle="tooltip"]:hover {
   top: 0;
   bottom: 0;
   right: 0;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.0);
   z-index: 99999;
 }
 .header-search-overlay > div {
@@ -6379,7 +6388,7 @@ a[data-toggle="tooltip"]:hover {
   .header-transparent .navbar-default:not(.navbar-fixed-top) .navbar-nav > .open > a > .underline:after,
   .header-transparent .navbar-default:not(.navbar-fixed-top) .navbar-nav > .active > a > .underline:after,
   .header-transparent .navbar-default:not(.navbar-fixed-top) .navbar-nav > li > a > .underline:after {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   .header-transparent .navbar-default:not(.navbar-fixed-top) .navbar-nav > .open > a.minicart-link:before,
   .header-transparent .navbar-default:not(.navbar-fixed-top) .navbar-nav > .active > a.minicart-link:before,
@@ -6387,7 +6396,7 @@ a[data-toggle="tooltip"]:hover {
   .header-transparent .navbar-default:not(.navbar-fixed-top) .navbar-nav > .open > a.navbar-search-button:before,
   .header-transparent .navbar-default:not(.navbar-fixed-top) .navbar-nav > .active > a.navbar-search-button:before,
   .header-transparent .navbar-default:not(.navbar-fixed-top) .navbar-nav > li > a.navbar-search-button:before {
-    background: #fff;
+    background: #ffffff;
   }
   .header-transparent .navbar-default:not(.navbar-fixed-top).navbar-fixed-top {
     background: #ffffff;

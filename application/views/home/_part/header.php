@@ -1,4 +1,7 @@
-<header class="header-container header-type-default header-default-center header-navbar-default header-scroll-resize">
+<style>
+	
+</style>
+<header class="header-container header-type-default header-default-center header-navbar-default header-scroll-resize" style=" width:100%; position: fixed; z-index : 2">
 	<div class="topbar">
 		<div class="container topbar-wap">
 			<div class="row">
@@ -20,15 +23,15 @@
 						<div class="navbar-minicart navbar-minicart-topbar">
 							<div class="navbar-minicart">
 								<a class="minicart-link" href="<?=base_url($link)?>">
-									<span class="minicart-icon">
+									<span class="minicart-icon" style="color:#ffffff;">
 										<i class="minicart-icon-svg elegant_icon_bag"></i> <span><?=$num?></span>
 									</span>
 								</a>
 							</div>
 						</div>
-						<div class="navbar-search" style="padding: 0 20px;">
+						<div class="navbar-search" style=" padding: 0 20px;">
 							<a class="navbar-search-button" href="#">
-								<i class="fa fa-search"></i>
+								<i class="fa fa-search" style="color:#ffffff;"></i>
 							</a>
 							<div class="search-form-wrap show-popup hide"></div>
 						</div>
@@ -47,7 +50,7 @@
 							<div class="user-login">
 								<ul class="nav top-nav">
 									<li class="menu-item">
-										<a data-rel="loginModal" href="#"><i class="fa fa-user"></i> Login</a>
+										<a data-rel="loginModal" style="color:#ffffff;" href="#"><i class="fa fa-user" style="color:#ffffff;"></i> Login</a>
 									</li>
 								</ul>
 							</div>
@@ -55,14 +58,14 @@
 							<div class="user-login">
 								<ul class="nav top-nav">
 									<li class="menu-item">
-										<a href="<?=base_url('loginfe/logout')?>"><i class="fa fa-sign-out"></i> Logout</a>
+										<a href="<?=base_url('loginfe/logout')?>" style="color:#ffffff;"><i class="fa fa-sign-out" style="color:#ffffff;"></i> Logout</a>
 									</li>
 								</ul>
 							</div>
 							<div class="user-login">
 								<ul class="nav top-nav">
 									<li class="menu-item">
-										<a href="<?=base_url('beranda/account')?>"><i class="fa fa-user"></i> Account</a>
+										<a href="<?=base_url('beranda/account')?>" style="color:#ffffff;"><i class="fa fa-user" style="color:#ffffff;"></i> Account</a>
 									</li>
 								</ul>
 							</div>
@@ -74,4 +77,5 @@
 		</div>
 	</div>
 <?php $this->load->view('home/_part/navbar') ?>
+
 </header>

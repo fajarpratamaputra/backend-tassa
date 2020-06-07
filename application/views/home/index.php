@@ -17,17 +17,19 @@
 	</script>
 	<!--End of Tawk.to Script-->
 	<body>
+	
 		<?php $this->load->view('home/_part/navbar-mobile.php') ?>
-
+		<?php $this->load->view('home/_part/header') ?>
 		<div id="wrapper" class="wide-wrap">
+			
 			<div class="offcanvas-overlay"></div>
 
-			<?php $this->load->view('home/_part/header') ?>
 				<?=$content?>
 			<?php $this->load->view('home/_part/footer') ?>
 		</div>
 		
         <? $this->load->view('home/_part/modal.php') ?>
 		<? $this->load->view('home/_part/js.php') ?>
+		
 </body>
 </html>

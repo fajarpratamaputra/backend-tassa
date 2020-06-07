@@ -85,6 +85,7 @@ li.nav-item {
                 
                 </a>
                 <ul class="isi-dropdown">
+                  <li><a class="nav-link" href="<?=base_url("information/article/")?>">Article</a></li>
                   <li><a class="nav-link" href="<?=base_url("setting/")?>">Web Setting</a></li>
                   <li><a class="nav-link" href="<?=base_url("faq/")?>">FAQ</a></li>
                   <li><a class="nav-link" href="<?=base_url("information/about")?>">About Us</a></li>
