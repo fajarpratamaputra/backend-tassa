@@ -8,7 +8,7 @@
 							
 								<?php $this->load->view('home/_part/banner') ?>
 
-								<div class="row home-default-about">
+								<div class="row home-default-about" style="background-color:#C3A771">
 									<div class="col-sm-12">
 									<div class="container">
 											<div class="row offers">
@@ -198,7 +198,7 @@
 									</div>
 								</div>
 
-								<div class="row home-default-about" style="background:#ffffff;">
+								<div class="row home-default-about" style="background:#C3A771;">
 									<div class="col-sm-12">
 									<div class="container">
 											<div class="row offers">

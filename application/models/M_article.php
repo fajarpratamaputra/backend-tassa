@@ -15,9 +15,8 @@ class M_Article extends CI_Model {
 
 	public function data($number,$offset)
 	{
-		$this->db->join('productcategories','productcategories.CategoryID = products.ProductCategoryID')
-				->order_by('products.ProductID','DESC');
-		return $this->db->get('products',$number,$offset)->result();
+		$this->db->order_by('id','DESC');
+		return $this->db->get('article',$number,$offset)->result();
 	}
 
 	public function get()
@@ -27,9 +26,8 @@ class M_Article extends CI_Model {
 
 	public function jumlah_data()
 	{
-		$this->db->join('productcategories','productcategories.CategoryID = products.ProductCategoryID')
-				->order_by('products.ProductID','DESC');
-		return $this->db->get('products')->num_rows();
+		$this->db->order_by('id','DESC');
+		return $this->db->get('article')->num_rows();
 	}
  
 	// function jumlah_data1(){

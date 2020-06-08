@@ -22,6 +22,7 @@ class Beranda extends CI_Controller {
 		$this->load->model('m_quote');
 		$this->load->model('m_footpicture');
 		$this->load->model('m_information');
+		$this->load->model('m_article');
 		$this->load->model('m_loginfe');
 		$this->load->model('m_address');
 	}
@@ -37,12 +38,29 @@ class Beranda extends CI_Controller {
 		$this->templatehome->view('home/home', $data);
 	}
 
-	public function articel()
+	public function article()
 	{
 		$data['prod'] = $this->m_productfe->get_join();
 		$data['other'] = $this->m_productfe->other_product();
 		$data['setting'] = $this->m_setting->get_setting();
-		$this->templatehome->view('home/blog', $data);
+		$jumlah_data = $this->m_article->jumlah_data();
+		$this->load->library('pagination');
+		$config['base_url'] = base_url().'index.php/beranda/article/';
+		$config['total_rows'] = $jumlah_data;
+		$config['per_page'] = 1;
+		$from = $this->uri->segment(3);
+		$this->pagination->initialize($config);		
+		$data['article'] = $this->m_article->data($config['per_page'],$from);
+		$this->templatehome->view('home/article', $data);
+	}
+
+	public function detail()
+	{
+		$data['prod'] = $this->m_productfe->get_join();
+		$data['other'] = $this->m_productfe->other_product();
+		$data['setting'] = $this->m_setting->get_setting();
+		$data['article'] = $this->m_article->get();
+		$this->templatehome->view('home/article-detail', $data);
 	}
 
 	public function product()
