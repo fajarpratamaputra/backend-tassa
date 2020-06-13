@@ -6,7 +6,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12 main-wrap">
-							<div class="main-content">
+							<div class="main-content"  style="margin-top:100px;">
 								<div class="row">
 									<div class="col-sm-12">
 										<div class="posts" data-paginate="page_num" data-layout="default">

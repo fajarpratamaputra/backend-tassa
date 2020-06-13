@@ -47,7 +47,7 @@ class Beranda extends CI_Controller {
 		$this->load->library('pagination');
 		$config['base_url'] = base_url().'index.php/beranda/article/';
 		$config['total_rows'] = $jumlah_data;
-		$config['per_page'] = 1;
+		$config['per_page'] = 10;
 		$from = $this->uri->segment(3);
 		$this->pagination->initialize($config);		
 		$data['article'] = $this->m_article->data($config['per_page'],$from);

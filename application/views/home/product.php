@@ -2,38 +2,8 @@
 		
 		<div id="wrapper" class="wide-wrap">
 			
-			<div class="heading-container heading-resize heading-button">
-				<div class="heading-background" style="text-align:center; background-image: url(<?=base_url('assets/template/')?>images/slideshow/green-banner.jpeg);">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-12">
-								<div class="heading-wrap" style="text-align:center;">
-									<div class="page-title" >
-									<?php 
-										if($this->uri->segment(3) == 'newin') { 
-											$title = "New In";
-										}else if($this->uri->segment(3) == 'moeslimdress') { 
-											$title = "Moeslim Dress";
-										}else if($this->uri->segment(3) == 'kaftan') { 
-											$title = "Kaftan";
-										}else if($this->uri->segment(3) == 'best') { 
-											$title = "Best Seller";
-										}else if($this->uri->segment(3) == 'sale') { 
-											$title = "Sale";
-										}else {
-											$title = "All Products";
-										}
-									?>
-										<h1><?=$title?></h1>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
 			<div class="shop-toolbar">
-				<div class="container">
+				<div class="container" style="margin-top:120px;">
 					<div class="row">
 						<div class="col-md-3 main-wrap pull-left">
 							<div class="view-mode" style="padding-top:10px">
@@ -96,7 +66,7 @@
                                                             </div>
                                                         </div>
 													</div>
-													<figcaption>
+													<figcaption style="z-index : 1">
 														<div class="shop-loop-product-info">
 															<div class="info-title">
 																<h3 class="product_title"><a href="<?=base_url('beranda/details/'.$p->ProductName.'/'.$p->ProductID.'/White')?>"><?=$p->ProductName?></a></h3>
@@ -157,7 +127,7 @@
                                                             
 														</div>
 													</div>
-													<figcaption>
+													<figcaption style="z-index : 1">
 														<div class="shop-loop-product-info">
 															<div class="info-title">
 																<h3 class="product_title"><a href="<?=base_url('beranda/details/'.$p->ProductName.'/'.$p->ProductID)?>"><?=$o->ProductName?></a></h3>
@@ -198,45 +168,35 @@
 												<div class="col-sm-12" style="padding-top:25px; padding-bottom:20px">
 													<div class="col-sm-5">
 														<div class="content_element"style="padding:20px;" >
-															<h2 style="color:#ffffff; padding:30px; padding-bottom:1px; letter-spacing: 2px;">Any question ?</h2>
-															<h2 style="color:#ffffff; padding:30px; padding-top:1px; letter-spacing: 2px;">Contact us here</h2>
+															<h2 style="color:#ffffff; padding:30px; padding-bottom:1px; letter-spacing: 2px;">Come Join With Us</h2>
 															
 														</div>
 													</div>
 													<div class="col-sm-3" style="float:right;">
-														<div class="col-sm-12" style="padding-top:15px; margin-top:10px; margin-bottom:5px; background-color:#ffffff; height: 2px;">
+														<div class="col-sm-12" style="border-width:2px; border-color:#ffffff; border-radius:30px; padding-top:15px; margin-top:10px; margin-bottom:5px; background-color: rgba(255, 255, 255, 0.1); height: 2px;">
 															<div class="col-md-3 col-sm-3 col-xs-3" style="padding: 0px; margin:0px;">
 																<img src="<?=base_url("assets/template/images/Icon/whatsapp_icon.png")?>" alt="">
 															</div>
 															<div class="col-sm-9" style="padding: 3px; margin:0px;">
-																<h6 style="padding: 0px; padding-top: 5px; margin:0px; ">+628 2330 5556 34</h6>
+																<h6 style="padding: 0px; padding-top: 5px; margin:0px; color:#ffffff; ">+628 2330 5556 34</h6>
 															</div>
 															
 														</div>
-														<div class="col-sm-12" style="padding-top:15px; margin-top:10px; margin-bottom:5px; background-color:#ffffff; height: 2px;">
-															<div class="col-md-3 col-sm-3 col-xs-3" style="padding: 0px; margin:0px;">
-																<img src="<?=base_url("assets/template/images/Icon/line_icon.png")?>" alt="">
-															</div>
-															<div class="col-md-9 col-sm-9 col-xs-9" style="padding: 3px; margin:0px;">
-																<h6 style="padding: 0px; padding-top: 5px; margin:0px; ">@tassadoid</h6>
-															</div>
-															
-														</div>
-														<div class="col-sm-12" style="padding-top:15px; margin-top:10px; margin-bottom:5px; background-color:#ffffff; height: 2px;">
+														<div class="col-sm-12" style="border-width:2px; border-color:#ffffff; border-radius:30px; padding-top:15px; margin-top:10px; margin-bottom:5px; background-color: rgba(255, 255, 255, 0.1); height: 2px;">
 															<div class="col-md-3 col-sm-3 col-xs-3" style="padding: 0px; margin:0px;">
 																<img src="<?=base_url("assets/template/images/Icon/instagram_icon.png")?>" alt="">
 															</div>
 															<div class="col-md-9 col-sm-9 col-xs-9" style="padding: 3px; margin:0px;">
-																<h6 style="padding: 0px; padding-top: 5px; margin:0px; ">@tassadoid</h6>
+																<h6 style="padding: 0px; padding-top: 5px; margin:0px; color:#ffffff; ">@tassadoid</h6>
 															</div>
 															
 														</div>
-														<div class="col-sm-12" style="padding-top:15px; margin-top:10px; margin-bottom:5px; background-color:#ffffff; height: 2px;">
+														<div class="col-sm-12" style="border-width:2px; border-color:#ffffff; border-radius:30px; padding-top:15px; margin-top:10px; margin-bottom:5px; background-color: rgba(255, 255, 255, 0.1); height: 2px;">
 															<div class="col-md-3 col-sm-3 col-xs-3" style="padding: 0px; margin:0px;">
 																<img src="<?=base_url("assets/template/images/Icon/facebook_icon.png")?>" alt="">
 															</div>
 															<div class="col-md-9 col-sm-9 col-xs-9" style="padding: 3px; margin:0px;">
-																<h6 style="padding: 0px; padding-top: 5px; margin:0px; ">tassadoid</h6>
+																<h6 style="padding: 0px; padding-top: 5px; margin:0px; color:#ffffff;">tassadoid</h6>
 															</div>
 															
 														</div>

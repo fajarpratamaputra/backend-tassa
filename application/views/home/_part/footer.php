@@ -53,25 +53,7 @@
 									
 								</div>
 							</div>
-							<div class="footer-widget-col col-md-2 col-sm-12 col-xs-12" style="padding:0px; margin:0px">
-								<div class="widget widget_nav_menu">
-									<h3 class="widget-title" style="color:#C3A771"><span>Follow Us </span></h3>
-									<ul class="menu">
-										<li>
-											<img src="<?=base_url("assets/template/")?>images/Icon/facebook_icon2.png" alt="" style="padding:6px">
-											<a href="#">tassadotid</a>
-										</li>
-										<li>
-											<img src="<?=base_url("assets/template/")?>images/Icon/linkedin_icon.png" alt="">
-											<a href="#">tassadotid</a>
-										</li>
-										<li>
-											<img src="<?=base_url("assets/template/")?>images/Icon/twitter_icon.png" alt="">
-											<a href="#">@tassadotid</a>
-										</li>
-									</ul>
-								</div>
-							</div>
+							
 							<div class="footer-widget-col col-md-3 col-sm-12 col-xs-12" style="padding:0px; margin:0px">
 								<h3 class="widget-title" style="color:#C3A771"><span>Translate</span></h3>
 								<div class="btn-group" role="group" aria-label="Basic example" style="padding:0px; margin:0px; border:1px solid #C3A771">
@@ -117,23 +99,7 @@
 											</div>
 										</ul>
 									</li>
-									<li class="menu-item-has-children dropdown">
-										<a href="<?=base_url('beranda/product/kaftan')?>" class="dropdown-hover">FOLLOW US<span class="caret"></span></a>
-										<ul class="dropdown-menu">
-											<li>
-												<img src="<?=base_url("assets/template/")?>images/Icon/facebook_icon2.png" alt="" style="padding:6px">
-												<a href="#">tassadotid</a>
-											</li>
-											<li>
-												<img src="<?=base_url("assets/template/")?>images/Icon/linkedin_icon.png" alt="">
-												<a href="#">tassadotid</a>
-											</li>
-											<li>
-												<img src="<?=base_url("assets/template/")?>images/Icon/twitter_icon.png" alt="">
-												<a href="#">@tassadotid</a>
-											</li>
-										</ul>
-									</li>
+									
 									<li class="menu-item-has-children dropdown">
 										<a href="<?=base_url('beranda/product/best')?>" class="dropdown-hover">TRANSLATE <span class="caret"></span></a>
 										<ul class="dropdown-menu">

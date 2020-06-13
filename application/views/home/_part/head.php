@@ -1,7 +1,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
-<title>Tassa.id</title>
-<link rel="shortcut icon" href="images/favicon.png">
+<title>TASSA Official Site | Moslem Fashion</title>
+<link rel="shortcut icon" href="<?=base_url('assets/template/')?>images/logo/icon-title.png">
 <link rel='stylesheet' href='<?=base_url('assets/template/')?>css/settings.css' type='text/css' media='all' />
 <link rel='stylesheet' href='<?=base_url('assets/template/')?>css/swatches-and-photos.css' type='text/css' media='all'/>
 <link rel='stylesheet' href='<?=base_url('assets/template/')?>css/font-awesome.min.css' type='text/css' media='all'/>

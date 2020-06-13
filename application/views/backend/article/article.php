@@ -34,7 +34,7 @@
                       <tr>
                           <td><?=$no++?></td>
                           <td><?=$art->title?></td>
-                          <td><?php echo word_limiter($art->description, 5) ?></td>
+                          <td><?php echo word_limiter($art->description, 20) ?></td>
                           <td><img width="100px" height="60px" src="<?=base_url('assets/backend/products/'.$art->img)?>" alt=""></td>
                           <td>
                               <a href="<?php echo base_url('information/article_delete/'.$art->id) ?>" class="btn btn-sm btn-outline-primary mr-1">Delete</a>

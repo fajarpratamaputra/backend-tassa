@@ -458,6 +458,13 @@
 					$(this).data('timeout', t);
 			});
 			
+			$(document).on('show',function(e){
+				e.stopPropagation();
+				e.preventDefault();
+				if($('#exampleModal').length){
+					$('#exampleModal').modal('show');
+				}
+			});
 			$(document).on('click','[data-rel=registerModal]',function(e){
 				e.stopPropagation();
 				e.preventDefault();

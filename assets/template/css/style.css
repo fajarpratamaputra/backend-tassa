@@ -324,7 +324,7 @@ body {
   font-size: 12px;
   line-height: 1.6;
   color: #1e1e1e;
-  background: #C3A771;
+  /* background: #C3A771; */
   font-style: normal;
   font-weight: 400;
 }
@@ -3215,6 +3215,7 @@ input[type="button"].btn-block {
 }
 .header-type-default .navbar-brand img {
   padding: 0;
+  margin-top: 20px;
 }
 .navbar-brand .logo-fixed {
   display: none;

@@ -29,7 +29,7 @@
 							<a href="<?=base_url('beranda/product/newin')?>" >New In </a>
 						</li>
 						<li class="menu-item-has-children">
-							<a href="<?=base_url('beranda/product/moeslimdress')?>" >Moeslim Dress</span></a>
+							<a href="<?=base_url('beranda/product/moeslimdress')?>" >Moslem Dress</span></a>
 						</li>
 						<li class="menu-item-has-children">
 							<a href="<?=base_url('beranda/product/kaftan')?>" >Kaftan</span></a>

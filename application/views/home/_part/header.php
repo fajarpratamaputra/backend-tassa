@@ -29,12 +29,13 @@
 								</a>
 							</div>
 						</div>
-						<div class="navbar-search" style=" padding: 0 20px;">
+						<div class="navbar-search" style=" padding: 0 30px;">
 							<a class="navbar-search-button" href="#">
 								<i class="fa fa-search" style="color:#ffffff;"></i>
 							</a>
 							<div class="search-form-wrap show-popup hide"></div>
 						</div>
+						
 					</div>
 				</div>
 				<div class="col-sm-6 col-right-topbar">

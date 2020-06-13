@@ -31,7 +31,7 @@
 								<a class="cart-icon-mobile" href="<?=base_url($link)?>">
 									<i class="elegant_icon_bag"></i><span><?=$num?></span>
 								</a>
-								<a class="navbar-brand" href="<?=base_url("beranda/")?>">
+								<a class="navbar-brand" href="<?=base_url("beranda/")?>" style="z-index:10">
 									<img class="logo" alt="Tassa.id" src="<?=base_url('assets/template/')?>images/logo_tassa.png">
 									<img class="logo-fixed" alt="Tassa.id" src="<?=base_url('assets/template/')?>images/logo_tassa.png">
 									<img class="logo-mobile" alt="Tassa.id" src="<?=base_url('assets/template/')?>images/logo_tassa.png">
@@ -63,7 +63,7 @@
 										padding-right: 1px;
 										font-size:13px;
 									">
-										<span class="underline" style="color:#ffffff;">MOESLIM DRESS</span> <span class="caret"></span>
+										<span class="underline" style="color:#ffffff;">MOSLEM DRESS</span> <span class="caret"></span>
 									</a>
 								</li>
 								<li class="menu-item-has-children">
