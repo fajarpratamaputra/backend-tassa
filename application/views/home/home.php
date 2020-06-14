@@ -1,22 +1,57 @@
 
 		
+<?php 
+	if($this->session->userdata('user_id') != null){ 
+		$id = $this->session->userdata('user_id');
+		$this->db->where('UserID',$id);
+		$query = $this->db->get('users');
+		$row = $query->row();
+		$username = $row->UserName;
+		
+	?>
+	<?php if($row->UserFullName == null) { ?>
+		<script>
+			swal("Selamat Datang <?=$username?>, Silahkan isi Nama Lengkap anda di halaman Account");
+		</script>
+	<?php } elseif($row->UserPhoto == null) { ?>
+		<script>
+			swal("Selamat Datang <?=$username?>, Silahkan lengkapi Foto Profil anda di halaman Account");
+		</script>
+	<?php } elseif($row->UserAddress == null) { ?>
+		<script>
+			swal("Selamat Datang <?=$username?>, Silahkan isi Alamat anda di halaman Account");
+		</script>
+	<?php } elseif($row->UserCity == null) { ?>
+		<script>
+			swal("Selamat Datang <?=$username?>, Silahkan isi Kabupaten/Kota anda di halaman Account");
+		</script>
+	<?php } elseif($row->UserProvince == null) { ?>
+		<script>
+			swal("Selamat Datang <?=$username?>, Silahkan isi Provinsi anda di halaman Account");
+		</script>
+	<?php } elseif($row->UserZip == null) { ?>
+		<script>
+			swal("Selamat Datang <?=$username?>, Silahkan isi Kode Pos Alamat anda di halaman Account");
+		</script>
+	<?php } else { ?>
+		<script>
+			swal("Selamat Datang <?=$username?>");
+		</script>
+	<?php } ?>
+<?php } ?>
 <div class="content-container no-padding" style="z-index : -1">
-				<div class="container-full">
-					<div class="row">
-						<div class="col-md-12 main-wrap">
-							<div class="main-content">
-							
-								<?php $this->load->view('home/_part/banner') ?>
-
-								<div class="row home-default-about">
-									<div class="col-sm-12">
-									<div class="container">
-											<div class="row offers">
-												
-											</div>
-										</div>
-										<?php foreach($quote as $q) { ?>
-										<div class="container">
+	<div class="container-full">
+		<div class="row">
+			<div class="col-md-12 main-wrap">
+				<div class="main-content">
+					<?php $this->load->view('home/_part/banner') ?>
+					<div class="row home-default-about">
+						<div class="col-sm-12">
+						<div class="container">
+							<div class="row offers"></div>
+						</div>
+						<?php foreach($quote as $q) { ?>
+						<div class="container">
 											<div class="row welcome" style="background-image:url(<?=base_url('assets/backend/banner/'.$q->picture_slider)?>)">
 												<div class="col-sm-12">
 													<div class="separator content_element separator_align_center sep_width_10 sep_border_width_2 sep_pos_align_center separator_no_text sep_color_white">

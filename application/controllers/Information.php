@@ -135,6 +135,15 @@ class Information extends CI_Controller {
 		$this->template_d->view('backend/information/payment', $data);
 	}
 
+	public function terms()
+	{
+		$id = $this->session->userdata('id');
+		$data['profile'] = $this->m_loginadmin->get_profile($id);
+		$id_about = $this->uri->segment('2');
+		$data['terms'] = $this->m_information->get_detail($id_about);
+		$this->template_d->view('backend/information/terms', $data);
+	}
+
 	public function insert()
     {
 		$id['type'] 	= $this->input->post("type");

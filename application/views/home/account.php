@@ -106,6 +106,42 @@
 
 
 												</style>
+												<?php 
+												if($this->session->userdata('user_id') != null){ 
+													$id = $this->session->userdata('user_id');
+													$this->db->where('UserID',$id);
+													$query = $this->db->get('users');
+													$row = $query->row();
+													$username = $row->UserName;
+													
+												?>
+												<?php if($row->UserFullName == null) { ?>
+													<script>
+														swal("Selamat Datang <?=$username?>, Silahkan isi Nama Lengkap anda di halaman Account");
+													</script>
+												<?php } elseif($row->UserPhoto == null) { ?>
+													<script>
+														swal("Selamat Datang <?=$username?>, Silahkan lengkapi Foto Profil anda di halaman Account");
+													</script>
+												<?php } elseif($row->UserAddress == null) { ?>
+													<script>
+														swal("Selamat Datang <?=$username?>, Silahkan isi Alamat anda di halaman Account");
+													</script>
+												<?php } elseif($row->UserCity == null) { ?>
+													<script>
+														swal("Selamat Datang <?=$username?>, Silahkan isi Kabupaten/Kota anda di halaman Account");
+													</script>
+												<?php } elseif($row->UserProvince == null) { ?>
+													<script>
+														swal("Selamat Datang <?=$username?>, Silahkan isi Provinsi anda di halaman Account");
+													</script>
+												<?php } elseif($row->UserZip == null) { ?>
+													<script>
+														swal("Selamat Datang <?=$username?>, Silahkan isi Kode Pos Alamat anda di halaman Account");
+													</script>
+												<?php } ?>
+													
+											<?php } ?>
 												<div class="col-md-12">													
 													<div class="col-md-4" style="margin-bottom:10px;">
 													<form action="<?=base_url('loginfe/update_user');?>" enctype="multipart/form-data" method="post">
@@ -283,7 +319,7 @@
 																					if(!in_array($payment->status_code, array(200, 201, 202, 407))) {
 																						$status = 'Belum Transfer';
 																					}else{
-																						$status = $payment->transaction_status;;
+																						$status = $payment->transaction_status;
 																					}
 																			?>
 																				<tr class="cart_item">

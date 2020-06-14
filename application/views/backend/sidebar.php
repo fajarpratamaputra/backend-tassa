@@ -73,12 +73,6 @@ li.nav-item {
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="<?=base_url("voucher/")?>">
-                  <i class="material-icons">vertical_split</i>
-                  <span>Voucher</span>
-                </a>
-              </li>
-              <li class="nav-item">
                 <a class="nav-link" href="#">
                   <i class="material-icons">vertical_split</i>  
                   <span>Information</span>
@@ -92,7 +86,14 @@ li.nav-item {
                   <li><a class="nav-link" href="<?=base_url("information/how")?>">How To Shop</a></li>
                   <li><a class="nav-link" href="<?=base_url("information/shipping")?>">Shipping</a></li>
                   <li><a class="nav-link" href="<?=base_url("information/payment")?>">Payment</a></li>
+                  <li><a class="nav-link" href="<?=base_url("information/terms")?>">Terms and Condition</a></li>
                 </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="<?=base_url("voucher/")?>">
+                  <i class="material-icons">vertical_split</i>
+                  <span>Voucher</span>
+                </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">

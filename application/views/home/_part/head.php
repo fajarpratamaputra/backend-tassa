@@ -11,3 +11,5 @@
 <link rel='stylesheet' href='<?=base_url('assets/template/')?>css/shop.css' type='text/css' media='all'/>
 <link rel='stylesheet' href='<?=base_url('assets/template/')?>css/layout.css' type='text/css' media='all'/>
 <link rel='stylesheet' href='<?=base_url('assets/template/')?>css/magnific-popup.css' type='text/css' media='all'/>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+

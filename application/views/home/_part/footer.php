@@ -26,6 +26,7 @@
 									<h3 class="widget-title" style="color:#C3A771"><span>Information</span></h3>
 									<ul class="menu">
 										<li><a href="<?=base_url('beranda/article')?>">Article</a></li>
+										<li><a href="<?=base_url('beranda/information/terms')?>">Terms and Condition</a></li>
 										<li><a href="<?=base_url('beranda/information/about')?>">About Us</a></li>
 										<li><a href="<?=base_url('beranda/information/how')?>">How To Shop</a></li>
 										<li><a href="<?=base_url('beranda/information/shipping')?>">Shipping</a></li>
@@ -78,6 +79,7 @@
 										<a href="<?=base_url('beranda/product/newin')?>" class="dropdown-hover">INFORMATION <span class="caret"></span></a>
 										<ul class="dropdown-menu">
 											<li><a href="<?=base_url('beranda/article')?>">Article</a></li>
+											<li><a href="<?=base_url('beranda/information/terms')?>">Terms and Condition</a></li>
 											<li><a href="<?=base_url('beranda/information/about')?>">About Us</a></li>
 											<li><a href="<?=base_url('beranda/information/how')?>">How To Shop</a></li>
 											<li><a href="<?=base_url('beranda/information/shipping')?>">Shipping</a></li>

@@ -6,7 +6,7 @@
             <div class="page-header row no-gutters py-4 mb-3 border-bottom">
               <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
                 <span class="text-uppercase page-subtitle">Detail</span>
-                <h3 class="page-title">About Us</h3>
+                <h3 class="page-title">Terms and Condition</h3>
               </div>
             </div>
             <!-- End Page Header -->
@@ -25,8 +25,8 @@
                           <!-- <form> -->
                             <div class="form-group">
                                 <strong class="text-muted d-block mb-2">Description</strong>
-                                <textarea name="desc" id="summernote" cols="30" rows="20"><?=$about->description?></textarea>
-                                <input type="hidden" name="type" value="about">
+                                <textarea name="desc" id="summernote" cols="30" rows="20"><?=$terms->description?></textarea>
+                                <input type="hidden" name="type" value="terms">
                               </div>
                             
                           <!-- </form> -->
