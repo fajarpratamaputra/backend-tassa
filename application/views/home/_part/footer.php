@@ -25,7 +25,7 @@
 								<div class="widget widget_nav_menu">
 									<h3 class="widget-title" style="color:#C3A771"><span>Information</span></h3>
 									<ul class="menu">
-										<li><a href="<?=base_url('beranda/article')?>">Article</a></li>
+										<li><a href="<?=base_url('beranda/article')?>">Artikel</a></li>
 										<li><a href="<?=base_url('beranda/information/terms')?>">Terms and Condition</a></li>
 										<li><a href="<?=base_url('beranda/information/about')?>">About Us</a></li>
 										<li><a href="<?=base_url('beranda/information/how')?>">How To Shop</a></li>

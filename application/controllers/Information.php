@@ -86,6 +86,16 @@ class Information extends CI_Controller {
 
 	}
 
+	public function article_edit()
+	{
+		$art = $this->uri->segment(3);
+		$id = $this->session->userdata('id');
+		$data['profile'] = $this->m_loginadmin->get_profile($id);
+		$id_about = $this->uri->segment('2');
+		$data['article'] = $this->db->where('id',$art)->get('article')->row();
+		$this->template_d->view('backend/article/editArticle', $data);
+	}
+
 	function article_delete($id){
 
 		$this->db->where('id',$id);

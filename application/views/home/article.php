@@ -8,7 +8,7 @@
 						<div class="col-md-12 main-wrap">
 							<div class="main-content"  style="margin-top:100px;">
 								<div class="row">
-									<div class="col-sm-12">
+								<div class="col-md-8 col-sm-12">
 										<div class="posts" data-paginate="page_num" data-layout="default">
 											<div class="posts-wrap posts-layout-default">
 											<?php
@@ -41,7 +41,7 @@
 																<?php echo word_limiter($art->description, 100) ?>	
 															</div>
 															<div class="readmore-link">
-																<a href="<?=base_url('beranda/detail')?>">Read More</a>
+																<a href="<?=base_url('beranda/detail/'.$art->id)?>">Read More</a>
 															</div>
 														</div>
 													</div>

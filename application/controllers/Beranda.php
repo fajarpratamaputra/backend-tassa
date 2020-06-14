@@ -56,10 +56,11 @@ class Beranda extends CI_Controller {
 
 	public function detail()
 	{
+		$id = $this->uri->segment(3);
 		$data['prod'] = $this->m_productfe->get_join();
 		$data['other'] = $this->m_productfe->other_product();
 		$data['setting'] = $this->m_setting->get_setting();
-		$data['article'] = $this->m_article->get();
+		$data['article'] = $this->db->where('id',$id)->get('article')->row();
 		$this->templatehome->view('home/article-detail', $data);
 	}
 
