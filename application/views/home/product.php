@@ -173,7 +173,7 @@
 														</div>
 													</div>
 													<div class="col-sm-3" style="float:right;">
-														<div class="col-sm-12" style="border-width:2px; border-color:#ffffff; border-radius:30px; padding-top:15px; margin-top:10px; margin-bottom:5px; background-color: rgba(255, 255, 255, 0.1); height: 2px;">
+														<div class="col-sm-12" style="border-width:2px; border-color:#ffffff; border-radius:30px; padding-top:15px; margin-top:10px; margin-bottom:5px; background-color: rgba(195, 167, 113, 0.5); height: 2px;">
 															<div class="col-md-3 col-sm-3 col-xs-3" style="padding: 0px; margin:0px;">
 																<img src="<?=base_url("assets/template/images/Icon/whatsapp_icon.png")?>" alt="">
 															</div>
@@ -182,7 +182,7 @@
 															</div>
 															
 														</div>
-														<div class="col-sm-12" style="border-width:2px; border-color:#ffffff; border-radius:30px; padding-top:15px; margin-top:10px; margin-bottom:5px; background-color: rgba(255, 255, 255, 0.1); height: 2px;">
+														<div class="col-sm-12" style="border-width:2px; border-color:#ffffff; border-radius:30px; padding-top:15px; margin-top:10px; margin-bottom:5px; background-color: rgba(195, 167, 113, 0.5); height: 2px;">
 															<div class="col-md-3 col-sm-3 col-xs-3" style="padding: 0px; margin:0px;">
 																<img src="<?=base_url("assets/template/images/Icon/instagram_icon.png")?>" alt="">
 															</div>
@@ -191,7 +191,7 @@
 															</div>
 															
 														</div>
-														<div class="col-sm-12" style="border-width:2px; border-color:#ffffff; border-radius:30px; padding-top:15px; margin-top:10px; margin-bottom:5px; background-color: rgba(255, 255, 255, 0.1); height: 2px;">
+														<div class="col-sm-12" style="border-width:2px; border-color:#ffffff; border-radius:30px; padding-top:15px; margin-top:10px; margin-bottom:5px; background-color: rgba(195, 167, 113, 0.5); height: 2px;">
 															<div class="col-md-3 col-sm-3 col-xs-3" style="padding: 0px; margin:0px;">
 																<img src="<?=base_url("assets/template/images/Icon/facebook_icon.png")?>" alt="">
 															</div>
