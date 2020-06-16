@@ -9,7 +9,7 @@
 					<div class="footer-widget-wrap">
 						<div class="row">
 						<div class="col-md-12 footer-web" >
-							<div class="footer-widget-col col-md-2 col-sm-12 col-xs-12" style="padding:0px; margin:0px">
+							<div class="footer-widget-col col-md-3 col-sm-12 col-xs-12" style="padding:0px 2px margin:0px 5px">
 								<div class="widget widget_nav_menu">
 									<h3 class="widget-title" style="color:#C3A771"><span>Office</span></h3>
 									<ul class="menu">
@@ -21,21 +21,23 @@
 									</ul>
 								</div>
 							</div>
-							<div class="footer-widget-col col-md-2 col-sm-12 col-xs-12" style="padding:0px; margin:0px">
+							
+							<div class="footer-widget-col col-md-3 col-sm-12 col-xs-12" style="padding:0px 2px margin:0px 5px">
 								<div class="widget widget_nav_menu">
 									<h3 class="widget-title" style="color:#C3A771"><span>Information</span></h3>
 									<ul class="menu">
+									<li><a href="<?=base_url('beranda/information/about')?>">About Us</a></li>
 										<li><a href="<?=base_url('beranda/article')?>">Artikel</a></li>
-										<li><a href="<?=base_url('beranda/information/terms')?>">Terms and Condition</a></li>
-										<li><a href="<?=base_url('beranda/information/about')?>">About Us</a></li>
-										<li><a href="<?=base_url('beranda/information/how')?>">How To Shop</a></li>
-										<li><a href="<?=base_url('beranda/information/shipping')?>">Shipping</a></li>
-										<li><a href="<?=base_url('beranda/information/payment')?>">Payment</a></li>
 										<li><a href="<?=base_url('beranda/faq/')?>">FAQ</a></li>
+										<li><a href="<?=base_url('beranda/information/how')?>">How To Shop</a></li>
+										<li><a href="<?=base_url('beranda/information/payment')?>">Payment</a></li>
+										<li><a href="<?=base_url('beranda/information/shipping')?>">Shipping</a></li>
+										<li><a href="<?=base_url('beranda/information/terms')?>">Terms and Condition</a></li>
 									</ul>
 								</div>
 							</div>
-							<div class="footer-widget-col col-md-3 col-sm-12 col-xs-12" style="padding:0px margin:5px">
+
+							<div class="footer-widget-col col-md-3 col-sm-12 col-xs-12" style="padding:0px 2px margin:0px 10px">
 								<div class="widget widget_text">
 								<h3 class="widget-title" style="color:#C3A771"><span>Payment</span></h3>
 										<div class="col-md-6 col-sm-5  col-xs-5">
@@ -55,7 +57,8 @@
 								</div>
 							</div>
 							
-							<div class="footer-widget-col col-md-3 col-sm-12 col-xs-12" style="padding:0px; margin:0px">
+							
+							<div class="footer-widget-col col-md-3 col-sm-12 col-xs-12" style="padding:0px 2px margin:0px 10px">
 								<h3 class="widget-title" style="color:#C3A771"><span>Translate</span></h3>
 								<div class="btn-group" role="group" aria-label="Basic example" style="padding:0px; margin:0px; border:1px solid #C3A771">
 									<button type="button" class="col-md-6 btn btn-secondary" style="border:1px solid #C3A771; background-color: #C3A771; color:#ffffff; font-size:12px;">Indonesia</button>
@@ -101,6 +104,7 @@
 											</div>
 										</ul>
 									</li>
+									
 									
 									<li class="menu-item-has-children dropdown">
 										<a href="<?=base_url('beranda/product/best')?>" class="dropdown-hover">TRANSLATE <span class="caret"></span></a>

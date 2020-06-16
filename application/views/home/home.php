@@ -246,14 +246,14 @@
 										<div class="container">
 											<div class="row welcome" style="background-image:url(<?=base_url('assets/backend/banner/'.$foot->picture_slider)?>)">
 												<div class="col-sm-12" style="padding-top:25px; padding-bottom:20px">
-													<div class="col-sm-5">
+													<div class="col-sm-6">
 														<div class="content_element"style="padding:20px;" >
-															<h2 style="color:#ffffff; padding:30px; padding-bottom:1px; letter-spacing: 2px;">Come Join With Us</h2>
+															<h1 style="color:#C3A771; font-size:28pt; padding:15px; padding-bottom:1px; letter-spacing: 2px;">Come Join With Us</h1>
 															
 														</div>
 													</div>
 													<div class="col-sm-3" style="float:right;">
-														<div class="col-sm-12" style="border-width:2px; border-color:#ffffff; border-radius:30px; padding-top:15px; margin-top:10px; margin-bottom:5px; background-color: rgba(195, 167, 113, 0.5); height: 2px;">
+														<div class="col-sm-12" style="border-width:2px; border-color:#ffffff; border-radius:30px; padding-top:5px; padding-bottom:35px; margin-top:10px; margin-bottom:5px; background-color: rgba(195, 167, 113, 1); height: 2px;">
 															<div class="col-md-3 col-sm-3 col-xs-3" style="padding: 0px; margin:0px;">
 																<img src="<?=base_url("assets/template/images/Icon/whatsapp_icon.png")?>" alt="">
 															</div>
@@ -262,7 +262,7 @@
 															</div>
 															
 														</div>
-														<div class="col-sm-12" style="border-width:2px; border-color:#ffffff; border-radius:30px; padding-top:15px; margin-top:10px; margin-bottom:5px; background-color: rgba(195, 167, 113, 0.5); height: 2px;">
+														<div class="col-sm-12" style="border-width:2px; border-color:#ffffff; border-radius:30px; padding-top:5px; padding-bottom:35px; margin-top:10px; margin-bottom:5px; background-color: rgba(195, 167, 113, 1); height: 2px;">
 															<div class="col-md-3 col-sm-3 col-xs-3" style="padding: 0px; margin:0px;">
 																<img src="<?=base_url("assets/template/images/Icon/instagram_icon.png")?>" alt="">
 															</div>
@@ -271,7 +271,7 @@
 															</div>
 															
 														</div>
-														<div class="col-sm-12" style="border-width:2px; border-color:#ffffff; border-radius:30px; padding-top:15px; margin-top:10px; margin-bottom:5px; background-color: rgba(195, 167, 113, 0.5); height: 2px;">
+														<div class="col-sm-12" style="border-width:2px; border-color:#ffffff; border-radius:30px; padding-top:5px; padding-bottom:35px; margin-top:10px; margin-bottom:5px; background-color: rgba(195, 167, 113, 1); height: 2px;">
 															<div class="col-md-3 col-sm-3 col-xs-3" style="padding: 0px; margin:0px;">
 																<img src="<?=base_url("assets/template/images/Icon/facebook_icon.png")?>" alt="">
 															</div>

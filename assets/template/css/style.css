@@ -6199,7 +6199,7 @@ a[data-toggle="tooltip"]:hover {
   background: linear-gradient(rgba(0, 0, 0, 0.9),rgba(0, 0, 0, 0.0));
 }
 .header-navbar-default:hover {
-  background: rgba(0, 0, 0, 0.9);
+  background: #222222;
 }
 .header-container.header-navbar-fixed {
   padding: 0 0 60px 0;
