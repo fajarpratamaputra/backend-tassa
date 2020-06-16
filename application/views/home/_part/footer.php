@@ -27,7 +27,7 @@
 									<h3 class="widget-title" style="color:#C3A771"><span>Information</span></h3>
 									<ul class="menu">
 									<li><a href="<?=base_url('beranda/information/about')?>">About Us</a></li>
-										<li><a href="<?=base_url('beranda/article')?>">Artikel</a></li>
+										<li><a href="<?=base_url('beranda/article')?>">Article</a></li>
 										<li><a href="<?=base_url('beranda/faq/')?>">FAQ</a></li>
 										<li><a href="<?=base_url('beranda/information/how')?>">How To Shop</a></li>
 										<li><a href="<?=base_url('beranda/information/payment')?>">Payment</a></li>
