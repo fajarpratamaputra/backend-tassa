@@ -168,7 +168,7 @@
 											<div class="col-sm-12" style="padding-top:25px; padding-bottom:20px">
 													<div class="col-sm-6">
 														<div class="content_element"style="padding:20px;" >
-															<h1 style="color:#C3A771; font-size:28pt; padding:15px; padding-bottom:1px; letter-spacing: 2px;">Come Join With Us</h1>
+															<h1 style="color:#fff; font-size:28pt; padding:15px; padding-bottom:1px; letter-spacing: 2px;">Come Join With Us</h1>
 															
 														</div>
 													</div>
