@@ -248,36 +248,35 @@
 														</div>
 													</div>
 													<div class="col-sm-3" style="float:right;">
-														<div class="col-sm-12" style="border-width:2px; border-color:#ffffff; border-radius:30px; padding-top:5px; padding-bottom:35px; margin-top:10px; margin-bottom:5px; background-color: rgba(195, 167, 113, 1); height: 2px;">
+														<div class="col-sm-12" style="border-width:2px; border-color:#ffffff; border-radius:30px; padding-top:5px; padding-bottom:35px; margin-top:10px; margin-bottom:5px; background-color: rgba(255, 255, 255, 0.2); height: 2px;">
 															<div class="col-md-3 col-sm-3 col-xs-3" style="padding: 0px; margin:0px;">
 																<img src="<?=base_url("assets/template/images/Icon/whatsapp_icon.png")?>" alt="">
 															</div>
 															<div class="col-sm-9" style="padding: 3px; margin:0px;">
-																<h6 style="padding: 0px; padding-top: 5px; margin:0px; color:#ffffff; ">+628 2330 5556 34</h6>
+																<h6 style="padding: 0px; padding-top: 5px; margin:0px; color:#ffffff; ">+628 1293 9378 12</h6>
 															</div>
 															
 														</div>
-														<div class="col-sm-12" style="border-width:2px; border-color:#ffffff; border-radius:30px; padding-top:5px; padding-bottom:35px; margin-top:10px; margin-bottom:5px; background-color: rgba(195, 167, 113, 1); height: 2px;">
+														<div class="col-sm-12" style="border-width:2px; border-color:#ffffff; border-radius:30px; padding-top:5px; padding-bottom:35px; margin-top:10px; margin-bottom:5px; background-color: rgba(255, 255, 255, 0.2); height: 2px;">
 															<div class="col-md-3 col-sm-3 col-xs-3" style="padding: 0px; margin:0px;">
 																<img src="<?=base_url("assets/template/images/Icon/instagram_icon.png")?>" alt="">
 															</div>
 															<div class="col-md-9 col-sm-9 col-xs-9" style="padding: 3px; margin:0px;">
-																<h6 style="padding: 0px; padding-top: 5px; margin:0px; color:#ffffff; ">@tassadoid</h6>
+																<h6 style="padding: 0px; padding-top: 5px; margin:0px; color:#ffffff; ">tassa.official</h6>
 															</div>
 															
 														</div>
-														<div class="col-sm-12" style="border-width:2px; border-color:#ffffff; border-radius:30px; padding-top:5px; padding-bottom:35px; margin-top:10px; margin-bottom:5px; background-color: rgba(195, 167, 113, 1); height: 2px;">
+														<div class="col-sm-12" style="border-width:2px; border-color:#ffffff; border-radius:30px; padding-top:5px; padding-bottom:35px; margin-top:10px; margin-bottom:5px; background-color: rgba(255, 255, 255, 0.2); height: 2px;">
 															<div class="col-md-3 col-sm-3 col-xs-3" style="padding: 0px; margin:0px;">
 																<img src="<?=base_url("assets/template/images/Icon/facebook_icon.png")?>" alt="">
 															</div>
 															<div class="col-md-9 col-sm-9 col-xs-9" style="padding: 3px; margin:0px;">
-																<h6 style="padding: 0px; padding-top: 5px; margin:0px; color:#ffffff;">tassadoid</h6>
+																<h6 style="padding: 0px; padding-top: 5px; margin:0px; color:#ffffff;">tassa.official</h6>
 															</div>
 															
 														</div>
 													</div>	
 												</div>
-											</div>
 										</div>
 											<div class="container">
 												<div class="row offers">
