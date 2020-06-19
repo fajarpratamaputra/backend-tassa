@@ -336,7 +336,7 @@
 																					</td>
 																					<td class="product-subtotal hidden-xs">
 																						<div style="border:1px; solid #DEDEDE; box-sizing: border-box; padding:5px; background-color:#C3A771">
-																							<a href="<?=base_url('#')?>" style="background-color: #C3A771; width:100%; border-color:#C3A771; color:#ffffff; font-size:12px;" class="btn btn-black-outline btn-lg btn-align-center">
+																							<a href="<?=base_url('beranda/invoice/'.$ord->OrderCode)?>" style="background-color: #C3A771; width:100%; border-color:#C3A771; color:#ffffff; font-size:12px;" class="btn btn-black-outline btn-lg btn-align-center">
 																								<?=$status; ?>	
 																							</a>
 																						</div>		

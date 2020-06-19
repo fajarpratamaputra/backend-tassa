@@ -58,7 +58,7 @@ class Transaction extends CI_Controller {
 	public function status($order_id)
 	{
 		echo 'test get status </br>';
-		print_r ($this->veritrans->status($order_id) );
+		print_r ($this->veritrans->status($order_id)->gross_amount );
 	}
 
 	public function cancel($order_id)

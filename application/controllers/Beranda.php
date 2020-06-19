@@ -490,6 +490,22 @@ class Beranda extends CI_Controller {
 		}
 	}
 
+	public function invoice()
+	{
+		if($this->session->userdata('user_id') == null){
+			redirect('beranda/');
+		}
+		else {
+			$userid = $this->session->userdata('user_id');
+			$code = $this->uri->segment(3);
+			$data['cart'] = $this->m_orderfe->history($userid);
+			$data['user'] = $this->m_orderfe->user($userid);
+			$data['setting'] = $this->m_setting->get_setting();
+			$data['order'] = $this->m_orderfe->get_detail($code);
+			$this->templatehome->view('home/invoice', $data);
+		}
+	}
+
 	public function listaddress()
 	{
 		if($this->session->userdata('user_id') == null){

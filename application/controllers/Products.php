@@ -63,10 +63,15 @@ class Products extends CI_Controller {
     {
 		$name 		 = $this->input->post("name");
 		$price 		 = $this->input->post("price");
+		$new 		 = $this->input->post("new");
+		$best 		 = $this->input->post("best");
 		$description = $this->input->post("description");
 		$category 	 = $this->input->post("category");
 		$stok 	 	 = $this->input->post("stok");
 		$weight 	 = $this->input->post("weight");
+
+		if($new == 'new'){ $new = 1; } else {$new = 0;}
+		if($best == 'best'){ $best = 1; } else {$best = 0;}
 		
         $this->load->library('upload');
         $nmfile = "file-".time(); //nama file saya beri nama langsung dan diikuti fungsi time
@@ -91,7 +96,9 @@ class Products extends CI_Controller {
 					'ProductWeight'		=> $weight,
 					'ProductImage' 		=> $gbr['file_name'],
 					'ProductCategoryID' => $category,
-					'ProductStock'      => $stok
+					'ProductStock'      => $stok,
+					'ProductNew'     	=> $new,
+					'ProductBest'     	=> $best
 				);
 
                 $this->m_products->add_products($data);
@@ -103,7 +110,9 @@ class Products extends CI_Controller {
 					'ProductCartDesc'	=> $description,
 					'ProductWeight'		=> $weight,
 					'ProductCategoryID' => $category,
-					'ProductStock'      => $stok
+					'ProductStock'      => $stok,
+					'ProductNew'     	=> $new,
+					'ProductBest'     	=> $best
 				);
 
 				$this->m_products->add_products($data);
@@ -167,6 +176,11 @@ class Products extends CI_Controller {
 		$category 	 	 = $this->input->post("category");
 		$stok 	 	 	 = $this->input->post("stok");
 		$weight 	 	 = $this->input->post("weight");
+		$new 		 = $this->input->post("new");
+		$best 		 = $this->input->post("best");
+
+		if($new == 'new'){ $new = 1; } else {$new = 0;}
+		if($best == 'best'){ $best = 1; } else {$best = 0;}
 		
         $this->load->library('upload');
         $nmfile = "file-".time(); //nama file saya beri nama langsung dan diikuti fungsi time
@@ -196,7 +210,9 @@ class Products extends CI_Controller {
 					'ProductWeight'		=> $weight,
 					'ProductImage' 		=> $gbr['file_name'],
 					'ProductCategoryID' => $category,
-					'ProductStock'      => $stok
+					'ProductStock'      => $stok,
+					'ProductNew'     	=> $new,
+					'ProductBest'     	=> $best
 				);
 
                 $this->m_products->update($data,$id);
@@ -208,7 +224,9 @@ class Products extends CI_Controller {
 					'ProductCartDesc'	=> $description,
 					'ProductWeight'		=> $weight,
 					'ProductCategoryID' => $category,
-					'ProductStock'      => $stok
+					'ProductStock'      => $stok,
+					'ProductNew'     	=> $new,
+					'ProductBest'     	=> $best
 				);
 
 				$this->m_products->update($data,$id);

@@ -50,6 +50,15 @@
                             <div class="form-group">
                                 <textarea class="form-control" name="description" id="" cols="30" rows="10"><?=$prod->ProductCartDesc?></textarea>
                             </div>
+                            <strong class="text-muted d-block mb-2">Product Promo</strong>
+                                <div class="form-check form-check-inline">
+                                  <input class="form-check-input" type="checkbox" name="new" <?php if($prod->ProductNew == 1) { echo "checked"; } ?> id="new" value="new">
+                                  <label class="form-check-label" for="new">New In</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                  <input class="form-check-input" type="checkbox" <?php if($prod->ProductBest == 1) { echo "checked"; } ?> name="best" id="best" value="best">
+                                  <label class="form-check-label" for="best">Best Seller</label>
+                                </div>
                         </div>
                       </div>
                     </li>

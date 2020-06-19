@@ -36,6 +36,13 @@ class M_Orderfe extends CI_Model {
 		return $this->db->get('orders')->result();
 	}
 
+	public function get_detail($code)
+	{
+		$this->db->where('OrderCode', $code)
+				 ->order_by('OrderID','DESC');
+		return $this->db->get('orders')->row();
+	}
+
 	public function get_idorder($id)
 	{
 		$this->db->where('OrderCode', $id)

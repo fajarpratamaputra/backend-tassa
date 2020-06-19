@@ -118,11 +118,41 @@
 													
 													<div class="col-md-12" style="margin-bottom:10px;">
 														<div style="border:1px; solid #DEDEDE; box-sizing: border-box; padding:10px; background-color:#C3A771">
-															<button id="pay-button" style="background-color: #C3A771; width:100%; border-color:#C3A771; color:#ffffff; font-size:12px;" class="btn btn-black-outline btn-lg btn-align-center" type="button">
+															<button data-toggle="modal" data-target="#exampleModal" style="background-color: #C3A771; width:100%; border-color:#C3A771; color:#ffffff; font-size:12px;" class="btn btn-black-outline btn-lg btn-align-center" type="button">
 																PAYMENT
 															</button>
 														</div>
 													</div>
+													<div class="modal fade user-lostpassword-modal" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
+														<div class="modal-dialog">
+															<div class="modal-content">
+																<form id="userlostpasswordModalForm">
+																	<div class="modal-header">
+																		<button type="button" class="close" data-dismiss="modal">
+																			<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+																		</button>
+																		<h4 class="modal-title">Perhatian</h4>
+																	</div>
+																	<div class="modal-body">
+																		<div class="form-group">
+																			<p>10% transaksi ini akan disumbangkan ke yang membutuhkan</p>	
+																		</div>
+																	</div>
+																	<div class="modal-footer">
+																		<div class="col-md-12" style="margin-bottom:10px;">
+																			<div style="border:1px; solid #DEDEDE; box-sizing: border-box; padding:10px; background-color:#C3A771">
+																				<button id="pay-button" style="background-color: #C3A771; width:100%; border-color:#C3A771; color:#ffffff; font-size:12px;" class="btn btn-black-outline btn-lg btn-align-center" type="button">
+																					LANJUTKAN
+																				</button>
+																			</div>
+																		</div>
+																	</div>
+																</form>
+															</div>
+														</div>
+													</div>
+		
+													
 													<script type="text/javascript">
 												
 														$('#pay-button').click(function (event) {

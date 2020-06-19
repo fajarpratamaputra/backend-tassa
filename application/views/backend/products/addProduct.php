@@ -51,6 +51,15 @@
                             <div class="form-group">
                                 <textarea class="form-control" name="description" id="" cols="30" rows="10" required></textarea>
                             </div>
+                            <strong class="text-muted d-block mb-2">Product Promo</strong>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" name="new" id="new" value="new">
+                              <label class="form-check-label" for="new">New In</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="checkbox" name="best" id="best" value="best">
+                              <label class="form-check-label" for="best">Best Seller</label>
+                            </div>
                         </div>
                       </div>
                     </li>
