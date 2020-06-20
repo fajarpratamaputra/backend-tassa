@@ -8,6 +8,7 @@
 						<div class="col-md-12 main-wrap">
 							<div class="main-content"  style="margin-top:100px;">
 								<div class="row">
+								<div class="col-md-2"></div>
 									<div class="col-sm-8 col-sm-12">
 										<div class="posts" data-paginate="page_num" data-layout="default">
 											<div class="posts-wrap posts-layout-default">

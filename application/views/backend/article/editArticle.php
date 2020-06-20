@@ -10,7 +10,7 @@
               </div>
             </div>
             <!-- End Page Header -->
-            <form action="<?=base_url('information/article_insert');?>" enctype="multipart/form-data" method="post">
+            <form action="<?=base_url('information/article_update');?>" enctype="multipart/form-data" method="post">
             <div class="row">
               <div class="col-lg-8 mb-4">
                 <div class="card card-small mb-4">
@@ -24,6 +24,7 @@
                        <div class="col-md-12 col-sm-12 form-group">
                                 <strong class="text-muted d-block mb-2">Title Article</strong>
                                 <input type="text" class="form-control" name="title" value="<?=$article->title?>" required>
+                                <input type="hidden" class="form-control" name="id" value="<?=$article->id?>" required>
                             </div>
                         <div class="col-sm-12 col-md-12">
                             <strong class="text-muted d-block mb-2">Description</strong>
@@ -47,7 +48,7 @@
                     <li class="list-group-item px-3">
                         <strong class="text-muted d-block mb-2">Image</strong>
                         <div class="input-group mb-3">
-                          <input name="file" type="file" class="form-control" required> 
+                          <input name="file" type="file" class="form-control" > 
                         </div>
                     </li>
                   </ul>

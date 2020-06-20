@@ -34,60 +34,19 @@ class M_Article extends CI_Model {
 	// 	return $this->db->get($this->table)->num_rows();
 	// }
 
-    function add_article($data) {
+    function article($data) {
         $insert = $this->db->insert($this->table, $data);
         if ($insert) :
             return $this->db->insert_id();
         endif;
 	}
 
-    public function get_join()
+	public function update($data, $id)
 	{
-		$this->db->join('productcategories','productcategories.CategoryID = products.ProductCategoryID')
-				->order_by('products.ProductID','DESC');
-		return $this->db->get('products')->result();
+		$query = $this->db->update($this->table, $data, $id);
+
 	}
 	
-	public function get_picture($productid)
-	{
-		$this->db->join('products','productimages.productID = products.ProductID')
-				->where('products.ProductID', $productid)
-				->order_by('productimages.id','ASC');
-		return $this->db->get('productimages')->result();
-	}
-	
-	public function get_count_picture($productid)
-	{
-		$this->db->join('products','productimages.productID = products.ProductID')
-				->where('products.ProductID', $productid)
-				->order_by('productimages.id','ASC');
-		return $this->db->get('productimages')->num_rows();
-	}
-    
-    public function get_product_frontend()
-	{
-		$this->db->join('productcategories','productcategories.CategoryID = products.ProductCategoryID')
-                ->order_by('products.ProductID','DESC')
-                ->limit('8');
-		return $this->db->get('products')->result();
-    }
-    
-    public function get_product_related()
-	{
-		$this->db->join('productcategories','productcategories.CategoryID = products.ProductCategoryID')
-                ->order_by('products.ProductID','DESC')
-                ->limit('4');
-		return $this->db->get('products')->result();
-	}
-
-    public function get_all()
-	{
-		$query = $this->db->select("*")
-				 ->from($this->table)
-				 ->get();
-		return $query->result();
-    }
-
     public function edit($id)
 	{
 
@@ -104,16 +63,6 @@ class M_Article extends CI_Model {
 
     }
     
-    public function update($data, $id)
-	{
-		$query = $this->db->update("products", $data, $id);
-
-	}
-    
-    public function delete($id)
-	{
-		$query = $this->db->delete("products", $id);
-	}
 
 }
 

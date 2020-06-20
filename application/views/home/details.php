@@ -1,4 +1,11 @@
 	
+	<link rel="stylesheet" media="screen, projection" href="<?=base_url('assets/template/')?>css/drift-basic.css">
+	<style>
+		.ix-link {
+			display: block;
+			margin-bottom: 3em;
+		}
+	</style>
 	<body class="shop">
 		
 		<div id="wrapper" class="wide-wrap">
@@ -23,7 +30,7 @@
 										<div class="col-md-12 no-min-height"></div>
 									</div>
 								</div>
-								<div class="product">
+								<div class="product" style="z-index : 1">
 									<div class="container">
 										<div class="row summary-container">
 											<div class="col-md-6 col-sm-6 entry-image">
@@ -33,16 +40,30 @@
 															<div class="caroufredsel-wrap">
 																<ul class="caroufredsel-items">
 																<?php
+																		$no = 0;
 																		foreach($picture as $pic){
+																			$no += 1; 
 																	?>
 																	<li class="caroufredsel-item">
 																		<div class="thumb">
 																			<a href="<?=base_url('assets/backend/products/'.$pic->picture)?>" data-rel="magnific-popup-verticalfit" title="Product-detail">
-																				<img width="400px" height="450px" src="<?=base_url('assets/backend/products/'.$pic->picture)?>" alt="Product-detail"/>
+																				<img class="drift-demo-trigger<?=$no?>" data-zoom="<?=base_url('assets/backend/products/'.$pic->picture)?>" width="400px" height="450px" src="<?=base_url('assets/backend/products/'.$pic->picture)?>" alt="Product-detail"/>
 																			</a>
 																		</div>
+																		<div class="detail<?=$no?>"></div>
+																		<script src="<?=base_url('assets/template/')?>js/Drift.js"></script>
+																		<script>
+																			new Drift(document.querySelector('.drift-demo-trigger<?=$no?>'), {
+																				paneContainer: document.querySelector('.detail<?=$no?>'),
+																				inlinePane: 900,
+																				inlineOffsetY: -85,
+																				containInline: true,
+																				hoverBoundingBox: true
+																			});
+																		</script>
 																	</li>
 																<?php } ?>
+																
 																</ul>
 																<a href="#" class="caroufredsel-prev"></a>
 																<a href="#" class="caroufredsel-next"></a>
@@ -61,21 +82,26 @@
 																			<a href="#" data-rel="1" title="Product-detail">
 																				<img width="100px" height="150px" src="<?=base_url('assets/backend/products/'.$pic->picture)?>" alt="Product-detail"/>
 																			</a>
+																			
 																		</div>
+																		
 																	</li>
 																<?php } ?>
 																</ul>
 															</div>
 														</div>
 													</div>
+													
 												</div>
 											</div>
+											
 											<?php 
 												if($this->session->userdata('user_id') == null){ 
 											?>
 												<h4>Anda harus login sebelum order</h4>
 											<?php } ?>
 											<div class="col-md-4 col-sm-6 entry-summary">
+												
 												<div class="summary">
 													<h2 class="product_title entry-title"><?=$prod->ProductName?></h2>
 													<a href="#" class="shop-review-link">customer review</a>
