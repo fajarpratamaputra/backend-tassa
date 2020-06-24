@@ -1,4 +1,4 @@
-<script type='text/javascript' src='http://code.jquery.com/jquery-1.11.3.min.js'></script>
+<script type='text/javascript' src='https://code.jquery.com/jquery-1.11.3.min.js'></script>
 <script type='text/javascript' src='<?=base_url('assets/template/')?>js/jquery-migrate.min.js'></script>
 <script type='text/javascript' src='<?=base_url('assets/template/')?>js/jquery.themepunch.tools.min.js'></script>
 <script type='text/javascript' src='<?=base_url('assets/template/')?>js/jquery.themepunch.revolution.min.js'></script>
