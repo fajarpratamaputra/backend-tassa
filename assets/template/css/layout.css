@@ -169,7 +169,7 @@
 .home-default-about .welcome .col-sm-12 {
   padding-top:50px;
   padding-bottom:50px;
-  border-bottom: 1px solid #eeeeee;
+  /* border-bottom: 1px solid #eeeeee; */
   color: #fff;
   font-size: 14px;
   font-style: italic;

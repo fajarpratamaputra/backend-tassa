@@ -60,7 +60,7 @@
 							
 							<div class="footer-widget-col col-md-3 col-sm-12 col-xs-12" style="padding:0px 2px margin:0px 10px">
 								<h3 class="widget-title" style="color:#C3A771"><span>Translate</span></h3>
-								<div class="btn-group" role="group" aria-label="Basic example" style="padding:0px; margin:0px; border:1px solid #C3A771">
+								<div class="btn-group" role="group" aria-label="Basic example" style="padding:0px; margin:0px;">
 									<button type="button" class="col-md-6 btn btn-secondary" style="border:1px solid #C3A771; background-color: #C3A771; color:#ffffff; font-size:12px;">Indonesia</button>
 									<button type="button" class="col-md-6 btn btn-secondary" style="border:1px solid #C3A771; background-color: #ffffff; color:#C3A771; font-size:12px;">English</button>
 								</div>
@@ -109,9 +109,9 @@
 									<li class="menu-item-has-children dropdown">
 										<a href="<?=base_url('beranda/product/best')?>" class="dropdown-hover">TRANSLATE <span class="caret"></span></a>
 										<ul class="dropdown-menu">
-											<div class="btn-group" role="group" aria-label="Basic example" style="padding:0px; margin:0px; border:1px solid #C3A771">
-												<button type="button" class="col-md-6 btn btn-secondary" style="border:1px solid #C3A771; background-color: #C3A771; color:#ffffff; font-size:12px;">Indonesia</button>
-												<button type="button" class="col-md-6 btn btn-secondary" style="border:1px solid #C3A771; background-color: #ffffff; color:#C3A771; font-size:12px;">English</button>
+											<div class="btn-group" role="group" aria-label="Basic example" style="padding:0px; margin:0px;">
+												<button type="button" class="col-md-6 col-sm-12 col-xs-12 btn btn-secondary" style="width:100%; border:1px solid #C3A771; background-color: #C3A771; color:#ffffff; font-size:12px;">Indonesia</button>
+												<button type="button" class="col-md-6 col-sm-12 col-xs-12 btn btn-secondary" style="width:100%; border:1px solid #C3A771; background-color: #ffffff; color:#C3A771; font-size:12px;">English</button>
 											</div>
 										</ul>
 									</li>

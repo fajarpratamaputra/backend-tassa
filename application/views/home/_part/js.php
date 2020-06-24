@@ -28,3 +28,17 @@
 <script type='text/javascript' src='<?=base_url('assets/template/')?>js/jquery.magnific-popup.min.js'></script>
 
 <script type='text/javascript' src='<?=base_url('assets/template/')?>js/custom.js'></script>
+<script>
+    $(window).scroll(function() {    
+    var scroll = $(window).scrollTop();
+
+     //>=, not <=
+        if (scroll >= 200) {
+            //clearHeader, not clearheader - caps H
+            $(".navbar-header").addClass("background-header");
+        }
+        else {
+            $(".navbar-header").removeClass("background-header");
+        }
+    });
+</script>

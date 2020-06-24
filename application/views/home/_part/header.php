@@ -1,6 +1,3 @@
-<style>
-	
-</style>
 <header class="header-container header-type-default header-default-center header-navbar-default header-scroll-resize" style=" width:100%; position: fixed; z-index : 2">
 	<div class="topbar">
 		<div class="container topbar-wap">

@@ -1,4 +1,4 @@
-<div class="offcanvas open">
+<div class="offcanvas open" >
 			<div class="offcanvas-wrap">
 				<?php 
 					$login = false;
@@ -14,8 +14,11 @@
 					</div>
 				<?php } else if ($login == true) { ?>
 					<div class="offcanvas-user clearfix">
+						<a class="offcanvas-user-account-link" href="<?=base_url('beranda/account')?>">
+							<i class="fa fa-user"></i> Account
+						</a>
 						<a class="offcanvas-user-account-link" href="<?=base_url('loginfe/logout')?>">
-							<i class="fa fa-user"></i> Logout
+							<i class="fa fa-sign-out"></i> Logout
 						</a>
 					</div>
 				<?php } ?>

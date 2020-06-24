@@ -115,4 +115,13 @@
 		</div>
 	</div>
 </div>
+<script>
+	$(window).scroll(function() {
+	if ($(document).scrollTop() > 50) {
+		$('.navbar-header').addClass('background-header');
+	} else {
+		$('.navbar-header').removeClass('background-header');
+	}
+	});
+</script>
 
