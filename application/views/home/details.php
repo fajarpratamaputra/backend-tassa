@@ -6,7 +6,16 @@
 			margin-bottom: 3em;
 		}
 	</style>
-	
+	<?php
+	// $PHP_SELF = &$_SERVER['PHP_SELF'];
+    if(!isset($_SESSION['lebarlayar'])){
+        echo "<script language=\"JavaScript\">document.location=\"?r=1&width=\"+screen.width+\"&Height=\"+screen.height;</script>";
+        if(isset($_GET['width']) && isset($_GET['Height'])){
+            $_SESSION['lebarlayar'] = $_GET['width'];
+            $_SESSION['tinggilayar'] = $_GET['Height'];
+        }
+    }           
+	?>
 	<body class="shop">
 		
 		<div id="wrapper" class="wide-wrap">
@@ -51,8 +60,22 @@
 																				<img class="drift-demo-trigger<?=$no?>" data-zoom="<?=base_url('assets/backend/products/'.$pic->picture)?>" width="400px" height="450px" src="<?=base_url('assets/backend/products/'.$pic->picture)?>" alt="Product-detail"/>
 																			</a>
 																		</div>
-																		
-																		
+																		<style>
+																			@media screen and (max-width: 480px) { .detail<?=$no?> {display:none;} }	
+																		</style>
+																		<?php if($_SESSION['lebarlayar'] > '480') { ?>
+																			<div class="detail<?=$no?> "></div>
+																			<script src="<?=base_url('assets/template/')?>js/Drift.js"></script>
+																			<script>
+																				new Drift(document.querySelector('.drift-demo-trigger<?=$no?>'), {
+																					paneContainer: document.querySelector('.detail<?=$no?>'),
+																					inlinePane: 900,
+																					inlineOffsetY: -85,
+																					containInline: true,
+																					hoverBoundingBox: true
+																				});
+																			</script>
+																		<?php } ?>
 																	</li>
 																<?php } ?>
 																

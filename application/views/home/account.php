@@ -198,13 +198,11 @@
 																	<datalist id="district">
 																		<option value="">Nama Kabupate/Kota</option>
 																		<?php
-																		    if($district != 0) {
-																				$no = 1;
-																				$count = $count_district - 1;
-																				for ($i = $count; $i >= 0; $i--){
+																		    for ($i = 0; $i < count($district); $i++){
+																				
 																		?>
 																		<option value="<?=$district[$i]->city_name?>"></option>
-																		<?php } } ?>
+																		<?php }  ?>
 																	</datalist>
 																</p>
 																<p class="col-md-12" style="text-align:left; font-size:10px; ">Provinsi</p>
@@ -212,13 +210,11 @@
 																	<input class="form-control" list="courier" name="province" value="<?=$user->UserProvince?>" required>
 																	<datalist id="courier">
 																		<?php
-																			if($courier != 0) {
-																				$no = 1;
-																				$count = $count_courier - 1;
-																				for ($i = $count; $i >= 0; $i--){
+																			for ($j = 0; $j < count($courier); $j++){
+																				
 																		?>
-																		<option value="<?=$courier[$i]->province?>"></option>
-																		<?php } } ?>
+																		<option value="<?=$courier[$j]->province?>"></option>
+																		<?php }  ?>
 																	</datalist>
 																</p>
 																<p class="col-md-12" style="text-align:left; font-size:10px; ">Kode Pos</p>

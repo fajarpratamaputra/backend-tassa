@@ -228,93 +228,101 @@ class Beranda extends CI_Controller {
 
 	public function cost($city)
 	{
-		$curl = curl_init();
+		for($i = 0; $i < 2; $i++){
+			$curl = curl_init();
 
-		curl_setopt_array($curl, array(
-		CURLOPT_URL => "https://pro.rajaongkir.com/api/cost",
-		CURLOPT_RETURNTRANSFER => true,
-		CURLOPT_ENCODING => "",
-		CURLOPT_MAXREDIRS => 10,
-		CURLOPT_TIMEOUT => 30,
-		CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-		CURLOPT_CUSTOMREQUEST => "POST",
-		CURLOPT_POSTFIELDS => "origin=153&originType=city&destination=$city&destinationType=city&weight=1700&courier=jne:pos:tiki:jnt:sicepat:jet:lion",
-		CURLOPT_HTTPHEADER => array(
-			"content-type: application/x-www-form-urlencoded",
-			"key: 90927796f8d9b2b9accbf81cda0adf94"
-		),
-		));
+			curl_setopt_array($curl, array(
+			CURLOPT_URL => "https://pro.rajaongkir.com/api/cost",
+			CURLOPT_RETURNTRANSFER => true,
+			CURLOPT_ENCODING => "",
+			CURLOPT_MAXREDIRS => 10,
+			CURLOPT_TIMEOUT => 30,
+			CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+			CURLOPT_CUSTOMREQUEST => "POST",
+			CURLOPT_POSTFIELDS => "origin=153&originType=city&destination=$city&destinationType=city&weight=1700&courier=jne:pos:tiki:jnt:sicepat:jet:lion",
+			CURLOPT_HTTPHEADER => array(
+				"content-type: application/x-www-form-urlencoded",
+				"key: 90927796f8d9b2b9accbf81cda0adf94"
+			),
+			));
 
-		$response = curl_exec($curl);
-		$err = curl_error($curl);
+			$response = curl_exec($curl);
+			$err = curl_error($curl);
 
-		curl_close($curl);
+			curl_close($curl);
 
-		if ($err) {
-			return false;
-		} else {
-			return json_decode($response);
+			if ($err) {
+				$i = 0;
+			}
 		}
+
+		return json_decode($response);
 	}
 
 	public function listcourier()
 	{
-		$curl = curl_init();
+		for($i = 0; $i < 2; $i++){
+			$curl = curl_init();
 
-		curl_setopt_array($curl, array(
-		CURLOPT_URL => "https://pro.rajaongkir.com/api/province",
-		CURLOPT_RETURNTRANSFER => true,
-		CURLOPT_ENCODING => "",
-		CURLOPT_MAXREDIRS => 10,
-		CURLOPT_TIMEOUT => 30,
-		CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-		CURLOPT_CUSTOMREQUEST => "GET",
-		CURLOPT_HTTPHEADER => array(
-			"key: 90927796f8d9b2b9accbf81cda0adf94"
-		),
-		));
+			curl_setopt_array($curl, array(
+			CURLOPT_URL => "https://api.rajaongkir.com/starter/province",
+			CURLOPT_RETURNTRANSFER => true,
+			CURLOPT_ENCODING => "",
+			CURLOPT_MAXREDIRS => 10,
+			CURLOPT_TIMEOUT => 30,
+			CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+			CURLOPT_CUSTOMREQUEST => "GET",
+			CURLOPT_HTTPHEADER => array(
+				"key: a801fb4239f9ab7d33dc570150dbea25"
+			),
+			));
 
-		$response = curl_exec($curl);
-		$err = curl_error($curl);
+			$response = curl_exec($curl);
+			$err = curl_error($curl);
 
-		curl_close($curl);
+			curl_close($curl);
 
-		if ($err) {
-			return false;
-			
-		} else {
-			return json_decode($response);
+			if ($err) {
+				$i = 0;
+			}
 		}
+
+		return json_decode($response);
 		
 	}
 
 	public function district()
 	{
-		$curl = curl_init();
+		for($i = 0; $i < 2; $i++){
+			$curl = curl_init();
 
-		curl_setopt_array($curl, array(
-		CURLOPT_URL => "https://pro.rajaongkir.com/api/city",
-		CURLOPT_RETURNTRANSFER => true,
-		CURLOPT_ENCODING => "",
-		CURLOPT_MAXREDIRS => 10,
-		CURLOPT_TIMEOUT => 30,
-		CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-		CURLOPT_CUSTOMREQUEST => "GET",
-		CURLOPT_HTTPHEADER => array(
-			"key: 90927796f8d9b2b9accbf81cda0adf94"
-		),
-		));
-
-		$response = curl_exec($curl);
-		$err = curl_error($curl);
-
-		curl_close($curl);
-
-		if ($err) {
-			return false;
-		} else {
-			return json_decode($response);
+			curl_setopt_array($curl, array(
+			CURLOPT_URL => "https://api.rajaongkir.com/starter/city",
+			CURLOPT_RETURNTRANSFER => true,
+			CURLOPT_ENCODING => "",
+			CURLOPT_MAXREDIRS => 10,
+			CURLOPT_TIMEOUT => 30,
+			CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+			CURLOPT_CUSTOMREQUEST => "GET",
+			CURLOPT_HTTPHEADER => array(
+				"key: a801fb4239f9ab7d33dc570150dbea25"
+			),
+			));
+		
+			$response = curl_exec($curl);
+			$err = curl_error($curl);
+		
+			curl_close($curl);
+			
+		
+			if ($err) {
+				$i = 0;
+			}
 		}
+
+		return json_decode($response);
+		 
+		
 	}
 
 	public function courier()
@@ -327,28 +335,18 @@ class Beranda extends CI_Controller {
 			$userid = $this->session->userdata('user_id');
 			$query = $this->db->select_max('OrderID')->where('OrderUserID', $userid)->get('orders');
 			$row = $query->row();
-			$city = $row->OrderID;
-			if($this->district(0)) {
-				$data['district'] = 0;
-			}else {
-				
-				$data['district'] = $this->district()->rajaongkir->results;
-				$data['count_district'] = count($this->district()->rajaongkir->results);
-			}
+			$order = $row->OrderID;
+			$data['district'] = $this->district()->rajaongkir->results;
 			
 			$data['cart'] = $this->m_orderfe->cart($userid);
 			$data['user'] = $this->m_orderfe->user($userid);
 			$data['setting'] = $this->m_setting->get_setting();
 			$data['address'] = $this->m_address->get_addressfe($userid);
-			$data['order'] = $this->m_orderfe->get_infoorder($city);
+			$data['order'] = $this->m_orderfe->get_infoorder($order);
 			if ($this->uri->segment(3) != '') {
 				$city = $this->uri->segment(3);
-				if($this->cost(0)) {
-					$data['cost'] = 0;
-				}else {
-					$data['cost'] = $this->cost($city)->rajaongkir->results;
-					$data['count_cost'] = count($this->cost($city)->rajaongkir->results);
-				}
+				$data['cost'] = $this->cost($city)->rajaongkir->results;
+				$data['count_cost'] = count($this->cost($city)->rajaongkir->results);
 				
 			}
 			$this->templatehome->view('home/kurir', $data);
@@ -444,33 +442,35 @@ class Beranda extends CI_Controller {
 	public function trace() {
 		$waybill = "JD0070081249";
 		$courier = "jnt";
-		$curl = curl_init();
+		for($i = 0; $i < 2; $i++){
+			$curl = curl_init();
 
-		curl_setopt_array($curl, array(
-		CURLOPT_URL => "https://pro.rajaongkir.com/api/waybill",
-		CURLOPT_RETURNTRANSFER => true,
-		CURLOPT_ENCODING => "",
-		CURLOPT_MAXREDIRS => 10,
-		CURLOPT_TIMEOUT => 30,
-		CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-		CURLOPT_CUSTOMREQUEST => "POST",
-		CURLOPT_POSTFIELDS => "waybill=$waybill&courier=$courier",
-		CURLOPT_HTTPHEADER => array(
-			"content-type: application/x-www-form-urlencoded",
-			"key: 90927796f8d9b2b9accbf81cda0adf94"
-		),
-		));
+			curl_setopt_array($curl, array(
+			CURLOPT_URL => "https://pro.rajaongkir.com/api/waybill",
+			CURLOPT_RETURNTRANSFER => true,
+			CURLOPT_ENCODING => "",
+			CURLOPT_MAXREDIRS => 10,
+			CURLOPT_TIMEOUT => 30,
+			CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+			CURLOPT_CUSTOMREQUEST => "POST",
+			CURLOPT_POSTFIELDS => "waybill=$waybill&courier=$courier",
+			CURLOPT_HTTPHEADER => array(
+				"content-type: application/x-www-form-urlencoded",
+				"key: 90927796f8d9b2b9accbf81cda0adf94"
+			),
+			));
 
-		$response = curl_exec($curl);
-		$err = curl_error($curl);
+			$response = curl_exec($curl);
+			$err = curl_error($curl);
 
-		curl_close($curl);
+			curl_close($curl);
 
-		if ($err) {
-			return false;
-		} else {
-			return json_decode($response);
+			if ($err) {
+				$i = 0;
+			}
 		}
+
+		return json_decode($response);
 	}
 
 	public function tracking()
@@ -499,18 +499,8 @@ class Beranda extends CI_Controller {
 			redirect('beranda/');
 		}
 		else {
-			if(($this->district() == false) || ($this->listcourier() == false)) {
-				$data['district'] = 0;
-				$data['courier'] = 0;
-			}else {
-				
-				$data['district'] = $this->district()->rajaongkir->results;
-				$data['count_district'] = count($this->district()->rajaongkir->results);
-				$data['courier'] = $this->listcourier()->rajaongkir->results;
-				$data['count_courier'] = count($this->listcourier()->rajaongkir->results);
-			}
-			
-			
+			$data['district'] = $this->district()->rajaongkir->results;
+			$data['courier'] = $this->listcourier()->rajaongkir->results;
 			
 			$userid = $this->session->userdata('user_id');
 			$data['cart'] = $this->m_orderfe->history($userid);

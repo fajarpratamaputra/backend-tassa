@@ -1,8 +1,4 @@
-<?php if($district == 0) { ?>
-		<script>
-			swal("API pihak ketiga sedang maintenance");
-		</script>
-<?php } ?>
+
 	<script type="text/javascript" >
 	function preventBack(){window.history.forward();}
 		setTimeout("preventBack()", 0);
@@ -121,13 +117,12 @@
 																	<select class="form-control" name="city" id="">
 																		<option value="">Nama Kabupate/Kota</option>
 																		<?php
-																		    if($district != 0) {
-																				$no = 1;
-																				$count = $count_district - 1;
-																				for ($i = $count; $i >= 0; $i--){
+																		    $no = 1;
+																			for ($i = 0; $i < count($district); $i++){
+																				
 																		?>
 																		<option value="<?=$district[$i]->city_name?>"></option>
-																		<?php } } ?>
+																		<?php }  ?>
 																	</select>
 																</div>
 															</div>
@@ -135,11 +130,7 @@
 														
 														<div class="col-md-12" style="margin-bottom:10px;">
 															<div style="border:1px; solid #DEDEDE; box-sizing: border-box; padding:10px; background-color:#C3A771">
-															<?php
-																if($district != 0) {
-															?>
 																<a href="<?=base_url('beranda/courier/'.$orderid)?>" class="btn btn-black-outline btn-lg btn-align-center" style="background-color: #C3A771; width:100%; border-color:#C3A771; color:#ffffff; font-size:12px;">CEK TARIF</a>
-																<?php } ?>
 															</div>
 														</div>
 													</div>
@@ -163,13 +154,13 @@
 															<tbody>
 															<?php
 																$no = 1;
-																if($cost != 0) {
-																	$count = $count_cost - 1;
+																$count = $count_cost - 1;
 																	for ($i = $count; $i >= 0; $i--){
 																		$costs = $cost[$i]->costs;
 																		$count_costs = count($cost[$i]->costs);
 																		$count_costs = $count_costs - 1;
 																		for ($z = $count_costs; $z >= 0; $z--){
+																	
 															?>
 																<tr class="cart_item">
 																	<td class="product-price">
@@ -195,7 +186,7 @@
 																		</div>
 																	</td>
 																</tr>
-															<?php } } } ?>
+															<?php } }  ?>
 															</tbody>
 														</table>
 													<?php } ?>
