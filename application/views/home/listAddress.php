@@ -1,4 +1,8 @@
-	
+<?php if(($district == 0) || ($courier == 0)) { ?>
+		<script>
+			swal("API pihak ketiga sedang maintenance");
+		</script>
+<?php } ?>
 	<body class="shop">
 		
 		<div id="wrapper" class="wide-wrap">
@@ -126,26 +130,29 @@
 																<p class="col-md-12" style="text-align:left">
 																<input class="form-control" list="district" name="district" placeholder="Kabupaten/Kota" required>
 																<datalist id="district">
-																	<?php
-																		$no = 1;
-																		$count = $count_district - 1;
-																		for ($i = $count; $i >= 0; $i--){
-																	?>
+																		<option value="">Nama Kabupate/Kota</option>
+																		<?php
+																		    if($district != 0) {
+																				$no = 1;
+																				$count = $count_district - 1;
+																				for ($i = $count; $i >= 0; $i--){
+																		?>
 																		<option value="<?=$district[$i]->city_name?>"></option>
-																	<?php } ?>
-																</datalist>
+																		<?php } } ?>
+																	</datalist>
 																</p>
 																<p class="col-md-12" style="text-align:left; font-size:10px; ">Provinsi</p>
 																<p class="col-md-12" style="text-align:left">
 																<input class="form-control" list="courier" name="province" placeholder="Provinsi" required>
 																	<datalist id="courier">
 																		<?php
-																			$no = 1;
-																			$count = $count_courier - 1;
+																			if($courier != 0) {
+																				$no = 1;
+																				$count = $count_courier - 1;
 																				for ($i = $count; $i >= 0; $i--){
-																			?>
-																			<option value="<?=$courier[$i]->province?>"></option>
-																		<?php } ?>
+																		?>
+																		<option value="<?=$courier[$i]->province?>"></option>
+																		<?php } } ?>
 																	</datalist>
 																</p>
 																<p class="col-md-12" style="text-align:left; font-size:10px; ">Kode Pos</p>

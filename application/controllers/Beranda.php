@@ -236,7 +236,7 @@ class Beranda extends CI_Controller {
 		CURLOPT_RETURNTRANSFER => true,
 		CURLOPT_ENCODING => "",
 		CURLOPT_MAXREDIRS => 10,
-		CURLOPT_TIMEOUT => 50,
+		CURLOPT_TIMEOUT => 30,
 		CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
 		CURLOPT_CUSTOMREQUEST => "POST",
 		CURLOPT_POSTFIELDS => "origin=153&originType=city&destination=$city&destinationType=city&weight=1700&courier=jne:pos:tiki:jnt:sicepat:jet:lion",
@@ -252,7 +252,7 @@ class Beranda extends CI_Controller {
 		curl_close($curl);
 
 		if ($err) {
-			echo "cURL Error #:" . $err;
+			return 0;
 		} else {
 			return json_decode($response);
 		}
@@ -267,7 +267,7 @@ class Beranda extends CI_Controller {
 		CURLOPT_RETURNTRANSFER => true,
 		CURLOPT_ENCODING => "",
 		CURLOPT_MAXREDIRS => 10,
-		CURLOPT_TIMEOUT => 50,
+		CURLOPT_TIMEOUT => 30,
 		CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
 		CURLOPT_CUSTOMREQUEST => "GET",
 		CURLOPT_HTTPHEADER => array(
@@ -281,7 +281,8 @@ class Beranda extends CI_Controller {
 		curl_close($curl);
 
 		if ($err) {
-			echo "cURL Error #:" . $err;
+			return 0;
+			
 		} else {
 			return json_decode($response);
 		}
@@ -297,7 +298,7 @@ class Beranda extends CI_Controller {
 		CURLOPT_RETURNTRANSFER => true,
 		CURLOPT_ENCODING => "",
 		CURLOPT_MAXREDIRS => 10,
-		CURLOPT_TIMEOUT => 50,
+		CURLOPT_TIMEOUT => 30,
 		CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
 		CURLOPT_CUSTOMREQUEST => "GET",
 		CURLOPT_HTTPHEADER => array(
@@ -311,7 +312,7 @@ class Beranda extends CI_Controller {
 		curl_close($curl);
 
 		if ($err) {
-			echo "cURL Error #:" . $err;
+			return 0;
 		} else {
 			return json_decode($response);
 		}
@@ -330,8 +331,13 @@ class Beranda extends CI_Controller {
 			$query = $this->db->select_max('OrderID')->where('OrderUserID', $userid)->get('orders');
 			$row = $query->row();
 			$city = $row->OrderID;
-			$data['district'] = $this->district()->rajaongkir->results;
-			$data['count_district'] = count($this->district()->rajaongkir->results);
+			if($this->district(0)) {
+				$data['district'] = 0;
+			}else {
+				
+				$data['district'] = $this->district()->rajaongkir->results;
+				$data['count_district'] = count($this->district()->rajaongkir->results);
+			}
 			
 			$data['cart'] = $this->m_orderfe->cart($userid);
 			$data['user'] = $this->m_orderfe->user($userid);
@@ -340,8 +346,13 @@ class Beranda extends CI_Controller {
 			$data['order'] = $this->m_orderfe->get_infoorder($city);
 			if ($this->uri->segment(3) != '') {
 				$city = $this->uri->segment(3);
-				$data['cost'] = $this->cost($city)->rajaongkir->results;
-				$data['count_cost'] = count($this->cost($city)->rajaongkir->results);
+				if($this->cost(0)) {
+					$data['cost'] = 0;
+				}else {
+					$data['cost'] = $this->cost($city)->rajaongkir->results;
+					$data['count_cost'] = count($this->cost($city)->rajaongkir->results);
+				}
+				
 			}
 			$this->templatehome->view('home/kurir', $data);
 		}
@@ -462,7 +473,7 @@ class Beranda extends CI_Controller {
 		curl_close($curl);
 
 		if ($err) {
-			echo "cURL Error #:" . $err;
+			return 0;
 		} else {
 			return json_decode($response);
 		}
@@ -497,10 +508,22 @@ class Beranda extends CI_Controller {
 			redirect('beranda/');
 		}
 		else {
-			$data['district'] = $this->district()->rajaongkir->results;
-			$data['count_district'] = count($this->district()->rajaongkir->results);
-			$data['courier'] = $this->listcourier()->rajaongkir->results;
-			$data['count_courier'] = count($this->listcourier()->rajaongkir->results);
+			if($this->district(0)) {
+				$data['district'] = 0;
+			}else {
+				
+				$data['district'] = $this->district()->rajaongkir->results;
+				$data['count_district'] = count($this->district()->rajaongkir->results);
+			}
+			if($this->listcourier(0)) {
+				$data['courier'] = 0;
+			}else {
+				
+				$data['courier'] = $this->listcourier()->rajaongkir->results;
+				$data['count_courier'] = count($this->listcourier()->rajaongkir->results);
+			}
+			
+			
 			$userid = $this->session->userdata('user_id');
 			$data['cart'] = $this->m_orderfe->history($userid);
 			$data['order'] = $this->m_orderfe->get_order($userid);
@@ -538,10 +561,20 @@ class Beranda extends CI_Controller {
 			redirect('beranda/');
 		}
 		else {
-			$data['district'] = $this->district()->rajaongkir->results;
-			$data['count_district'] = count($this->district()->rajaongkir->results);
-			$data['courier'] = $this->listcourier()->rajaongkir->results;
-			$data['count_courier'] = count($this->listcourier()->rajaongkir->results);
+			if($this->district(0)) {
+				$data['district'] = 0;
+			}else {
+				
+				$data['district'] = $this->district()->rajaongkir->results;
+				$data['count_district'] = count($this->district()->rajaongkir->results);
+			}
+			if($this->listcourier(0)) {
+				$data['courier'] = 0;
+			}else {
+				
+				$data['courier'] = $this->listcourier()->rajaongkir->results;
+				$data['count_courier'] = count($this->listcourier()->rajaongkir->results);
+			}
 			$userid = $this->session->userdata('user_id');
 			$data['address'] = $this->m_address->get_addressfe($userid);
 			$data['user'] = $this->m_orderfe->user($userid);

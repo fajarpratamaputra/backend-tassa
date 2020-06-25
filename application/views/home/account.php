@@ -1,3 +1,8 @@
+<?php if(($district == 0) || ($courier == 0)) { ?>
+		<script>
+			swal("API pihak ketiga sedang maintenance");
+		</script>
+<?php } ?>
 	<body class="shop" >
 		
 		<div id="wrapper" class="wide-wrap">
@@ -191,13 +196,15 @@
 																<p class="col-md-12" style="text-align:left">
 																	<input class="form-control" list="district" name="city" value="<?=$user->UserCity?>" required>
 																	<datalist id="district">
+																		<option value="">Nama Kabupate/Kota</option>
 																		<?php
-																			$no = 1;
-																			$count = $count_district - 1;
-																			for ($i = $count; $i >= 0; $i--){
+																		    if($district != 0) {
+																				$no = 1;
+																				$count = $count_district - 1;
+																				for ($i = $count; $i >= 0; $i--){
 																		?>
 																		<option value="<?=$district[$i]->city_name?>"></option>
-																		<?php } ?>
+																		<?php } } ?>
 																	</datalist>
 																</p>
 																<p class="col-md-12" style="text-align:left; font-size:10px; ">Provinsi</p>
@@ -205,12 +212,13 @@
 																	<input class="form-control" list="courier" name="province" value="<?=$user->UserProvince?>" required>
 																	<datalist id="courier">
 																		<?php
-																			$no = 1;
-																			$count = $count_courier - 1;
-																			for ($i = $count; $i >= 0; $i--){
+																			if($courier != 0) {
+																				$no = 1;
+																				$count = $count_courier - 1;
+																				for ($i = $count; $i >= 0; $i--){
 																		?>
 																		<option value="<?=$courier[$i]->province?>"></option>
-																		<?php } ?>
+																		<?php } } ?>
 																	</datalist>
 																</p>
 																<p class="col-md-12" style="text-align:left; font-size:10px; ">Kode Pos</p>
