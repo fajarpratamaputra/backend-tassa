@@ -143,7 +143,7 @@
 											<?php } ?>
 												<div class="col-md-12">													
 													<div class="col-md-4" style="margin-bottom:10px;">
-														<!-- <form action="<?=base_url('loginfe/update_user');?>" enctype="multipart/form-data" method="post"> -->
+													 <form action="<?=base_url('loginfe/update_user');?>" enctype="multipart/form-data" method="post">
 														<div class="col-md-12" style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px; margin-bottom:10px;">
 															<div class="col-md-12">
 																<div class="col-md-5">
@@ -223,10 +223,7 @@
 															Update Profile
 														</button>
 														
-														
-														
-														
-														<!-- </form> -->
+														</form>
 													</div> 
 													<div class="col-md-8" style="margin-bottom:10px;">
 														<div class="col-md-12" style="border:1px solid #DEDEDE; box-sizing: border-box; padding:10px;">
