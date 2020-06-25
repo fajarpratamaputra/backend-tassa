@@ -229,7 +229,7 @@ class Beranda extends CI_Controller {
 		CURLOPT_RETURNTRANSFER => true,
 		CURLOPT_ENCODING => "",
 		CURLOPT_MAXREDIRS => 10,
-		CURLOPT_TIMEOUT => 30,
+		CURLOPT_TIMEOUT => 50,
 		CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
 		CURLOPT_CUSTOMREQUEST => "POST",
 		CURLOPT_POSTFIELDS => "origin=153&originType=city&destination=$city&destinationType=city&weight=1700&courier=jne:pos:tiki:jnt:sicepat:jet:lion",
@@ -260,7 +260,7 @@ class Beranda extends CI_Controller {
 		CURLOPT_RETURNTRANSFER => true,
 		CURLOPT_ENCODING => "",
 		CURLOPT_MAXREDIRS => 10,
-		CURLOPT_TIMEOUT => 30,
+		CURLOPT_TIMEOUT => 50,
 		CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
 		CURLOPT_CUSTOMREQUEST => "GET",
 		CURLOPT_HTTPHEADER => array(
@@ -290,7 +290,7 @@ class Beranda extends CI_Controller {
 		CURLOPT_RETURNTRANSFER => true,
 		CURLOPT_ENCODING => "",
 		CURLOPT_MAXREDIRS => 10,
-		CURLOPT_TIMEOUT => 30,
+		CURLOPT_TIMEOUT => 50,
 		CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
 		CURLOPT_CUSTOMREQUEST => "GET",
 		CURLOPT_HTTPHEADER => array(
