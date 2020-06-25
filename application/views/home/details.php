@@ -7,6 +7,7 @@
 		}
 	</style>
 	<?
+	$PHP_SELF = &$_SERVER['PHP_SELF'];
     if(!isset($_SESSION['lebarlayar'])){
         echo "<script language=\"JavaScript\">document.location=\"$PHP_SELF?r=1&width=\"+screen.width+\"&Height=\"+screen.height;</script>";
         if(isset($_GET['width']) && isset($_GET['Height'])){
