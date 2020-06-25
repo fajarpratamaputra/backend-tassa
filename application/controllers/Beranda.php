@@ -13,17 +13,24 @@ class Beranda extends CI_Controller {
 		$this->load->helper('url');
 
 		$this->load->library('templatehome');
-		
-	}
-
-
-	public function index()
-	{	
+		$this->load->model('m_orderfe');
+		$this->load->model('m_setting');
+		$this->load->model('m_address');
 		$this->load->model('m_setting');
 		$this->load->model('m_productfe');
 		$this->load->model('m_banner');
 		$this->load->model('m_quote');
 		$this->load->model('m_footpicture');
+		$this->load->model('m_article');
+		$this->load->model('m_voucherfe');
+		$this->load->model('m_information');
+		$this->load->model('m_faq');
+	}
+
+
+	public function index()
+	{	
+		
 		$data['prod'] = $this->m_productfe->get_product_frontend();
 		$data['setting'] = $this->m_setting->get_setting();
 		$data['banner'] = $this->m_banner->get_banner();
@@ -34,9 +41,7 @@ class Beranda extends CI_Controller {
 
 	public function article()
 	{
-		$this->load->model('m_setting');
-		$this->load->model('m_productfe');
-		$this->load->model('m_article');
+		
 		$data['prod'] = $this->m_productfe->get_join();
 		$data['other'] = $this->m_productfe->other_product();
 		$data['setting'] = $this->m_setting->get_setting();
@@ -53,8 +58,7 @@ class Beranda extends CI_Controller {
 
 	public function detail()
 	{
-		$this->load->model('m_productfe');
-		$this->load->model('m_setting');
+		
 		$id = $this->uri->segment(3);
 		$data['prod'] = $this->m_productfe->get_join();
 		$data['other'] = $this->m_productfe->other_product();
@@ -65,8 +69,7 @@ class Beranda extends CI_Controller {
 
 	public function product()
 	{
-		$this->load->model('m_productfe');
-		$this->load->model('m_setting');
+		
 		$data['prod'] = $this->m_productfe->get_join();
 		$data['other'] = $this->m_productfe->other_product();
 		$data['setting'] = $this->m_setting->get_setting();
@@ -75,15 +78,14 @@ class Beranda extends CI_Controller {
 
 	public function checkout()
 	{
-		$this->load->model('m_setting');
+		
 		$data['setting'] = $this->m_setting->get_setting();
 		$this->templatehome->view('home/checkout', $data);
 	}
 
 	public function details()
 	{
-		$this->load->model('m_productfe');
-		$this->load->model('m_setting');
+		
 		$id = $this->uri->segment('4');
 		$color = $this->uri->segment('5');
 		$data['prod'] = $this->m_productfe->edit($id);
@@ -96,7 +98,7 @@ class Beranda extends CI_Controller {
 
 	public function add_to_cart()
     {
-		$this->load->model('m_orderfe');
+		
 		$productid 		= $this->input->post("productid");
 		$userid 		= $this->session->userdata('user_id');
 		$productname 	= $this->input->post("productname");
@@ -129,7 +131,7 @@ class Beranda extends CI_Controller {
 
 	public function add_to_payment()
     {
-		$this->load->model('m_orderfe');
+		
 		$productid 		= $this->input->post("productid");
 		$userid 		= $this->session->userdata('user_id');
 		$color 			= $this->input->post("color");
@@ -156,8 +158,7 @@ class Beranda extends CI_Controller {
 
 	public function cart()
 	{
-		$this->load->model('m_setting');
-		$this->load->model('m_orderfe');
+		
 		$num = $this->db->where('userid', $this->session->userdata('user_id'))->where('orderid', '')->get('cart')->num_rows();
 		if(($this->session->userdata('user_id') == null) || ($num == 0)){
 			redirect('beranda/');
@@ -182,9 +183,7 @@ class Beranda extends CI_Controller {
 
 	public function address()
 	{
-		$this->load->model('m_orderfe');
-		$this->load->model('m_setting');
-		$this->load->model('m_address');
+		
 		if($this->session->userdata('user_id') == null){
 			redirect('beranda/');
 		}
@@ -200,7 +199,7 @@ class Beranda extends CI_Controller {
 
 	public function insert_address()
     {
-		$this->load->model('m_orderfe');
+		
 		$random		  = rand();
 		$name 		  = $this->input->post("name");
 		$phone 	 	  = $this->input->post("phone");
@@ -320,9 +319,7 @@ class Beranda extends CI_Controller {
 
 	public function courier()
 	{
-		$this->load->model('m_orderfe');
-		$this->load->model('m_setting');
-		$this->load->model('m_address');
+		
 		if($this->session->userdata('user_id') == null){
 			redirect('beranda/');
 		}
@@ -360,7 +357,7 @@ class Beranda extends CI_Controller {
 
 	public function insert_courier()
     {
-		$this->load->model('m_orderfe');
+		
 		$courier	 	  = urldecode($this->uri->segment(3));
 		$service	 	  = urldecode($this->uri->segment(4));
 		$rates	 	  	  = urldecode($this->uri->segment(5));
@@ -383,8 +380,7 @@ class Beranda extends CI_Controller {
 
 	public function order_detail()
 	{
-		$this->load->model('m_orderfe');
-		$this->load->model('m_setting');
+		
 		if($this->session->userdata('user_id') == null){
 			redirect('beranda/');
 		}
@@ -400,7 +396,7 @@ class Beranda extends CI_Controller {
 
 	public function insert_detail_order()
     {
-		$this->load->model('m_orderfe');
+		
 		$id['OrderCode']  = $this->input->post("order");
 		$amount	 	  	  = $this->input->post("amount");
 		$voucher	 	  = $this->input->post("voucher"); 
@@ -433,8 +429,6 @@ class Beranda extends CI_Controller {
 
 	public function payment()
 	{
-		$this->load->model('m_orderfe');
-		$this->load->model('m_setting');
 		if($this->session->userdata('user_id') == null){
 			redirect('beranda/');
 		}
@@ -481,8 +475,7 @@ class Beranda extends CI_Controller {
 
 	public function tracking()
 	{
-		$this->load->model('m_orderfe');
-		$this->load->model('m_setting');
+		
 		if($this->session->userdata('user_id') == null){
 			redirect('beranda/');
 		}
@@ -501,9 +494,7 @@ class Beranda extends CI_Controller {
 
 	public function account()
 	{
-		$this->load->model('m_voucherfe');
-		$this->load->model('m_orderfe');
-		$this->load->model('m_setting');
+		
 		if($this->session->userdata('user_id') == null){
 			redirect('beranda/');
 		}
@@ -533,8 +524,7 @@ class Beranda extends CI_Controller {
 
 	public function invoice()
 	{
-		$this->load->model('m_orderfe');
-		$this->load->model('m_setting');
+		
 		if($this->session->userdata('user_id') == null){
 			redirect('beranda/');
 		}
@@ -551,9 +541,7 @@ class Beranda extends CI_Controller {
 
 	public function listaddress()
 	{
-		$this->load->model('m_orderfe');
-		$this->load->model('m_setting');
-		$this->load->model('m_address');
+		
 		if($this->session->userdata('user_id') == null){
 			redirect('beranda/');
 		}
@@ -578,7 +566,7 @@ class Beranda extends CI_Controller {
 
 	public function insert_alamat()
     {
-		$this->load->model('m_address');
+		
 		$userid 	 = $this->session->userdata('user_id');
 		$address 	 = $this->input->post("address");
 		$district 	 = $this->input->post("district");
@@ -611,8 +599,8 @@ class Beranda extends CI_Controller {
 
 	public function information()
 	{
-		$this->load->model('m_setting');
-		$this->load->model('m_information');
+		
+		
 		$data['setting'] = $this->m_setting->get_setting();
 		$type = $this->uri->segment(3);
 		$data['info'] = $this->m_information->get_detail($type);
@@ -621,8 +609,8 @@ class Beranda extends CI_Controller {
 
 	public function faq()
 	{
-		$this->load->model('m_setting');
-		$this->load->model('m_faq');
+		
+		
 		$data['faq'] = $this->m_faq->get_faq();
 		$data['setting'] = $this->m_setting->get_setting();
 		$this->templatehome->view('home/faq', $data);
