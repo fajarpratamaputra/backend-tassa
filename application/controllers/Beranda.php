@@ -252,7 +252,7 @@ class Beranda extends CI_Controller {
 		curl_close($curl);
 
 		if ($err) {
-			return 0;
+			return false;
 		} else {
 			return json_decode($response);
 		}
@@ -281,7 +281,7 @@ class Beranda extends CI_Controller {
 		curl_close($curl);
 
 		if ($err) {
-			return 0;
+			return false;
 			
 		} else {
 			return json_decode($response);
@@ -312,7 +312,7 @@ class Beranda extends CI_Controller {
 		curl_close($curl);
 
 		if ($err) {
-			return 0;
+			return false;
 		} else {
 			return json_decode($response);
 		}
@@ -473,7 +473,7 @@ class Beranda extends CI_Controller {
 		curl_close($curl);
 
 		if ($err) {
-			return 0;
+			return false;
 		} else {
 			return json_decode($response);
 		}
@@ -508,20 +508,17 @@ class Beranda extends CI_Controller {
 			redirect('beranda/');
 		}
 		else {
-			if($this->district(0)) {
+			if(($this->district() == false) || ($this->listcourier() == false)) {
 				$data['district'] = 0;
+				$data['courier'] = 0;
 			}else {
 				
 				$data['district'] = $this->district()->rajaongkir->results;
 				$data['count_district'] = count($this->district()->rajaongkir->results);
-			}
-			if($this->listcourier(0)) {
-				$data['courier'] = 0;
-			}else {
-				
 				$data['courier'] = $this->listcourier()->rajaongkir->results;
 				$data['count_courier'] = count($this->listcourier()->rajaongkir->results);
 			}
+			
 			
 			
 			$userid = $this->session->userdata('user_id');
@@ -561,17 +558,13 @@ class Beranda extends CI_Controller {
 			redirect('beranda/');
 		}
 		else {
-			if($this->district(0)) {
+			if(($this->district() == false) || ($this->listcourier() == false)) {
 				$data['district'] = 0;
+				$data['courier'] = 0;
 			}else {
 				
 				$data['district'] = $this->district()->rajaongkir->results;
 				$data['count_district'] = count($this->district()->rajaongkir->results);
-			}
-			if($this->listcourier(0)) {
-				$data['courier'] = 0;
-			}else {
-				
 				$data['courier'] = $this->listcourier()->rajaongkir->results;
 				$data['count_courier'] = count($this->listcourier()->rajaongkir->results);
 			}
