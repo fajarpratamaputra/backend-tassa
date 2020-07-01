@@ -143,10 +143,10 @@
 														<table class="table shop_table cart">
 															<thead>
 																<tr>
-																	<th class="product-price">No</th>
-																	<th class="product-quantity">Kurir</th>
-																	<th class="product-quantity">Jenis Layanan</th>
-																	<th class="product-quantity">Estimasi Hari</th>
+																	<th class="product-price hidden-xs">No</th>
+																	<th class="product-quantity ">Kurir</th>
+																	<th class="product-quantity hidden-xs">Jenis Layanan</th>
+																	<th class="product-quantity hidden-xs">Estimasi Hari</th>
 																	<th class="product-quantity">Tarif</th>
 																	<th class="product-quantity">#</th>
 																</tr>
@@ -163,16 +163,16 @@
 																	
 															?>
 																<tr class="cart_item">
-																	<td class="product-price">
+																	<td class="product-price hidden-xs">
 																		<?=$no++?>
 																	</td>
 																	<td class="product-quantity">
 																		<?=$cost[$i]->code; ?>
 																	</td>
-																	<td class="product-quantity">
+																	<td class="product-quantity hidden-xs">
 																		<?=$costs[$z]->service; ?>
 																	</td>
-																	<td class="product-quantity">
+																	<td class="product-quantity hidden-xs">
 																		<?=$costs[$z]->cost[0]->etd; ?>
 																	</td>
 																	<td class="product-quantity">

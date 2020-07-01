@@ -21,14 +21,6 @@
 		<script>
 			swal("Selamat Datang <?=$username?>, Silahkan isi Alamat anda di halaman Account");
 		</script>
-	<?php } elseif($row->UserCity == null) { ?>
-		<script>
-			swal("Selamat Datang <?=$username?>, Silahkan isi Kabupaten/Kota anda di halaman Account");
-		</script>
-	<?php } elseif($row->UserProvince == null) { ?>
-		<script>
-			swal("Selamat Datang <?=$username?>, Silahkan isi Provinsi anda di halaman Account");
-		</script>
 	<?php } elseif($row->UserZip == null) { ?>
 		<script>
 			swal("Selamat Datang <?=$username?>, Silahkan isi Kode Pos Alamat anda di halaman Account");
@@ -96,24 +88,31 @@
 									<div class="col-sm-12">
 										<div class="container">
 											<div class="row home-default-products">
+												
 												<div class="col-sm-12">
 													<h2 class="text-center custom_heading">NEW IN</h2>
 													
-													<div class="content_element">
-														<p class="text-center" style="font-size:18px;">
-															Kami hadirkan produk terbaru untuk anda kenakan
-														</p>
-														
-													</div>
+													
 													<div class="caroufredsel product-slider" data-scroll-fx="" data-speed="" data-easing="" data-visible-min="1" data-scroll-item="" data-responsive="1" data-infinite="1" data-autoplay="0">
-														<div class="caroufredsel-wrap">
+														<div class="caroufredsel-wrap" style="z-index:-1;">
 															<div class="shop columns-4">
-																<ul class="products columns-4" data-columns="4">
+																<div class="width:100%; height:100%; z-index:500; ">
+																	<div class="content_element" style="margin-top: 120px; padding:10px; background-color:rgba(0,0,0,0.4); color:#fff;">
+																		<p class="text-center" style="font-size:18px; z-index:501; ">
+																			Kami hadirkan produk terbaru untuk anda kenakan
+																		</p>
+																		<div class="slider-buttons" style="text-align:center;">
+																			<a href="#" class="btn btn-lg btn-white-outline">Detail</a>
+																			<!-- <a href="#" class="btn btn-lg btn-white-outline">Buy Now</a> -->
+																		</div>
+																	</div>
+																</div>
+																<ul class="products columns-4"  data-columns="4">
 																<?php
 																	$no = 1;
 																	foreach($prod as $p){
 																?>
-																	<li class="product">
+																	<li class="product" style="z-index:-1;">
 																		<div class="product-container">
 																			<figure>
 																				<div class="product-wrap">
@@ -125,36 +124,17 @@
                                                                                             
                                                                                         </div>
                                                                                         <div class="clear"></div>
-																						<!-- <div class="shop-loop-quickview">
-																							<a href="#" data-rel="quickViewModal"><i class="fa fa-plus"></i></a>
-																						</div> -->
 																					</div>
 																				</div>
-																				<figcaption style="z-index : 1">
-																					<div class="shop-loop-product-info">
-																						<div class="info-title">
-																							<h3 class="product_title"><a href="<?=base_url('beranda/details/'.$p->ProductName.'/'.$p->ProductID.'/White')?>"><?=$p->ProductName?></a></h3>
-																						</div>
-																						<div class="info-meta">
-																							<div class="info-price">
-																								<span class="price">
-																									<span class="amount">Rp <?=$p->ProductPrice?></span>
-																								</span>
-																							</div>
-																							<div class="loop-add-to-cart">
-																								<a href="<?=base_url('beranda/details/'.$p->ProductName.'/'.$p->ProductID.'/White')?>">Select options</a>
-																							</div>
-																						</div>
-																					</div>
-																				</figcaption>
+																				
 																			</figure>
 																		</div>
 																	</li>
 																	<?php } ?>	
 																</ul>
 															</div>
-															<a href="#" class="caroufredsel-prev"></a>
-															<a href="#" class="caroufredsel-next"></a>
+															<!-- <a href="#" class="caroufredsel-prev"></a>
+															<a href="#" class="caroufredsel-next"></a> -->
 														</div>
 													</div>
 												</div>
@@ -169,22 +149,26 @@
 											<div class="row home-default-products">
 												<div class="col-sm-12">
 													<h2 class="text-center custom_heading">BEST SELLER</h2>
-													
-													<div class="content_element">
-														<p class="text-center" style="font-size:18px;">
-															Kami hadirkan produk terlaris untuk anda kenakan
-														</p>
-														
-													</div>
 													<div class="caroufredsel product-slider" data-scroll-fx="" data-speed="" data-easing="" data-visible-min="1" data-scroll-item="" data-responsive="1" data-infinite="1" data-autoplay="0">
-														<div class="caroufredsel-wrap">
+														<div class="caroufredsel-wrap" style="z-index:-1;">
 															<div class="shop columns-4">
+															<div class="z-index:500; ">
+																	<div class="content_element" style="margin-top: 120px; padding:10px; background-color:rgba(0,0,0,0.4); color:#fff;">
+																		<p class="text-center" style="font-size:18px; z-index:501; ">
+																			Kami hadirkan produk terbaik untuk anda kenakan
+																		</p>
+																		<div class="slider-buttons" style="text-align:center;">
+																			<a href="#" class="btn btn-lg btn-white-outline">Detail</a>
+																			<!-- <a href="#" class="btn btn-lg btn-white-outline">Buy Now</a> -->
+																		</div>
+																	</div>
+																</div>
 																<ul class="products columns-4" data-columns="4">
 																<?php
 																	$no = 1;
 																	foreach($prod as $p){
 																?>
-																	<li class="product">
+																	<li class="product" style="z-index:-1;">
 																		<div class="product-container">
 																			<figure>
 																				<div class="product-wrap">
@@ -195,36 +179,17 @@
 																							</a>
                                                                                         </div>
                                                                                         <div class="clear"></div>
-																						<!-- <div class="shop-loop-quickview">
-																							<a href="#" data-rel="quickViewModal"><i class="fa fa-plus"></i></a>
-																						</div> -->
 																					</div>
 																				</div>
-																				<figcaption style="z-index : 1">
-																					<div class="shop-loop-product-info">
-																						<div class="info-title">
-																							<h3 class="product_title"><a href="<?=base_url('beranda/details/'.$p->ProductName.'/'.$p->ProductID.'/White')?>"><?=$p->ProductName?></a></h3>
-																						</div>
-																						<div class="info-meta">
-																							<div class="info-price">
-																								<span class="price">
-																									<span class="amount">Rp <?=$p->ProductPrice?></span>
-																								</span>
-																							</div>
-																							<div class="loop-add-to-cart">
-																								<a href="<?=base_url('beranda/details/'.$p->ProductName.'/'.$p->ProductID.'/White')?>">Select options</a>
-																							</div>
-																						</div>
-																					</div>
-																				</figcaption>
+																				
 																			</figure>
 																		</div>
 																	</li>
 																	<?php } ?>	
 																</ul>
 															</div>
-															<a href="#" class="caroufredsel-prev"></a>
-															<a href="#" class="caroufredsel-next"></a>
+															<!-- <a href="#" class="caroufredsel-prev"></a>
+															<a href="#" class="caroufredsel-next"></a> -->
 														</div>
 													</div>
 												</div>
