@@ -94,19 +94,17 @@
 													
 													
 													<div class="caroufredsel product-slider" data-scroll-fx="" data-speed="" data-easing="" data-visible-min="1" data-scroll-item="" data-responsive="1" data-infinite="1" data-autoplay="0">
-														<div class="caroufredsel-wrap" style="z-index:-1;">
-															<div class="shop columns-4">
-																<div class="width:100%; height:100%; z-index:500; ">
-																	<div class="content_element" style="margin-top: 120px; padding:10px; background-color:rgba(0,0,0,0.4); color:#fff;">
-																		<p class="text-center" style="font-size:18px; z-index:501; ">
-																			Kami hadirkan produk terbaru untuk anda kenakan
-																		</p>
-																		<div class="slider-buttons" style="text-align:center;">
-																			<a href="#" class="btn btn-lg btn-white-outline">Detail</a>
-																			<!-- <a href="#" class="btn btn-lg btn-white-outline">Buy Now</a> -->
-																		</div>
-																	</div>
+														<div class="caroufredsel-wrap" >
+															<div class="content_element" style="position: absolute; z-index:100; top: 25%; padding:10px; background-color:rgba(0,0,0,0.4); color:#fff; width:100%;">
+																<p class="text-center" style="font-size:18px;">
+																	Kami hadirkan produk terbaru untuk anda kenakan
+																	
+																</p>
+																<div class="slider-buttons" style="text-align:center; ">
+																	<a href="<?=base_url("beranda/product/new")?>" class="btn btn-lg btn-white-outline">Detail</a>
 																</div>
+															</div>
+															<div class="shop columns-4">
 																<ul class="products columns-4"  data-columns="4">
 																<?php
 																	$no = 1;
@@ -146,23 +144,23 @@
 								<div class="row">
 									<div class="col-sm-12">
 										<div class="container">
-											<div class="row home-default-products">
+											
+											<div class="row home-default-products" style="z-index:1">
+											
 												<div class="col-sm-12">
 													<h2 class="text-center custom_heading">BEST SELLER</h2>
 													<div class="caroufredsel product-slider" data-scroll-fx="" data-speed="" data-easing="" data-visible-min="1" data-scroll-item="" data-responsive="1" data-infinite="1" data-autoplay="0">
-														<div class="caroufredsel-wrap" style="z-index:-1;">
-															<div class="shop columns-4">
-															<div class="z-index:500; ">
-																	<div class="content_element" style="margin-top: 120px; padding:10px; background-color:rgba(0,0,0,0.4); color:#fff;">
-																		<p class="text-center" style="font-size:18px; z-index:501; ">
-																			Kami hadirkan produk terbaik untuk anda kenakan
-																		</p>
-																		<div class="slider-buttons" style="text-align:center;">
-																			<a href="#" class="btn btn-lg btn-white-outline">Detail</a>
-																			<!-- <a href="#" class="btn btn-lg btn-white-outline">Buy Now</a> -->
-																		</div>
-																	</div>
+													    <div class="caroufredsel-wrap" >
+															<div class="content_element" style="position: absolute; z-index:100; top: 25%; padding:10px; background-color:rgba(0,0,0,0.4); color:#fff; width:100%;">
+																<p class="text-center" style="font-size:18px;">
+																	Kami hadirkan produk terbaik untuk anda kenakan
+																	
+																</p>
+																<div class="slider-buttons" style="text-align:center; ">
+																	<a href="<?=base_url("beranda/product/best")?>" class="btn btn-lg btn-white-outline">Detail</a>
 																</div>
+															</div>
+															<div class="shop columns-4" style="z-index:-1;">
 																<ul class="products columns-4" data-columns="4">
 																<?php
 																	$no = 1;
