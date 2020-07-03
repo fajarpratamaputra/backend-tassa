@@ -90,7 +90,7 @@
 											<div class="row home-default-products">
 												
 												<div class="col-sm-12">
-													<div class="caroufredsel product-slider" data-scroll-fx="" data-speed="1" data-easing="" data-visible-min="1" data-scroll-item="" data-responsive="1" data-infinite="1" data-autoplay="0">
+													<div class="caroufredsel product-slider" data-scroll-fx="" data-speed="3000" data-easing="" data-visible-min="1" data-scroll-item="" data-responsive="1" data-infinite="1" data-autoplay="1">
 														<div class="caroufredsel-wrap" >
 															<div class="content_element" style="position: absolute; z-index:100; top: 25%; padding:10px; background-color:rgba(0,0,0,0.4); color:#fff; width:100%;">
 																<h2 class="text-center custom_heading" style="color:#ffffff;">NEW IN</h2>
@@ -147,7 +147,7 @@
 											
 												<div class="col-sm-12">
 													
-													<div class="caroufredsel product-slider" data-scroll-fx="" data-speed="1" data-easing="" data-visible-min="1" data-scroll-item="" data-responsive="1" data-infinite="1" data-autoplay="0">
+													<div class="caroufredsel product-slider" data-scroll-fx="" data-speed="3000" data-easing="" data-visible-min="1" data-scroll-item="" data-responsive="1" data-infinite="1" data-autoplay="1">
 													    <div class="caroufredsel-wrap" >
 															<div class="content_element" style="position: absolute; z-index:100; top: 25%; padding:10px; background-color:rgba(0,0,0,0.4); color:#fff; width:100%;">
 																<h2 class="text-center custom_heading" style="color:#ffffff;">BEST SELLER</h2>
