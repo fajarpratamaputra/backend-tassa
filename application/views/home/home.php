@@ -87,7 +87,7 @@
 								<div class="row">
 									<div class="col-sm-12">
 										<div class="container">
-											<div class="row home-default-products">
+											<div class="row home-default-products" style="z-index:1">
 												
 												<div class="col-sm-12">
 													<div class="caroufredsel product-slider" data-scroll-fx="" data-speed="3000" data-easing="" data-visible-min="1" data-scroll-item="" data-responsive="1" data-infinite="1" data-autoplay="1">
